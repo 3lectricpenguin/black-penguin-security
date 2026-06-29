@@ -10,7 +10,7 @@
       </div>
       <h2 class="section-title">Interactive Terminal</h2>
       <p class="section-subtitle">
-        Test our simulated network toolkit. Run vulnerability scans, decrypt packets, or review JCM protocols in real-time.
+        Test our simulated network toolkit. Run vulnerability scans, decrypt packets, or review JCMAC protocols in real-time.
       </p>
     </div>
 
@@ -23,22 +23,22 @@
           <span class="win-btn minimize"></span>
           <span class="win-btn maximize"></span>
         </div>
-        <div class="terminal-title">guest@jcm-cybersecurity-node:~</div>
+        <div class="terminal-title">guest@jcmac-csec-node:~</div>
         <div class="terminal-status">SECURE CONNECTED</div>
       </div>
       
       <!-- Terminal Screen -->
       <div class="terminal-screen" id="terminal-screen">
         <div class="terminal-log">
-          <div class="log-line system-welcome">JCM SECURE NETWORKING PROTOCOL [VERSION 2.40.1]</div>
-          <div class="log-line system-welcome">© {new Date().getFullYear()} JCM IT Solutions. All access logged.</div>
+          <div class="log-line system-welcome">JCMAC C-SECURE NETWORKING PROTOCOL [VERSION 2.40.1]</div>
+          <div class="log-line system-welcome">© {new Date().getFullYear()} JCMAC C-Sec. All access logged.</div>
           <div class="log-line system-welcome">Type <span class="cmd-highlight">help</span> for a list of available operations.</div>
           <br />
         </div>
         
         <!-- Terminal Input Line -->
         <div class="terminal-input-line">
-          <span class="terminal-prompt">guest@jcm-node:~$</span>
+          <span class="terminal-prompt">guest@jcmac-node:~$</span>
           <input type="text" id="terminal-input" autofocus autocomplete="off" spellcheck="false" max-length="40" />
           <span class="custom-cursor"></span>
         </div>
@@ -54,7 +54,7 @@
 
   const COMMAND_LIST = {
     help: 'List of protocols: help, about, scan, decrypt, harden, clear',
-    about: 'JCM IT Solutions: High-performance web development combined with professional-grade penetration testing and defensive engineering.',
+    about: 'JCMAC C-Sec: High-performance web development combined with professional-grade penetration testing and defensive engineering.',
     clear: '',
   };
 
@@ -70,7 +70,7 @@
         const cmd = inputVal.toLowerCase();
         
         // Output prompt
-        appendLog(`guest@jcm-node:~$ ${inputVal}`, 'user-cmd');
+        appendLog(`guest@jcmac-node:~$ ${inputVal}`, 'user-cmd');
         termInput.value = '';
 
         if (cmd === '') return;
@@ -153,7 +153,7 @@
         await sleep(250);
       }
       
-      decryptLine.innerText = '[HASH DECRYPT] jcm_auth_token_hash_ok :: verified';
+      decryptLine.innerText = '[HASH DECRYPT] jcmac_auth_token_hash_ok :: verified';
       decryptLine.className = 'log-line sys-success';
     }
 
