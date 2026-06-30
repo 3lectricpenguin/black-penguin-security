@@ -5,9 +5,16 @@ import Footer from '../components/Footer.astro';
 interface Props {
 	title: string;
 	description?: string;
+	image?: string;
 }
 
-const { title, description = "JMAC C-Sec provides high-performance web engineering and enterprise-grade penetration testing to protect your assets and accelerate your growth." } = Astro.props;
+const { 
+	title, 
+	description = "Apex C-Sec provides high-performance web engineering and enterprise-grade penetration testing to protect your digital assets and accelerate your growth.",
+	image = "/favicon.svg"
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || Astro.url.origin);
 ---
 
 <!doctype html>
@@ -15,14 +22,62 @@ const { title, description = "JMAC C-Sec provides high-performance web engineeri
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="description" content={description} />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<title>{title}</title>
+		
+		<!-- Primary Meta Tags -->
+		<meta name="title" content={title} />
+		<meta name="description" content={description} />
+		<link rel="canonical" href={canonicalURL} />
+		<meta name="robots" content="index, follow" />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={new URL(image, Astro.url.origin)} />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={canonicalURL} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={new URL(image, Astro.url.origin)} />
+
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		
 		<!-- Google Fonts for High-End Cyber Aesthetics -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@500;700;800;900&display=swap" rel="stylesheet">
+
+		<!-- Schema.org JSON-LD Structured Data for Local Business SEO -->
+		<script type="application/ld+json" is:inline>
+			{
+				"@context": "https://schema.org",
+				"@type": "ProfessionalService",
+				"name": "Apex C-Sec",
+				"description": "Enterprise-grade penetration testing and high-performance web engineering services.",
+				"url": "https://apex-csec.com",
+				"logo": "https://apex-csec.com/favicon.svg",
+				"image": "https://apex-csec.com/favicon.svg",
+				"address": {
+					"@type": "PostalAddress",
+					"addressRegion": "Michigan, Ohio, Indiana",
+					"addressCountry": "US"
+				},
+				"geo": {
+					"@type": "GeoCircle",
+					"geoMidpoint": {
+						"@type": "GeoCoordinates",
+						"latitude": "42.3314",
+						"longitude": "-83.0458"
+					},
+					"radius": "500000"
+				},
+				"priceRange": "$$$"
+			}
+		</script>
 		
 		<style is:global>
 			:root {

@@ -5,11 +5,15 @@
   <div class="header-container">
     <a href="/" class="logo-link">
       <div class="logo-wrapper">
-        <img src="/jmaccsec_logo.png" alt="JMAC C-Sec Logo" class="logo-img" />
+        <svg viewBox="0 0 100 100" class="logo-svg" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="50,10 90,30 90,70 50,90 10,70 10,30" stroke="var(--accent-green)" stroke-width="8" stroke-linejoin="round" fill="rgba(163, 230, 53, 0.05)"/>
+          <path d="M50,25 L75,70 L25,70 Z" fill="none" stroke="#ffffff" stroke-width="6" stroke-linejoin="round"/>
+          <circle cx="50" cy="52" r="7" fill="var(--accent-green)"/>
+        </svg>
         <div class="logo-glow"></div>
       </div>
       <div class="logo-text">
-        <span class="logo-brand">JMAC</span>
+        <span class="logo-brand">APEX</span>
         <span class="logo-sub">C-SEC</span>
       </div>
     </a>
@@ -73,10 +77,12 @@
     transition: all 0.3s ease;
   }
 
-  .logo-img {
+  .logo-svg {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    padding: 3px;
+    z-index: 2;
+    position: relative;
   }
 
   .logo-glow {

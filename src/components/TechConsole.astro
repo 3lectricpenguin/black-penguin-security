@@ -10,7 +10,7 @@
       </div>
       <h2 class="section-title">Interactive Terminal</h2>
       <p class="section-subtitle">
-        Test our simulated network toolkit. Run vulnerability scans, decrypt packets, or review JMAC protocols in real-time.
+        Test our simulated network toolkit. Run vulnerability scans, decrypt packets, or review Apex protocols in real-time.
       </p>
     </div>
 
@@ -23,22 +23,22 @@
           <span class="win-btn minimize"></span>
           <span class="win-btn maximize"></span>
         </div>
-        <div class="terminal-title">guest@jmac-csec-node:~</div>
+        <div class="terminal-title">guest@apex-csec-node:~</div>
         <div class="terminal-status">SECURE CONNECTED</div>
       </div>
       
       <!-- Terminal Screen -->
       <div class="terminal-screen" id="terminal-screen">
         <div class="terminal-log">
-          <div class="log-line system-welcome">JMAC C-SECURE NETWORKING PROTOCOL [VERSION 2.40.1]</div>
-          <div class="log-line system-welcome">© {new Date().getFullYear()} JMAC C-Sec. All access logged.</div>
+          <div class="log-line system-welcome">APEX C-SECURE NETWORKING PROTOCOL [VERSION 2.40.1]</div>
+          <div class="log-line system-welcome">© {new Date().getFullYear()} Apex C-Sec. All access logged.</div>
           <div class="log-line system-welcome">Type <span class="cmd-highlight">help</span> for a list of available operations.</div>
           <br />
         </div>
         
         <!-- Terminal Input Line -->
         <div class="terminal-input-line">
-          <span class="terminal-prompt">guest@jmac-node:~$</span>
+          <span class="terminal-prompt">guest@apex-node:~$</span>
           <input type="text" id="terminal-input" autofocus autocomplete="off" spellcheck="false" max-length="40" />
           <span class="custom-cursor"></span>
         </div>
@@ -54,7 +54,7 @@
 
   const COMMAND_LIST = {
     help: 'List of protocols: help, about, scan, decrypt, harden, clear',
-    about: 'JMAC C-Sec: High-performance web development combined with professional-grade penetration testing and defensive engineering.',
+    about: 'Apex C-Sec: High-performance web development combined with professional-grade penetration testing and defensive engineering.',
     clear: '',
   };
 
@@ -70,7 +70,7 @@
         const cmd = inputVal.toLowerCase();
         
         // Output prompt
-        appendLog(`guest@jmac-node:~$ ${inputVal}`, 'user-cmd');
+        appendLog(`guest@apex-node:~$ ${inputVal}`, 'user-cmd');
         termInput.value = '';
 
         if (cmd === '') return;
@@ -153,7 +153,7 @@
         await sleep(250);
       }
       
-      decryptLine.innerText = '[HASH DECRYPT] jmac_auth_token_hash_ok :: verified';
+      decryptLine.innerText = '[HASH DECRYPT] apex_auth_token_hash_ok :: verified';
       decryptLine.className = 'log-line sys-success';
     }
 
