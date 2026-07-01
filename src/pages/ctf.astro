@@ -1,0 +1,1784 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Cyber CTF | Black Penguin IT Security" description="Test your cybersecurity skills on the Black Penguin CTF platform. Solve challenges in cryptography, web security, reverse engineering, and SQL injection.">
+  <div class="ctf-page-wrapper">
+    <!-- Particles/Cyber grid background -->
+    <div class="cyber-grid-overlay"></div>
+
+    <div class="ctf-main-container">
+      
+      <!-- 1. ENTRY PORTAL (Nickname Selection) -->
+      <div id="ctf-entry-portal" class="ctf-card portal-card">
+        <div class="card-header-accent">
+          <span class="glitch-text" data-text="INITIALIZE OPERATION">INITIALIZE OPERATION</span>
+        </div>
+        <div class="portal-body">
+          <div class="portal-logo">
+            <svg viewBox="0 0 100 100" class="portal-svg" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="50,5 90,25 90,75 50,95 10,75 10,25" stroke="var(--accent-green)" stroke-width="4" stroke-linejoin="round" fill="none"/>
+              <path d="M50,25 L70,45 L70,70 L50,85 L30,70 L30,45 Z" fill="none" stroke="var(--accent-green)" stroke-width="2" stroke-linejoin="round" stroke-dasharray="2,2"/>
+              <circle cx="50" cy="50" r="10" stroke="var(--accent-green)" stroke-width="2" fill="none"/>
+            </svg>
+          </div>
+          <h3>SECURE OPERATOR ACCESS</h3>
+          <p class="portal-desc">
+            Welcome to the Black Penguin Sandbox CTF environment. Enter an operator nickname to log in, initialize tracking protocols, and access the challenges.
+          </p>
+          <form id="nickname-form" class="portal-form">
+            <div class="input-wrapper">
+              <label for="operator-nickname">OPERATOR NICKNAME</label>
+              <input type="text" id="operator-nickname" placeholder="e.g., Guest_Hacker" maxlength="15" required autocomplete="off" />
+              <span class="input-focus-line"></span>
+            </div>
+            <button type="submit" class="btn-portal-submit">
+              <span>ACCESS WORKSPACE</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- 2. CTF WORKSPACE (Hidden initially) -->
+      <div id="ctf-workspace" class="workspace-grid" style="display: none;">
+        
+        <!-- Sidebar: Stats & Leaderboard -->
+        <div class="workspace-sidebar">
+          
+          <!-- Operator Profile Card -->
+          <div class="ctf-card profile-card">
+            <div class="profile-header">
+              <div class="avatar-glow"></div>
+              <div class="profile-text">
+                <span class="profile-label">OPERATOR STATUS</span>
+                <h4 id="display-nickname">GUEST_USER</h4>
+              </div>
+            </div>
+            <div class="profile-stats">
+              <div class="stat-box">
+                <span class="stat-label">TOTAL SCORE</span>
+                <span class="stat-value" id="player-score">0 pts</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-label">ELAPSED TIME</span>
+                <span class="stat-value" id="elapsed-time">00:00</span>
+              </div>
+            </div>
+            <div class="progress-bar-container">
+              <div class="progress-bar-fill" id="player-progress" style="width: 0%;"></div>
+            </div>
+            <div class="progress-label">
+              <span>COMPLETION</span>
+              <span id="player-percent">0%</span>
+            </div>
+            <button id="abort-session-btn" class="btn-abort">ABORT OPERATION</button>
+          </div>
+
+          <!-- Top Hackers Leaderboard -->
+          <div class="ctf-card leaderboard-card">
+            <div class="card-title">
+              <span class="title-indicator"></span>
+              <h4>TOP HACKERS</h4>
+              <span class="live-pulse">LIVE</span>
+            </div>
+            <div class="leaderboard-list" id="leaderboard-rows">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+
+          <!-- Hack Logs (Feed of system events) -->
+          <div class="ctf-card logs-card">
+            <div class="card-title">
+              <span class="title-indicator"></span>
+              <h4>SYSTEM LOGS</h4>
+            </div>
+            <div class="log-feed" id="system-log-feed">
+              <div class="log-entry system">[SYSTEM] Protocols loaded. Waiting for initialization...</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Main Workspace: Challenge Selection & Details -->
+        <div class="workspace-main">
+          
+          <!-- Challenge Selector Cards -->
+          <div class="challenges-section">
+            <div class="section-header">
+              <h3>ACTIVE CHALLENGES</h3>
+              <p>Select a challenge to open the sandbox terminal and solve it.</p>
+            </div>
+            <div class="challenges-grid" id="challenges-list">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+
+          <!-- Challenge Details Panel -->
+          <div class="ctf-card details-card" id="challenge-details-panel">
+            <div class="details-empty" id="details-empty-state">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+              <h4>NO CHALLENGE SELECTED</h4>
+              <p>Select an active node from the grid above to load instructions and connection interface.</p>
+            </div>
+
+            <div class="details-content" id="details-content-state" style="display: none;">
+              <div class="challenge-meta">
+                <span class="challenge-points-badge" id="detail-points">0 pts</span>
+                <span class="challenge-category-badge" id="detail-category">GENERAL</span>
+              </div>
+              <h2 id="detail-title" class="challenge-title">Challenge Title</h2>
+              <p id="detail-desc" class="challenge-desc">Challenge description goes here.</p>
+              
+              <!-- Interactive Workspace for Challenge -->
+              <div class="challenge-sandbox" id="challenge-sandbox-container">
+                <!-- Inner sandbox changes depending on selected challenge -->
+              </div>
+
+              <!-- Submit Form -->
+              <div class="challenge-submission-box" id="submission-box">
+                <form id="flag-submit-form" class="submission-form">
+                  <div class="flag-input-group">
+                    <input type="text" id="flag-input" placeholder="FLAG{...}" required autocomplete="off" />
+                    <button type="submit" class="btn-submit-flag">SUBMIT FLAG</button>
+                  </div>
+                  <div class="flag-feedback" id="flag-feedback-msg"></div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</Layout>
+
+<script>
+  // Challenges database
+  interface Challenge {
+    id: number;
+    title: string;
+    points: number;
+    category: string;
+    description: string;
+    hint: string;
+    flag: string;
+    solved: boolean;
+  }
+
+  const challenges: Challenge[] = [
+    {
+      id: 1,
+      title: "Secret in the Source",
+      points: 5,
+      category: "Web Recon",
+      description: "Developers often leave sensitive comments or debug information in the page source. Inspect this card's DOM structure or look closely for hidden comments to find the flag.",
+      hint: "Right-click -> Inspect, or view the source of the elements inside this challenge box. There is an HTML comment waiting for you.",
+      flag: "FLAG{s3cr3t_s0urc3_5pts}",
+      solved: false
+    },
+    {
+      id: 2,
+      title: "Cypher Decoder",
+      points: 10,
+      category: "Cryptography",
+      description: "We intercepted a Base64-encoded payload from a command-and-control server. Decode the string to retrieve the raw flag: <br/><code class='cyber-code'>RkxBR3tiYXM2NF9kZWNvZGVyXzEwcHRzfQ==</code>",
+      hint: "Base64 is a binary-to-text representation. You can decode it in JavaScript using the `atob()` function in the console, or use a decoder tool.",
+      flag: "FLAG{bas64_decoder_10pts}",
+      solved: false
+    },
+    {
+      id: 3,
+      title: "Logic Bypass",
+      points: 20,
+      category: "Reverse Engineering",
+      description: "An authentication gate checks a password. The Javascript function validating the entry is reversed: <br/><code class='cyber-code'>function check(pass) { return pass.split('').reverse().join('') === 'n1ugn3p_kc4lb'; }</code><br/>Find the correct password and submit it in the input panel below to get the flag.",
+      hint: "Reverse the target string 'n1ugn3p_kc4lb' to discover the correct password. Be sure to check letters and numbers carefully.",
+      flag: "FLAG{js_obfuscation_20pts}",
+      solved: false
+    },
+    {
+      id: 4,
+      title: "Caesar's Vault",
+      points: 35,
+      category: "Cryptography",
+      description: "A message was encrypted using a Caesar cipher (rotational offset shift of +7). Decrypt the cipher text to find the flag: <br/><code class='cyber-code'>MSHN{jhlzhy_jpwoly_35waz}</code>",
+      hint: "For each character in the message, shift it backward by 7 positions in the alphabet. M -> F, S -> L, H -> A, N -> G, and so on.",
+      flag: "FLAG{caesar_cipher_35pts}",
+      solved: false
+    },
+    {
+      id: 5,
+      title: "SQL Injection Panel",
+      points: 50,
+      category: "Web Exploitation",
+      description: "We found a administrative login page. The database query is constructed insecurely as: <br/><code class='cyber-code'>SELECT * FROM users WHERE username = '${user}' AND password = '${pass}'</code><br/>Inject SQL commands into the Username field to bypass verification, log in as `admin`, and extract the secret flag.",
+      hint: "Injecting `' OR '1'='1` or `' OR 1=1 --` into the username field will force the SQL statement to evaluate to true, bypassing password checks.",
+      flag: "FLAG{sqli_bypass_50pts_winner}",
+      solved: false
+    }
+  ];
+
+  // Leaderboard data
+  interface Hacker {
+    name: string;
+    points: number;
+    time: number; // in seconds
+    isPlayer?: boolean;
+    solvedCount: number;
+  }
+
+  let hackers: Hacker[] = [
+    { name: "acid_burn", points: 70, time: 165, solvedCount: 3 },
+    { name: "zero_cool", points: 55, time: 242, solvedCount: 3 },
+    { name: "cereal_killer", points: 35, time: 125, solvedCount: 2 },
+    { name: "lord_nikon", points: 15, time: 92, solvedCount: 2 },
+    { name: "crash_override", points: 5, time: 32, solvedCount: 1 },
+    { name: "phantom_phreak", points: 0, time: 0, solvedCount: 0 }
+  ];
+
+  let nickname = "";
+  let playerScore = 0;
+  let playerTime = 0; // seconds
+  let timerInterval: any = null;
+  let selectedChallengeId: number | null = null;
+  let startTime = 0;
+
+  // DOM Elements
+  const entryPortal = document.getElementById('ctf-entry-portal') as HTMLElement;
+  const workspace = document.getElementById('ctf-workspace') as HTMLElement;
+  const nicknameForm = document.getElementById('nickname-form') as HTMLFormElement;
+  const nicknameInput = document.getElementById('operator-nickname') as HTMLInputElement;
+  const displayNickname = document.getElementById('display-nickname') as HTMLElement;
+  const playerProgress = document.getElementById('player-progress') as HTMLElement;
+  const playerPercent = document.getElementById('player-percent') as HTMLElement;
+  const playerScoreEl = document.getElementById('player-score') as HTMLElement;
+  const elapsedTimeEl = document.getElementById('elapsed-time') as HTMLElement;
+  const abortBtn = document.getElementById('abort-session-btn') as HTMLButtonElement;
+  const leaderboardRows = document.getElementById('leaderboard-rows') as HTMLElement;
+  const logFeed = document.getElementById('system-log-feed') as HTMLElement;
+  const challengesList = document.getElementById('challenges-list') as HTMLElement;
+
+  // Challenge Details DOM
+  const detailsEmpty = document.getElementById('details-empty-state') as HTMLElement;
+  const detailsContent = document.getElementById('details-content-state') as HTMLElement;
+  const detailPoints = document.getElementById('detail-points') as HTMLElement;
+  const detailCategory = document.getElementById('detail-category') as HTMLElement;
+  const detailTitle = document.getElementById('detail-title') as HTMLElement;
+  const detailDesc = document.getElementById('detail-desc') as HTMLElement;
+  const sandboxContainer = document.getElementById('challenge-sandbox-container') as HTMLElement;
+  const submissionBox = document.getElementById('submission-box') as HTMLElement;
+  const flagForm = document.getElementById('flag-submit-form') as HTMLFormElement;
+  const flagInput = document.getElementById('flag-input') as HTMLInputElement;
+  const flagFeedback = document.getElementById('flag-feedback-msg') as HTMLElement;
+
+  // Initialize page
+  function init() {
+    const savedNickname = localStorage.getItem('ctf_nickname');
+    const savedScore = localStorage.getItem('ctf_score');
+    const savedTime = localStorage.getItem('ctf_elapsed');
+    const savedSolved = localStorage.getItem('ctf_solved_ids');
+
+    if (savedNickname) {
+      nickname = savedNickname;
+      playerScore = parseInt(savedScore || '0');
+      playerTime = parseInt(savedTime || '0');
+      
+      const solvedIds = JSON.parse(savedSolved || '[]');
+      challenges.forEach(c => {
+        if (solvedIds.includes(c.id)) {
+          c.solved = true;
+        }
+      });
+
+      startTime = Date.now() - (playerTime * 1000);
+      startWorkspace();
+    }
+  }
+
+  // Handle Nickname Submission
+  nicknameForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    nickname = nicknameInput.value.trim().replace(/[^a-zA-Z0-9_]/g, '');
+    if (!nickname) return;
+
+    localStorage.setItem('ctf_nickname', nickname);
+    localStorage.setItem('ctf_score', '0');
+    localStorage.setItem('ctf_elapsed', '0');
+    localStorage.setItem('ctf_solved_ids', '[]');
+    
+    startTime = Date.now();
+    playerTime = 0;
+    playerScore = 0;
+    challenges.forEach(c => c.solved = false);
+
+    // Setup initial leaderboard status for player
+    const existingPlayerIndex = hackers.findIndex(h => h.isPlayer);
+    if (existingPlayerIndex > -1) hackers.splice(existingPlayerIndex, 1);
+    
+    startWorkspace();
+    addLog(`[SYSTEM] Operator session initialized for ${nickname}`, 'system');
+  });
+
+  // Abort operation
+  abortBtn.addEventListener('click', () => {
+    localStorage.removeItem('ctf_nickname');
+    localStorage.removeItem('ctf_score');
+    localStorage.removeItem('ctf_elapsed');
+    localStorage.removeItem('ctf_solved_ids');
+    clearInterval(timerInterval);
+    
+    entryPortal.style.display = 'block';
+    workspace.style.display = 'none';
+  });
+
+  // Switch display and start loops
+  function startWorkspace() {
+    entryPortal.style.display = 'none';
+    workspace.style.display = 'grid';
+    displayNickname.textContent = nickname.toUpperCase();
+    
+    // Build challenges grid
+    renderChallengesList();
+
+    // Start Timer
+    clearInterval(timerInterval);
+    timerInterval = setInterval(() => {
+      playerTime = Math.floor((Date.now() - startTime) / 1000);
+      localStorage.setItem('ctf_elapsed', playerTime.toString());
+      updateTimerDisplay();
+    }, 1000);
+
+    // Draw Leaderboard
+    updateLeaderboard();
+
+    // Simulated background bot actions
+    startBotSimulations();
+  }
+
+  function updateTimerDisplay() {
+    const mins = Math.floor(playerTime / 60).toString().padStart(2, '0');
+    const secs = (playerTime % 60).toString().padStart(2, '0');
+    elapsedTimeEl.textContent = `${mins}:${secs}`;
+  }
+
+  function addLog(text: string, type: 'system' | 'success' | 'warning' | 'alert') {
+    const entry = document.createElement('div');
+    entry.className = `log-entry ${type}`;
+    const timestamp = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+    entry.innerHTML = `<span class="log-time">[${timestamp}]</span> ${text}`;
+    logFeed.appendChild(entry);
+    logFeed.scrollTop = logFeed.scrollHeight;
+  }
+
+  // Render the challenge nodes in grid
+  function renderChallengesList() {
+    challengesList.innerHTML = '';
+    challenges.forEach(challenge => {
+      const card = document.createElement('div');
+      card.className = `challenge-selector-card ${challenge.solved ? 'solved' : ''} ${selectedChallengeId === challenge.id ? 'active' : ''}`;
+      card.setAttribute('data-id', challenge.id.toString());
+      
+      card.innerHTML = `
+        <div class="selector-meta">
+          <span class="cat">${challenge.category}</span>
+          <span class="pts">${challenge.points} pts</span>
+        </div>
+        <h4 class="selector-title">${challenge.title}</h4>
+        <div class="selector-status">
+          ${challenge.solved ? '● SECURED' : '○ ONLINE'}
+        </div>
+      `;
+
+      card.addEventListener('click', () => {
+        selectChallenge(challenge.id);
+      });
+
+      challengesList.appendChild(card);
+    });
+
+    updateProgress();
+  }
+
+  function updateProgress() {
+    const totalSolved = challenges.filter(c => c.solved).length;
+    const progressPercent = Math.round((totalSolved / challenges.length) * 100);
+    playerPercent.textContent = `${progressPercent}%`;
+    playerProgress.style.width = `${progressPercent}%`;
+    playerScoreEl.textContent = `${playerScore} pts`;
+  }
+
+  // Load a single challenge into details view
+  function selectChallenge(id: number) {
+    selectedChallengeId = id;
+    const challenge = challenges.find(c => c.id === id);
+    if (!challenge) return;
+
+    // Highlights selected card
+    const selectorCards = document.querySelectorAll('.challenge-selector-card');
+    selectorCards.forEach(card => {
+      if (parseInt(card.getAttribute('data-id') || '0') === id) {
+        card.classList.add('active');
+      } else {
+        card.classList.remove('active');
+      }
+    });
+
+    detailsEmpty.style.display = 'none';
+    detailsContent.style.display = 'block';
+
+    detailPoints.textContent = `${challenge.points} pts`;
+    detailCategory.textContent = challenge.category.toUpperCase();
+    detailTitle.textContent = challenge.title;
+    detailDesc.innerHTML = challenge.description;
+
+    // Reset submission state
+    flagInput.value = '';
+    flagFeedback.style.display = 'none';
+    
+    if (challenge.solved) {
+      submissionBox.style.display = 'none';
+      flagFeedback.style.display = 'block';
+      flagFeedback.className = 'flag-feedback success-text';
+      flagFeedback.textContent = 'Challenge Node Secured. Flag verified.';
+    } else {
+      submissionBox.style.display = 'block';
+    }
+
+    // Build specific interactive sandbox
+    loadSandbox(challenge);
+  }
+
+  // Custom sandbox for each challenge
+  function loadSandbox(challenge: Challenge) {
+    sandboxContainer.innerHTML = '';
+    
+    if (challenge.id === 1) {
+      // Challenge 1: HTML Comment
+      const wrapper = document.createElement('div');
+      wrapper.className = 'sandbox-inner html-sandbox';
+      wrapper.innerHTML = `
+        <div class="interactive-prompt">
+          <span>CONSOLE: DOM inspector active. Scan for comments.</span>
+        </div>
+        <div class="element-viewer">
+          <p>Analyzing sub-nodes...</p>
+          <span class="muted-tag">&lt;div class="node-root"&gt;</span>
+          <div class="nested-node">
+            <span class="muted-tag">&lt;span class="cyber-badge"&gt;Black Penguin Security Node&lt;/span&gt;</span>
+            <!-- Flag: FLAG{s3cr3t_s0urc3_5pts} -->
+            <p class="cyber-inspect-hint">Node structure secure. All systems green.</p>
+          </div>
+          <span class="muted-tag">&lt;/div&gt;</span>
+        </div>
+      `;
+      sandboxContainer.appendChild(wrapper);
+    } 
+    else if (challenge.id === 2) {
+      // Challenge 2: Base64 Decrypt
+      const wrapper = document.createElement('div');
+      wrapper.className = 'sandbox-inner crypto-sandbox';
+      wrapper.innerHTML = `
+        <div class="interactive-prompt">
+          <span>CONSOLE: Base64 decoder tool.</span>
+        </div>
+        <div class="decoder-tool">
+          <input type="text" id="base64-input" placeholder="Enter base64 to decode..." class="sandbox-input" />
+          <button id="base64-btn" class="btn-sandbox">DECODE</button>
+          <div id="base64-output" class="sandbox-output">Result: </div>
+        </div>
+      `;
+      sandboxContainer.appendChild(wrapper);
+
+      const b64Input = wrapper.querySelector('#base64-input') as HTMLInputElement;
+      const b64Btn = wrapper.querySelector('#base64-btn') as HTMLButtonElement;
+      const b64Output = wrapper.querySelector('#base64-output') as HTMLElement;
+
+      b64Btn.addEventListener('click', () => {
+        try {
+          const val = b64Input.value.trim();
+          if (val) {
+            b64Output.textContent = `Result: ${atob(val)}`;
+            b64Output.className = "sandbox-output success-val";
+          }
+        } catch(e) {
+          b64Output.textContent = `Result: Decode failed. Invalid Base64 format.`;
+          b64Output.className = "sandbox-output error-val";
+        }
+      });
+    }
+    else if (challenge.id === 3) {
+      // Challenge 3: Logic Bypass
+      const wrapper = document.createElement('div');
+      wrapper.className = 'sandbox-inner rev-sandbox';
+      wrapper.innerHTML = `
+        <div class="interactive-prompt">
+          <span>CONSOLE: Authenticator gate check. Enter correct password.</span>
+        </div>
+        <div class="login-bypass-panel">
+          <div class="bypass-row">
+            <input type="text" id="bypass-password" placeholder="Enter gate password..." class="sandbox-input" />
+            <button id="bypass-btn" class="btn-sandbox">UNLOCK</button>
+          </div>
+          <div id="bypass-output" class="sandbox-output">Status: LOCKED</div>
+        </div>
+      `;
+      sandboxContainer.appendChild(wrapper);
+
+      const passInput = wrapper.querySelector('#bypass-password') as HTMLInputElement;
+      const passBtn = wrapper.querySelector('#bypass-btn') as HTMLButtonElement;
+      const passOutput = wrapper.querySelector('#bypass-output') as HTMLElement;
+
+      passBtn.addEventListener('click', () => {
+        const val = passInput.value.trim();
+        if (val.split('').reverse().join('') === 'n1ugn3p_kc4lb') {
+          passOutput.innerHTML = `STATUS: UNLOCKED<br/><span style="color:var(--accent-green);font-weight:bold;">FLAG: FLAG{js_obfuscation_20pts}</span>`;
+          passOutput.className = "sandbox-output success-val";
+          addLog('[SUCCESS] Authenticator gate bypassed successfully.', 'success');
+        } else {
+          passOutput.textContent = `STATUS: ACCESS DENIED. Password incorrect.`;
+          passOutput.className = "sandbox-output error-val";
+        }
+      });
+    }
+    else if (challenge.id === 4) {
+      // Challenge 4: Caesar shift
+      const wrapper = document.createElement('div');
+      wrapper.className = 'sandbox-inner crypto-sandbox';
+      wrapper.innerHTML = `
+        <div class="interactive-prompt">
+          <span>CONSOLE: Rotational cipher decryptor helper.</span>
+        </div>
+        <div class="caesar-tool">
+          <div class="caesar-controls">
+            <input type="text" id="caesar-text" value="MSHN{jhlzhy_jpwoly_35waz}" class="sandbox-input" style="flex: 1;" />
+            <div class="shift-selector">
+              <label>Shift:</label>
+              <input type="number" id="caesar-shift" value="-7" min="-25" max="25" class="sandbox-input number-input" />
+            </div>
+            <button id="caesar-btn" class="btn-sandbox">SHIFT</button>
+          </div>
+          <div id="caesar-output" class="sandbox-output">Result: </div>
+        </div>
+      `;
+      sandboxContainer.appendChild(wrapper);
+
+      const txtInput = wrapper.querySelector('#caesar-text') as HTMLInputElement;
+      const shInput = wrapper.querySelector('#caesar-shift') as HTMLInputElement;
+      const caesarBtn = wrapper.querySelector('#caesar-btn') as HTMLButtonElement;
+      const caesarOutput = wrapper.querySelector('#caesar-output') as HTMLElement;
+
+      caesarBtn.addEventListener('click', () => {
+        const txt = txtInput.value;
+        const shift = parseInt(shInput.value) || 0;
+        
+        let result = '';
+        for (let i = 0; i < txt.length; i++) {
+          const char = txt[i];
+          if (char.match(/[a-z]/i)) {
+            const code = txt.charCodeAt(i);
+            // Uppercase
+            if (code >= 65 && code <= 90) {
+              result += String.fromCharCode(((code - 65 + shift + 26) % 26) + 65);
+            }
+            // Lowercase
+            else if (code >= 97 && code <= 122) {
+              result += String.fromCharCode(((code - 97 + shift + 26) % 26) + 97);
+            }
+          } else {
+            result += char;
+          }
+        }
+        caesarOutput.textContent = `Result: ${result}`;
+        caesarOutput.className = "sandbox-output success-val";
+      });
+    }
+    else if (challenge.id === 5) {
+      // Challenge 5: SQLi
+      const wrapper = document.createElement('div');
+      wrapper.className = 'sandbox-inner sqli-sandbox';
+      wrapper.innerHTML = `
+        <div class="interactive-prompt">
+          <span>CONSOLE: Live Insecure Login Panel</span>
+        </div>
+        <div class="sqli-panel">
+          <div class="form-row">
+            <div class="form-field">
+              <label>USERNAME:</label>
+              <input type="text" id="sqli-user" placeholder="admin" class="sandbox-input" />
+            </div>
+            <div class="form-field">
+              <label>PASSWORD:</label>
+              <input type="password" id="sqli-pass" placeholder="••••••••" class="sandbox-input" />
+            </div>
+          </div>
+          <button id="sqli-btn" class="btn-sandbox" style="margin-top: 1rem; width: 100%;">QUERY DATABASE</button>
+          
+          <div class="sql-query-viewer">
+            <span class="label">COMPILED SQL QUERY:</span>
+            <code id="sql-query-display">SELECT * FROM users WHERE username = '' AND password = ''</code>
+          </div>
+          
+          <div id="sqli-output" class="sandbox-output">Console ready. Submit query.</div>
+        </div>
+      `;
+      sandboxContainer.appendChild(wrapper);
+
+      const sqliUser = wrapper.querySelector('#sqli-user') as HTMLInputElement;
+      const sqliPass = wrapper.querySelector('#sqli-pass') as HTMLInputElement;
+      const sqliBtn = wrapper.querySelector('#sqli-btn') as HTMLButtonElement;
+      const queryDisplay = wrapper.querySelector('#sql-query-display') as HTMLElement;
+      const sqliOutput = wrapper.querySelector('#sqli-output') as HTMLElement;
+
+      const updateQueryText = () => {
+        const u = sqliUser.value.replace(/'/g, "\\'");
+        const p = sqliPass.value.replace(/'/g, "\\'");
+        queryDisplay.innerHTML = `SELECT * FROM users WHERE username = '<span class="sql-inject">${sqliUser.value}</span>' AND password = '<span class="sql-inject">${sqliPass.value}</span>'`;
+      };
+
+      sqliUser.addEventListener('input', updateQueryText);
+      sqliPass.addEventListener('input', updateQueryText);
+
+      sqliBtn.addEventListener('click', () => {
+        const u = sqliUser.value.trim();
+        
+        // Simple mock injection checker
+        // Patterns to match: ' OR '1'='1 or admin' -- or ' or 1=1
+        const hasInjection = /'.*(or|\|\|).*(=|like).*'.*/gi.test(u) || 
+                             /'.*(or|\|\|).*[0-9]+=[0-9]+/gi.test(u) || 
+                             /admin'\s*--/gi.test(u) ||
+                             /'\s*or\s*true\s*--/gi.test(u);
+
+        if (hasInjection) {
+          sqliOutput.innerHTML = `
+            <span class="success-val">AUTHENTICATION BYPASSED!</span><br/>
+            <span>Role: Administrator (admin)</span><br/>
+            <span style="color:var(--accent-green);font-weight:bold;">FLAG: FLAG{sqli_bypass_50pts_winner}</span>
+          `;
+          sqliOutput.className = "sandbox-output success-val";
+          addLog('[SUCCESS] SQL injection detected. Authentication bypassed.', 'success');
+        } else {
+          sqliOutput.innerHTML = `<span class="error-val">SQL EXECUTION ERROR: Invalid username/password. Query returned 0 rows.</span>`;
+          sqliOutput.className = "sandbox-output error-val";
+        }
+      });
+    }
+  }
+
+  // Handle Flag Submissions
+  flagForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (selectedChallengeId === null) return;
+
+    const challenge = challenges.find(c => c.id === selectedChallengeId);
+    if (!challenge) return;
+
+    const submittedFlag = flagInput.value.trim();
+    
+    if (submittedFlag === challenge.flag) {
+      challenge.solved = true;
+      playerScore += challenge.points;
+      
+      // Update local storage
+      localStorage.setItem('ctf_score', playerScore.toString());
+      const solvedIds = challenges.filter(c => c.solved).map(c => c.id);
+      localStorage.setItem('ctf_solved_ids', JSON.stringify(solvedIds));
+
+      flagFeedback.style.display = 'block';
+      flagFeedback.className = 'flag-feedback success-text';
+      flagFeedback.textContent = `✔ Correct! Node secured (+${challenge.points} pts)`;
+      
+      addLog(`[SECURED] Solved "${challenge.title}" (+${challenge.points} pts)`, 'success');
+
+      // Update layout
+      renderChallengesList();
+      updateProgress();
+      updateLeaderboard();
+      
+      // Check if all are solved
+      const allSolved = challenges.every(c => c.solved);
+      if (allSolved) {
+        clearInterval(timerInterval);
+        addLog(`[COMPLETE] Congratulations! You secured all challenge nodes in ${playerTime}s!`, 'success');
+      }
+
+      // Refresh challenge panel details
+      selectChallenge(challenge.id);
+    } else {
+      flagFeedback.style.display = 'block';
+      flagFeedback.className = 'flag-feedback error-text';
+      flagFeedback.textContent = '❌ Incorrect flag hash. Try again.';
+      addLog(`[ATTEMPT] Failed flag submission for "${challenge.title}"`, 'warning');
+    }
+  });
+
+  // Leaderboard Sorting & UI updates
+  function updateLeaderboard() {
+    // Check if player is in hackers array, if so, update their score & time
+    let playerHacker = hackers.find(h => h.isPlayer);
+    if (!playerHacker) {
+      playerHacker = {
+        name: nickname,
+        points: playerScore,
+        time: playerTime,
+        isPlayer: true,
+        solvedCount: challenges.filter(c => c.solved).length
+      };
+      hackers.push(playerHacker);
+    } else {
+      playerHacker.name = nickname;
+      playerHacker.points = playerScore;
+      playerHacker.time = playerTime;
+      playerHacker.solvedCount = challenges.filter(c => c.solved).length;
+    }
+
+    // Sort: 1) Points (descending), 2) Time (ascending)
+    // Players with 0 points are sorted to bottom.
+    hackers.sort((a, b) => {
+      if (b.points !== a.points) {
+        return b.points - a.points;
+      }
+      return a.time - b.time;
+    });
+
+    // Render ranks
+    leaderboardRows.innerHTML = '';
+    hackers.forEach((hacker, idx) => {
+      const row = document.createElement('div');
+      row.className = `leaderboard-row ${hacker.isPlayer ? 'player-row' : ''}`;
+      
+      const mins = Math.floor(hacker.time / 60).toString().padStart(2, '0');
+      const secs = (hacker.time % 60).toString().padStart(2, '0');
+      const formattedTime = hacker.points > 0 ? `${mins}:${secs}` : '--:--';
+      
+      row.innerHTML = `
+        <div class="hacker-rank">#${idx + 1}</div>
+        <div class="hacker-name">${hacker.name} ${hacker.isPlayer ? '<span class="you-badge">YOU</span>' : ''}</div>
+        <div class="hacker-time">${formattedTime}</div>
+        <div class="hacker-pts">${hacker.points} pts</div>
+      `;
+      leaderboardRows.appendChild(row);
+    });
+  }
+
+  // Simulated live updating bots
+  function startBotSimulations() {
+    // Every 45 seconds, a random bot will solve a challenge
+    const interval = setInterval(() => {
+      // Only run if user is active
+      if (!nickname) {
+        clearInterval(interval);
+        return;
+      }
+
+      // Filter out bots that haven't solved everything
+      const activeBots = hackers.filter(h => !h.isPlayer && h.solvedCount < challenges.length);
+      if (activeBots.length === 0) return;
+
+      // Choose a random bot
+      const bot = activeBots[Math.floor(Math.random() * activeBots.length)];
+      
+      // Determine what challenge the bot solves next
+      const nextChallengeIdx = bot.solvedCount;
+      if (nextChallengeIdx < challenges.length) {
+        const solvedChallenge = challenges[nextChallengeIdx];
+        
+        bot.solvedCount++;
+        bot.points += solvedChallenge.points;
+        bot.time += Math.floor(Math.random() * 45) + 30; // Add time
+
+        addLog(`[LIVE BROADCAST] Operator "${bot.name}" solved "${solvedChallenge.title}" (+${solvedChallenge.points} pts)`, 'alert');
+        updateLeaderboard();
+      }
+    }, 45000);
+  }
+
+  // Init on load
+  init();
+</script>
+
+<style>
+  .ctf-page-wrapper {
+    position: relative;
+    background-color: var(--bg-primary);
+    min-height: calc(100vh - 80px); /* Adjust based on header height */
+    padding: 4rem 2rem;
+    overflow: hidden;
+  }
+
+  /* Grid overlay for cyber appearance */
+  .cyber-grid-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-size: 40px 40px;
+    background-image: 
+      linear-gradient(to right, rgba(163, 230, 53, 0.02) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(163, 230, 53, 0.02) 1px, transparent 1px);
+    opacity: 0.8;
+    z-index: 1;
+  }
+
+  .ctf-main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Core Card Layout */
+  .ctf-card {
+    background: rgba(17, 19, 28, 0.7);
+    border: 1px solid rgba(163, 230, 53, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .ctf-card:hover {
+    border-color: rgba(163, 230, 53, 0.25);
+  }
+
+  .card-header-accent {
+    background: rgba(163, 230, 53, 0.05);
+    border-bottom: 1px solid rgba(163, 230, 53, 0.15);
+    padding: 1.25rem;
+    text-align: center;
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: var(--accent-green);
+  }
+
+  /* 1. ENTRY PORTAL STYLES */
+  .portal-card {
+    max-width: 480px;
+    margin: 4rem auto;
+  }
+
+  .portal-body {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .portal-logo {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 1.5rem;
+  }
+
+  .portal-svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 10px rgba(163, 230, 53, 0.3));
+  }
+
+  .portal-body h3 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+    color: #fff;
+    letter-spacing: 0.5px;
+  }
+
+  .portal-desc {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+  }
+
+  .portal-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .input-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    width: 100%;
+  }
+
+  .input-wrapper label {
+    font-family: var(--font-display);
+    font-size: 0.65rem;
+    font-weight: bold;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+  }
+
+  .input-wrapper input {
+    width: 100%;
+    background: rgba(10, 11, 16, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    padding: 0.85rem 1rem;
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+  }
+
+  .input-wrapper input:focus {
+    outline: none;
+    border-color: var(--accent-green);
+    box-shadow: 0 0 10px rgba(163, 230, 53, 0.1);
+  }
+
+  .btn-portal-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    padding: 1rem;
+    background: var(--accent-green);
+    border: none;
+    border-radius: 4px;
+    color: #060814;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .btn-portal-submit:hover {
+    box-shadow: 0 0 20px rgba(163, 230, 53, 0.4);
+    transform: translateY(-1px);
+  }
+
+  /* 2. CTF WORKSPACE GRID */
+  .workspace-grid {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .workspace-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  /* Profile Card styling */
+  .profile-card {
+    padding: 1.5rem;
+  }
+
+  .profile-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .avatar-glow {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent-green);
+    box-shadow: 0 0 12px var(--accent-green);
+  }
+
+  .profile-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .profile-label {
+    font-size: 0.6rem;
+    color: var(--text-muted);
+    font-family: var(--font-display);
+    letter-spacing: 1px;
+    font-weight: bold;
+  }
+
+  .profile-text h4 {
+    font-family: var(--font-display);
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin-top: 2px;
+  }
+
+  .profile-stats {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .stat-box {
+    flex: 1;
+    background: rgba(10, 11, 16, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 4px;
+    padding: 0.75rem;
+    text-align: center;
+  }
+
+  .stat-label {
+    display: block;
+    font-size: 0.55rem;
+    color: var(--text-secondary);
+    font-family: var(--font-display);
+    letter-spacing: 0.5px;
+    margin-bottom: 0.35rem;
+  }
+
+  .stat-value {
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--accent-green);
+  }
+
+  .progress-bar-container {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+  }
+
+  .progress-bar-fill {
+    height: 100%;
+    background: var(--accent-green);
+    box-shadow: 0 0 8px var(--accent-green);
+    transition: width 0.4s ease;
+  }
+
+  .progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.6rem;
+    color: var(--text-muted);
+    font-family: var(--font-display);
+    font-weight: bold;
+    margin-bottom: 1.25rem;
+  }
+
+  .btn-abort {
+    width: 100%;
+    padding: 0.6rem;
+    background: transparent;
+    border: 1px solid rgba(239, 68, 68, 0.4);
+    color: #ef4444;
+    border-radius: 4px;
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .btn-abort:hover {
+    background: rgba(239, 68, 68, 0.1);
+    border-color: #ef4444;
+  }
+
+  /* Leaderboard Card styling */
+  .leaderboard-card {
+    padding: 1.25rem;
+  }
+
+  .card-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .title-indicator {
+    width: 4px;
+    height: 12px;
+    background: var(--accent-green);
+  }
+
+  .card-title h4 {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 1px;
+    flex: 1;
+  }
+
+  .live-pulse {
+    font-family: monospace;
+    font-size: 0.6rem;
+    color: var(--accent-green);
+    background: rgba(163, 230, 53, 0.1);
+    padding: 2px 6px;
+    border-radius: 3px;
+    border: 1px solid rgba(163, 230, 53, 0.2);
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    animation: statusPulse 1.5s infinite;
+  }
+
+  .leaderboard-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .leaderboard-row {
+    display: grid;
+    grid-template-columns: 35px 1fr 60px 70px;
+    align-items: center;
+    font-family: monospace;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    background: rgba(10, 11, 16, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    transition: all 0.3s;
+  }
+
+  .leaderboard-row.player-row {
+    background: rgba(163, 230, 53, 0.05);
+    border-color: rgba(163, 230, 53, 0.3);
+    color: #fff;
+    font-weight: bold;
+  }
+
+  .hacker-rank {
+    color: var(--text-muted);
+  }
+
+  .player-row .hacker-rank {
+    color: var(--accent-green);
+  }
+
+  .hacker-name {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .you-badge {
+    font-size: 0.55rem;
+    background: var(--accent-green);
+    color: #060814;
+    padding: 1px 4px;
+    border-radius: 2px;
+    font-weight: 900;
+  }
+
+  .hacker-time {
+    color: var(--text-muted);
+    text-align: right;
+  }
+
+  .player-row .hacker-time {
+    color: var(--text-secondary);
+  }
+
+  .hacker-pts {
+    text-align: right;
+    color: var(--accent-green);
+    font-weight: bold;
+  }
+
+  /* Log feed card */
+  .logs-card {
+    padding: 1.25rem;
+  }
+
+  .log-feed {
+    height: 140px;
+    overflow-y: auto;
+    font-family: monospace;
+    font-size: 0.7rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .log-feed::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .log-feed::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+  }
+
+  .log-entry {
+    line-height: 1.4;
+    word-break: break-all;
+  }
+
+  .log-entry.system {
+    color: var(--text-muted);
+  }
+
+  .log-entry.success {
+    color: var(--accent-green);
+  }
+
+  .log-entry.warning {
+    color: #ef4444;
+  }
+
+  .log-entry.alert {
+    color: #38bdf8;
+  }
+
+  .log-time {
+    color: var(--text-muted);
+    margin-right: 0.25rem;
+  }
+
+  /* WORKSPACE MAIN COLUMN */
+  .workspace-main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .section-header h3 {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+  }
+
+  .section-header p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+  }
+
+  /* Challenges selector grid */
+  .challenges-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .challenge-selector-card {
+    background: rgba(17, 19, 28, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    padding: 1.25rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .challenge-selector-card:hover {
+    border-color: rgba(163, 230, 53, 0.3);
+    background: rgba(163, 230, 53, 0.02);
+    transform: translateY(-2px);
+  }
+
+  .challenge-selector-card.active {
+    border-color: var(--accent-green);
+    background: rgba(163, 230, 53, 0.04);
+    box-shadow: 0 0 15px rgba(163, 230, 53, 0.1);
+  }
+
+  .challenge-selector-card.solved {
+    border-color: rgba(163, 230, 53, 0.2);
+    background: rgba(163, 230, 53, 0.01);
+  }
+
+  .selector-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .selector-meta .cat {
+    font-size: 0.6rem;
+    color: var(--text-muted);
+    font-family: var(--font-display);
+    font-weight: bold;
+    letter-spacing: 0.5px;
+  }
+
+  .selector-meta .pts {
+    font-family: monospace;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: var(--accent-green);
+  }
+
+  .selector-title {
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.3;
+  }
+
+  .selector-status {
+    font-family: monospace;
+    font-size: 0.65rem;
+    font-weight: bold;
+    color: var(--text-muted);
+  }
+
+  .solved .selector-status {
+    color: var(--accent-green);
+  }
+
+  /* Challenge Details Panel */
+  .details-card {
+    min-height: 380px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .details-empty {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem;
+    color: var(--text-muted);
+  }
+
+  .details-empty svg {
+    margin-bottom: 1.25rem;
+    opacity: 0.4;
+  }
+
+  .details-empty h4 {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+  }
+
+  .details-empty p {
+    font-size: 0.8rem;
+    max-width: 280px;
+    line-height: 1.5;
+  }
+
+  .details-content {
+    padding: 2.5rem;
+  }
+
+  .challenge-meta {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .challenge-points-badge {
+    font-family: monospace;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #060814;
+    background: var(--accent-green);
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+
+  .challenge-category-badge {
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: var(--text-secondary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.02);
+    padding: 2px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+  }
+
+  .challenge-title {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 1rem;
+    letter-spacing: -0.5px;
+  }
+
+  .challenge-desc {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+
+  .cyber-code {
+    display: inline-block;
+    background: rgba(10, 11, 16, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.85rem;
+    color: #f1f5f9;
+    margin: 0.5rem 0;
+    word-break: break-all;
+  }
+
+  /* Interactive Sandbox Space */
+  .challenge-sandbox {
+    background: rgba(10, 11, 16, 0.9);
+    border: 1px solid rgba(163, 230, 53, 0.15);
+    border-radius: 6px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.8);
+  }
+
+  .interactive-prompt {
+    font-family: monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+    padding-bottom: 0.75rem;
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .interactive-prompt::before {
+    content: '❯';
+    color: var(--accent-green);
+    font-weight: bold;
+  }
+
+  .sandbox-inner {
+    font-family: monospace;
+  }
+
+  .element-viewer {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+  }
+
+  .element-viewer p {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .nested-node {
+    margin-left: 1.5rem;
+    padding: 0.5rem 0;
+    border-left: 1px dashed rgba(255, 255, 255, 0.05);
+    padding-left: 1rem;
+  }
+
+  .muted-tag {
+    color: rgba(255, 255, 255, 0.25);
+    font-size: 0.75rem;
+  }
+
+  .cyber-inspect-hint {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    margin: 0.5rem 0;
+  }
+
+  /* Sandbox tools & inputs */
+  .sandbox-input {
+    background: #060814;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    padding: 0.75rem 1rem;
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9rem;
+    outline: none;
+    transition: all 0.3s;
+  }
+
+  .sandbox-input:focus {
+    border-color: var(--accent-green);
+    box-shadow: 0 0 8px rgba(163, 230, 53, 0.1);
+  }
+
+  .btn-sandbox {
+    background: transparent;
+    border: 1px solid var(--accent-green);
+    color: var(--accent-green);
+    border-radius: 4px;
+    padding: 0.75rem 1.5rem;
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .btn-sandbox:hover {
+    background: var(--accent-green);
+    color: #060814;
+    box-shadow: 0 0 12px rgba(163, 230, 53, 0.2);
+  }
+
+  .sandbox-output {
+    margin-top: 1.25rem;
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.2);
+    border-left: 3px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  .sandbox-output.success-val {
+    border-left-color: var(--accent-green);
+    color: var(--accent-green);
+    background: rgba(163, 230, 53, 0.02);
+  }
+
+  .sandbox-output.error-val {
+    border-left-color: #ef4444;
+    color: #ef4444;
+    background: rgba(239, 68, 68, 0.02);
+  }
+
+  /* Specific SQLi panels */
+  .sqli-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .sqli-panel .form-row {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .sqli-panel .form-field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .sqli-panel .form-field label {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    font-weight: bold;
+    letter-spacing: 0.5px;
+  }
+
+  .sqli-panel .form-field .sandbox-input {
+    width: 100%;
+  }
+
+  .sql-query-viewer {
+    margin-top: 1rem;
+    background: #000;
+    padding: 1rem;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    font-family: monospace;
+    font-size: 0.8rem;
+  }
+
+  .sql-query-viewer .label {
+    display: block;
+    font-size: 0.6rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+
+  .sql-query-viewer code {
+    color: #94a3b8;
+    word-break: break-all;
+  }
+
+  .sql-inject {
+    color: var(--accent-green);
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(163, 230, 53, 0.25);
+  }
+
+  /* Decoder tool */
+  .decoder-tool {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* Caesar tool */
+  .caesar-tool {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .caesar-controls {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .shift-selector {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .shift-selector label {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+  }
+
+  .shift-selector .number-input {
+    width: 65px;
+    text-align: center;
+  }
+
+  /* Submission block */
+  .challenge-submission-box {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 2rem;
+  }
+
+  .submission-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .flag-input-group {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .flag-input-group input {
+    flex: 1;
+    background: rgba(10, 11, 16, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    padding: 0.85rem 1.25rem;
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.3s;
+  }
+
+  .flag-input-group input:focus {
+    border-color: var(--accent-green);
+    box-shadow: 0 0 10px rgba(163, 230, 53, 0.1);
+  }
+
+  .btn-submit-flag {
+    background: var(--accent-green);
+    border: none;
+    color: #060814;
+    border-radius: 4px;
+    padding: 0 2rem;
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .btn-submit-flag:hover {
+    box-shadow: 0 0 15px rgba(163, 230, 53, 0.3);
+    transform: translateY(-1px);
+  }
+
+  .flag-feedback {
+    font-family: monospace;
+    font-size: 0.8rem;
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    display: none;
+  }
+
+  .flag-feedback.success-text {
+    display: block;
+    background: rgba(163, 230, 53, 0.08);
+    border: 1px solid rgba(163, 230, 53, 0.3);
+    color: var(--accent-green);
+  }
+
+  .flag-feedback.error-text {
+    display: block;
+    background: rgba(239, 68, 68, 0.08);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #ef4444;
+  }
+
+  /* Glitch text helper */
+  .glitch-text {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Responsive CTF workspace */
+  @media (max-width: 992px) {
+    .workspace-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .sqli-panel .form-row,
+    .caesar-controls,
+    .flag-input-group {
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .shift-selector .number-input {
+      width: 100%;
+    }
+    .btn-submit-flag {
+      padding: 0.85rem;
+    }
+  }
+</style>
