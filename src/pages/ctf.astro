@@ -236,17 +236,63 @@ import Layout from '../layouts/Layout.astro';
     points: number;
     time: number; // in seconds
     isPlayer?: boolean;
-    solvedCount: number;
+    solvedCount?: number;
   }
 
-  let hackers: Hacker[] = [
-    { name: "acid_burn", points: 70, time: 165, solvedCount: 3 },
-    { name: "zero_cool", points: 55, time: 242, solvedCount: 3 },
-    { name: "cereal_killer", points: 35, time: 125, solvedCount: 2 },
-    { name: "lord_nikon", points: 15, time: 92, solvedCount: 2 },
-    { name: "crash_override", points: 5, time: 32, solvedCount: 1 },
-    { name: "phantom_phreak", points: 0, time: 0, solvedCount: 0 }
-  ];
+  const BIN_URL = 'https://extendsclass.com/api/json-storage/bin/bafcada';
+  let hackers: Hacker[] = [];
+
+  async function fetchScores() {
+    try {
+      const res = await fetch(BIN_URL);
+      if (!res.ok) throw new Error('Failed to fetch leaderboard data');
+      const data = await res.json();
+      if (Array.isArray(data)) {
+        hackers = data;
+        updateLeaderboard();
+      }
+    } catch (e) {
+      console.error('Error fetching scores:', e);
+    }
+  }
+
+  async function saveScore(name: string, points: number, time: number, solvedCount: number) {
+    try {
+      const res = await fetch(BIN_URL);
+      if (!res.ok) throw new Error('Failed to fetch current scores');
+      let currentScores: Hacker[] = await res.json();
+      if (!Array.isArray(currentScores)) currentScores = [];
+
+      const existingPlayer = currentScores.find(h => h.name.toLowerCase() === name.toLowerCase());
+      if (existingPlayer) {
+        existingPlayer.name = name;
+        existingPlayer.points = points;
+        existingPlayer.time = time;
+        existingPlayer.solvedCount = solvedCount;
+      } else {
+        currentScores.push({
+          name,
+          points,
+          time,
+          solvedCount
+        });
+      }
+
+      const putRes = await fetch(BIN_URL, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(currentScores)
+      });
+      if (!putRes.ok) throw new Error('Failed to save scores');
+      
+      hackers = currentScores;
+      updateLeaderboard();
+    } catch (e) {
+      console.error('Error saving score:', e);
+    }
+  }
 
   let nickname = "";
   let playerScore = 0;
@@ -302,7 +348,7 @@ import Layout from '../layouts/Layout.astro';
   }
 
   // Initialize page
-  function init() {
+  async function init() {
     const savedNickname = localStorage.getItem('ctf_nickname');
     const savedScore = localStorage.getItem('ctf_score');
     const savedTime = localStorage.getItem('ctf_elapsed');
@@ -321,32 +367,62 @@ import Layout from '../layouts/Layout.astro';
       });
 
       startTime = Date.now() - (playerTime * 1000);
-      startWorkspace();
+      await startWorkspace();
     }
   }
 
   // Handle Nickname Submission
-  nicknameForm.addEventListener('submit', (e) => {
+  nicknameForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    nickname = nicknameInput.value.trim().replace(/[^a-zA-Z0-9_]/g, '');
-    if (!nickname) return;
+    const enteredNickname = nicknameInput.value.trim().replace(/[^a-zA-Z0-9_]/g, '');
+    if (!enteredNickname) return;
 
-    localStorage.setItem('ctf_nickname', nickname);
-    localStorage.setItem('ctf_score', '0');
-    localStorage.setItem('ctf_elapsed', '0');
-    localStorage.setItem('ctf_solved_ids', '[]');
-    
-    startTime = Date.now();
-    playerTime = 0;
-    playerScore = 0;
-    challenges.forEach(c => c.solved = false);
+    try {
+      const res = await fetch(BIN_URL);
+      const data: Hacker[] = await res.json();
+      const existing = data.find(h => h.name.toLowerCase() === enteredNickname.toLowerCase());
 
-    // Setup initial leaderboard status for player
-    const existingPlayerIndex = hackers.findIndex(h => h.isPlayer);
-    if (existingPlayerIndex > -1) hackers.splice(existingPlayerIndex, 1);
-    
-    startWorkspace();
-    addLog(`[SYSTEM] Operator session initialized for ${nickname}`, 'system');
+      nickname = enteredNickname;
+      localStorage.setItem('ctf_nickname', nickname);
+
+      if (existing) {
+        playerScore = existing.points;
+        playerTime = existing.time;
+        
+        let accumulated = 0;
+        challenges.forEach(c => {
+          if (accumulated + c.points <= playerScore) {
+            c.solved = true;
+            accumulated += c.points;
+          } else {
+            c.solved = false;
+          }
+        });
+        localStorage.setItem('ctf_score', playerScore.toString());
+        localStorage.setItem('ctf_solved_ids', JSON.stringify(challenges.filter(c => c.solved).map(c => c.id)));
+      } else {
+        playerScore = 0;
+        playerTime = 0;
+        challenges.forEach(c => c.solved = false);
+        localStorage.setItem('ctf_score', '0');
+        localStorage.setItem('ctf_solved_ids', '[]');
+        
+        await saveScore(nickname, 0, 0, 0);
+      }
+
+      startTime = Date.now() - (playerTime * 1000);
+      await startWorkspace();
+      addLog(`[SYSTEM] Operator session initialized for ${nickname}`, 'system');
+    } catch (e) {
+      console.error(e);
+      nickname = enteredNickname;
+      localStorage.setItem('ctf_nickname', nickname);
+      startTime = Date.now();
+      playerScore = 0;
+      playerTime = 0;
+      challenges.forEach(c => c.solved = false);
+      await startWorkspace();
+    }
   });
 
   // Abort operation
@@ -364,13 +440,16 @@ import Layout from '../layouts/Layout.astro';
   });
 
   // Switch display and start loops
-  function startWorkspace() {
+  async function startWorkspace() {
     entryPortal.style.display = 'none';
     workspace.style.display = 'grid';
     displayNickname.textContent = nickname.toUpperCase();
     
     // Build challenges grid
     renderChallengesList();
+
+    // Fetch scores immediately
+    await fetchScores();
 
     // Start Timer
     clearInterval(timerInterval);
@@ -383,8 +462,8 @@ import Layout from '../layouts/Layout.astro';
     // Draw Leaderboard
     updateLeaderboard();
 
-    // Simulated background bot actions
-    startBotSimulations();
+    // Fetch scores from API periodically
+    setInterval(fetchScores, 15000);
   }
 
   function updateTimerDisplay() {
@@ -725,7 +804,7 @@ import Layout from '../layouts/Layout.astro';
   }
 
   // Handle Flag Submissions
-  flagForm.addEventListener('submit', (e) => {
+  flagForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     if (selectedChallengeId === null) return;
 
@@ -753,6 +832,9 @@ import Layout from '../layouts/Layout.astro';
       renderChallengesList();
       updateProgress();
       updateLeaderboard();
+
+      // Save score to ExtendsClass database
+      await saveScore(nickname, playerScore, playerTime, solvedIds.length);
       
       // Check if all are solved
       const allSolved = challenges.every(c => c.solved);
@@ -773,9 +855,17 @@ import Layout from '../layouts/Layout.astro';
 
   // Leaderboard Sorting & UI updates
   function updateLeaderboard() {
-    // Check if player is in hackers array, if so, update their score & time
+    // Flag the current player entry in hackers array based on nickname
+    hackers.forEach(h => {
+      if (nickname && h.name.toLowerCase() === nickname.toLowerCase()) {
+        h.isPlayer = true;
+      } else {
+        h.isPlayer = false;
+      }
+    });
+
     let playerHacker = hackers.find(h => h.isPlayer);
-    if (!playerHacker) {
+    if (!playerHacker && nickname) {
       playerHacker = {
         name: nickname,
         points: playerScore,
@@ -784,8 +874,7 @@ import Layout from '../layouts/Layout.astro';
         solvedCount: challenges.filter(c => c.solved).length
       };
       hackers.push(playerHacker);
-    } else {
-      playerHacker.name = nickname;
+    } else if (playerHacker) {
       playerHacker.points = playerScore;
       playerHacker.time = playerTime;
       playerHacker.solvedCount = challenges.filter(c => c.solved).length;
@@ -818,38 +907,6 @@ import Layout from '../layouts/Layout.astro';
       `;
       leaderboardRows.appendChild(row);
     });
-  }
-
-  // Simulated live updating bots
-  function startBotSimulations() {
-    // Every 45 seconds, a random bot will solve a challenge
-    const interval = setInterval(() => {
-      // Only run if user is active
-      if (!nickname) {
-        clearInterval(interval);
-        return;
-      }
-
-      // Filter out bots that haven't solved everything
-      const activeBots = hackers.filter(h => !h.isPlayer && h.solvedCount < challenges.length);
-      if (activeBots.length === 0) return;
-
-      // Choose a random bot
-      const bot = activeBots[Math.floor(Math.random() * activeBots.length)];
-      
-      // Determine what challenge the bot solves next
-      const nextChallengeIdx = bot.solvedCount;
-      if (nextChallengeIdx < challenges.length) {
-        const solvedChallenge = challenges[nextChallengeIdx];
-        
-        bot.solvedCount++;
-        bot.points += solvedChallenge.points;
-        bot.time += Math.floor(Math.random() * 45) + 30; // Add time
-
-        addLog(`[LIVE BROADCAST] Operator "${bot.name}" solved "${solvedChallenge.title}" (+${solvedChallenge.points} pts)`, 'alert');
-        updateLeaderboard();
-      }
-    }, 45000);
   }
 
   // Init on load
