@@ -237,10 +237,34 @@ import Layout from '../layouts/Layout.astro';
     time: number; // in seconds
     isPlayer?: boolean;
     solvedCount?: number;
+    createdAt?: number; // timestamp in ms
+    lastActiveAt?: number; // timestamp in ms
   }
 
   const BIN_URL = 'https://extendsclass.com/api/json-storage/bin/bafcada';
   let hackers: Hacker[] = [];
+
+  // Helper to remove any competitor who has remained at 0 points for 24 hours (86,400,000 ms)
+  function cleanupStaleUsers(scores: Hacker[]): { updatedScores: Hacker[], modified: boolean } {
+    const oneDayMs = 24 * 60 * 60 * 1000;
+    const now = Date.now();
+    let modified = false;
+
+    const updatedScores = scores.filter(h => {
+      const isZeroPoints = h.points === 0;
+      const createdAt = h.createdAt || now;
+      const ageMs = now - createdAt;
+      const isStale = isZeroPoints && ageMs > oneDayMs;
+
+      if (isStale) {
+        modified = true;
+        return false;
+      }
+      return true;
+    });
+
+    return { updatedScores, modified };
+  }
 
   async function fetchScores() {
     try {
@@ -248,8 +272,20 @@ import Layout from '../layouts/Layout.astro';
       if (!res.ok) throw new Error('Failed to fetch leaderboard data');
       const data = await res.json();
       if (Array.isArray(data)) {
-        hackers = data;
+        const { updatedScores, modified } = cleanupStaleUsers(data);
+        hackers = updatedScores;
         updateLeaderboard();
+
+        // If stale users were cleaned up, sync the updated state back to the database
+        if (modified) {
+          await fetch(BIN_URL, {
+            method: 'PUT',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(updatedScores)
+          });
+        }
       }
     } catch (e) {
       console.error('Error fetching scores:', e);
@@ -263,31 +299,40 @@ import Layout from '../layouts/Layout.astro';
       let currentScores: Hacker[] = await res.json();
       if (!Array.isArray(currentScores)) currentScores = [];
 
+      const now = Date.now();
       const existingPlayer = currentScores.find(h => h.name.toLowerCase() === name.toLowerCase());
       if (existingPlayer) {
         existingPlayer.name = name;
         existingPlayer.points = points;
         existingPlayer.time = time;
         existingPlayer.solvedCount = solvedCount;
+        existingPlayer.lastActiveAt = now;
+        if (!existingPlayer.createdAt) {
+          existingPlayer.createdAt = now;
+        }
       } else {
         currentScores.push({
           name,
           points,
           time,
-          solvedCount
+          solvedCount,
+          createdAt: now,
+          lastActiveAt: now
         });
       }
+
+      const { updatedScores } = cleanupStaleUsers(currentScores);
 
       const putRes = await fetch(BIN_URL, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(currentScores)
+        body: JSON.stringify(updatedScores)
       });
       if (!putRes.ok) throw new Error('Failed to save scores');
       
-      hackers = currentScores;
+      hackers = updatedScores;
       updateLeaderboard();
     } catch (e) {
       console.error('Error saving score:', e);
