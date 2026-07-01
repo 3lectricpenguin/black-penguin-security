@@ -275,6 +275,25 @@ import Layout from '../layouts/Layout.astro';
       const data = await res.json();
       if (Array.isArray(data)) {
         const { updatedScores, modified } = cleanupStaleUsers(data);
+        
+        // Broadcast solutions by other real players in the system logs feed
+        if (hackers.length > 0) {
+          updatedScores.forEach(newHacker => {
+            if (nickname && newHacker.name.toLowerCase() === nickname.toLowerCase()) {
+              return;
+            }
+            const oldHacker = hackers.find(h => h.name.toLowerCase() === newHacker.name.toLowerCase());
+            if (oldHacker) {
+              const scoreDiff = newHacker.points - oldHacker.points;
+              if (scoreDiff > 0) {
+                addLog(`[LIVE BROADCAST] Operator "${newHacker.name}" secured a node (+${scoreDiff} pts)`, 'alert');
+              }
+            } else if (newHacker.points > 0) {
+              addLog(`[LIVE BROADCAST] Operator "${newHacker.name}" joined the matrix with ${newHacker.points} pts`, 'alert');
+            }
+          });
+        }
+
         hackers = updatedScores;
         updateLeaderboard();
 
@@ -516,7 +535,7 @@ import Layout from '../layouts/Layout.astro';
     updateLeaderboard();
 
     // Fetch scores from API periodically
-    setInterval(fetchScores, 15000);
+    setInterval(fetchScores, 5000);
   }
 
   function updateTimerDisplay() {
