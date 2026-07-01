@@ -154,6 +154,49 @@
           </ul>
         </div>
       </div>
+      <!-- Service Card 4: Cyber CTF -->
+      <a href="/ctf" class="service-card ctf-card-link">
+        <div class="card-glow"></div>
+        <div class="card-border"></div>
+        <div class="card-content">
+          <div class="card-header">
+            <div class="service-icon">
+              <!-- Custom Flag SVG Icon -->
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path>
+                <line x1="4" y1="22" x2="4" y2="15"></line>
+              </svg>
+            </div>
+            <span class="service-protocol">[ PROTOCOL-04 // CTF ]</span>
+          </div>
+
+          <h3 class="service-name">Cyber CTF Sandbox</h3>
+          <p class="service-desc">
+            Test your offensive and defensive security capabilities in our interactive browser-based hacking sandbox. Solve cryptography, logic bypass, and SQLi challenges.
+          </p>
+
+          <ul class="service-features">
+            <li>
+              <svg class="feat-check" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              5 Sandboxed Hacking Challenges
+            </li>
+            <li>
+              <svg class="feat-check" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Live Leaderboard ("Top Hackers")
+            </li>
+            <li>
+              <svg class="feat-check" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Real-time Flag Verification & Scoring
+            </li>
+          </ul>
+        </div>
+      </a>
     </div>
   </div>
 </section>
@@ -217,8 +260,13 @@
   /* Grid configuration */
   .services-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
+  }
+
+  .ctf-card-link {
+    text-decoration: none;
+    color: inherit;
   }
 
   /* Glassmorphic cards */
@@ -363,6 +411,13 @@
   }
 
   /* Responsive styling */
+  @media (max-width: 1200px) {
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+  }
+
   @media (max-width: 992px) {
     .services-grid {
       grid-template-columns: 1fr;
