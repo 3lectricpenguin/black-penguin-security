@@ -144,6 +144,19 @@
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       
+      const emailInput = document.getElementById('form-email') as HTMLInputElement;
+      const email = emailInput ? emailInput.value.trim() : '';
+      
+      // Strict regex validation for email
+      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      if (!email || !emailRegex.test(email)) {
+        feedback.style.display = 'block';
+        feedback.style.opacity = '1';
+        feedback.className = 'form-feedback error';
+        feedback.innerHTML = '❌ Please enter a valid email address.';
+        return;
+      }
+      
       const formData = new FormData(form as HTMLFormElement);
       
       // Submit via fetch to Jotform (no-cors mode to allow redirect responses)
@@ -155,6 +168,7 @@
       .then(() => {
         // Visual feedback response
         feedback.style.display = 'block';
+        feedback.style.opacity = '1';
         feedback.className = 'form-feedback success';
         feedback.innerHTML = '✔ Message sent successfully! We will get back to you shortly.';
         
@@ -172,6 +186,7 @@
       .catch((error) => {
         console.error('Submission error:', error);
         feedback.style.display = 'block';
+        feedback.style.opacity = '1';
         feedback.className = 'form-feedback error';
         feedback.innerHTML = '❌ An error occurred. Please try again or email us directly.';
       });
