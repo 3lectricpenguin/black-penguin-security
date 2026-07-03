@@ -141,7 +141,11 @@
   const feedback = document.getElementById('form-feedback-message');
   
   if (form && feedback) {
-    form.addEventListener('submit', (e) => {
+    const submitBtn = form.querySelector('.btn-submit') as HTMLButtonElement;
+    const btnText = submitBtn?.querySelector('.btn-text');
+    const originalBtnText = btnText ? btnText.textContent : 'SEND MESSAGE';
+
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       
       const emailInput = document.getElementById('form-email') as HTMLInputElement;
@@ -157,6 +161,56 @@
         return;
       }
       
+      const domain = email.split('@')[1];
+      if (!domain) {
+        feedback.style.display = 'block';
+        feedback.style.opacity = '1';
+        feedback.className = 'form-feedback error';
+        feedback.innerHTML = '❌ Invalid email format.';
+        return;
+      }
+
+      // Show verifying status and disable submit button
+      if (submitBtn && btnText) {
+        submitBtn.disabled = true;
+        btnText.textContent = 'VERIFYING EMAIL...';
+      }
+      feedback.style.display = 'block';
+      feedback.style.opacity = '1';
+      feedback.className = 'form-feedback success';
+      feedback.innerHTML = '🔍 Checking email server status...';
+
+      // Perform DNS MX/A record verification
+      let isDomainValid = true;
+      try {
+        const mxResponse = await fetch(`https://dns.google/resolve?name=${encodeURIComponent(domain)}&type=MX`);
+        const mxData = await mxResponse.json();
+        
+        const hasMX = mxData.Answer && mxData.Answer.length > 0;
+        
+        if (!hasMX) {
+          // Fallback to checking A records
+          const aResponse = await fetch(`https://dns.google/resolve?name=${encodeURIComponent(domain)}&type=A`);
+          const aData = await aResponse.json();
+          const hasA = aData.Answer && aData.Answer.length > 0;
+          if (!hasA) {
+            isDomainValid = false;
+          }
+        }
+      } catch (err) {
+        console.error('DNS verification failed, failing open:', err);
+      }
+
+      if (!isDomainValid) {
+        feedback.className = 'form-feedback error';
+        feedback.innerHTML = `❌ The domain '@${domain}' does not appear to be configured to receive email. Please check for typos.`;
+        if (submitBtn && btnText) {
+          submitBtn.disabled = false;
+          btnText.textContent = originalBtnText;
+        }
+        return;
+      }
+      
       const formData = new FormData(form as HTMLFormElement);
       
       // Submit via fetch to Jotform (no-cors mode to allow redirect responses)
@@ -167,8 +221,6 @@
       })
       .then(() => {
         // Visual feedback response
-        feedback.style.display = 'block';
-        feedback.style.opacity = '1';
         feedback.className = 'form-feedback success';
         feedback.innerHTML = '✔ Message sent successfully! We will get back to you shortly.';
         
@@ -185,10 +237,14 @@
       })
       .catch((error) => {
         console.error('Submission error:', error);
-        feedback.style.display = 'block';
-        feedback.style.opacity = '1';
         feedback.className = 'form-feedback error';
         feedback.innerHTML = '❌ An error occurred. Please try again or email us directly.';
+      })
+      .finally(() => {
+        if (submitBtn && btnText) {
+          submitBtn.disabled = false;
+          btnText.textContent = originalBtnText;
+        }
       });
     });
   }
@@ -580,6 +636,14 @@
     color: #060814;
     box-shadow: 0 0 25px rgba(163, 230, 53, 0.4);
     transform: translateY(-2px);
+  }
+
+  .btn-submit:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+    transform: none;
+    box-shadow: none;
   }
 
   .submit-arrow {
