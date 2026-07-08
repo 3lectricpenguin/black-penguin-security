@@ -8,9 +8,9 @@
     <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="circuit-glow" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="rgba(163,230,53,0.01)" />
-          <stop offset="50%" stop-color="rgba(163,230,53,0.08)" />
-          <stop offset="100%" stop-color="rgba(163,230,53,0.01)" />
+          <stop offset="0%" stop-color="rgba(0, 210, 255,0.01)" />
+          <stop offset="50%" stop-color="rgba(0, 210, 255,0.08)" />
+          <stop offset="100%" stop-color="rgba(0, 210, 255,0.01)" />
         </linearGradient>
       </defs>
       <!-- Circuit paths representing logo lines -->
@@ -33,7 +33,7 @@
       </h1>
       
       <p class="hero-description">
-        We build bulletproof, ultra-fast web architectures and perform enterprise-grade penetration testing. Black Penguin IT Security secures your digital perimeter while accelerating user engagement.
+        We build bulletproof, ultra-fast web architectures and perform enterprise-grade penetration testing. 3lectric Penguin IT Security secures your digital perimeter while accelerating user engagement.
       </p>
 
       <div class="hero-buttons">
@@ -88,17 +88,17 @@
           
           <!-- Circuit traces on the chip -->
           <svg class="chip-svg-traces" viewBox="0 0 200 200">
-            <path d="M 20,40 L 60,40 L 80,60" stroke="rgba(163, 230, 53, 0.2)" stroke-width="1" fill="none" />
-            <path d="M 180,40 L 140,40 L 120,60" stroke="rgba(163, 230, 53, 0.2)" stroke-width="1" fill="none" />
-            <path d="M 20,160 L 60,160 L 80,140" stroke="rgba(163, 230, 53, 0.2)" stroke-width="1" fill="none" />
-            <path d="M 180,160 L 140,160 L 120,140" stroke="rgba(163, 230, 53, 0.2)" stroke-width="1" fill="none" />
-            <path d="M 100,20 L 100,50" stroke="rgba(163, 230, 53, 0.2)" stroke-width="1" fill="none" />
-            <path d="M 100,180 L 100,150" stroke="rgba(163, 230, 53, 0.2)" stroke-width="1" fill="none" />
+            <path d="M 20,40 L 60,40 L 80,60" stroke="rgba(0, 210, 255, 0.2)" stroke-width="1" fill="none" />
+            <path d="M 180,40 L 140,40 L 120,60" stroke="rgba(0, 210, 255, 0.2)" stroke-width="1" fill="none" />
+            <path d="M 20,160 L 60,160 L 80,140" stroke="rgba(0, 210, 255, 0.2)" stroke-width="1" fill="none" />
+            <path d="M 180,160 L 140,160 L 120,140" stroke="rgba(0, 210, 255, 0.2)" stroke-width="1" fill="none" />
+            <path d="M 100,20 L 100,50" stroke="rgba(0, 210, 255, 0.2)" stroke-width="1" fill="none" />
+            <path d="M 100,180 L 100,150" stroke="rgba(0, 210, 255, 0.2)" stroke-width="1" fill="none" />
           </svg>
 
           <!-- Core of the chip -->
           <div class="chip-core">
-            <div class="core-black">BLACK</div>
+            <div class="core-black">3LECTRIC</div>
             <div class="core-tech">PENGUIN</div>
             <div class="core-glow-layer"></div>
           </div>
@@ -107,7 +107,7 @@
           <div class="chip-telemetry">
             <div class="telemetry-row">
               <span>FW_STATUS</span>
-              <span class="tele-val val-green">ACTIVE</span>
+              <span class="tele-val val-blue">ACTIVE</span>
             </div>
             <div class="telemetry-row">
               <span>SCAN_PROC</span>
@@ -141,7 +141,7 @@
       if (load > 90) {
         scanEl.className = 'tele-val val-warn';
       } else {
-        scanEl.className = 'tele-val val-green';
+        scanEl.className = 'tele-val val-blue';
       }
     }, 2000);
   }
@@ -162,8 +162,8 @@
     position: absolute;
     inset: 0;
     background-image: 
-      linear-gradient(rgba(163, 230, 53, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(163, 230, 53, 0.03) 1px, transparent 1px);
+      linear-gradient(rgba(0, 210, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 210, 255, 0.03) 1px, transparent 1px);
     background-size: 50px 50px;
     mask-image: radial-gradient(circle at 60% 40%, black, transparent 75%);
     -webkit-mask-image: radial-gradient(circle at 60% 40%, black, transparent 75%);
@@ -201,8 +201,8 @@
     align-items: center;
     gap: 0.6rem;
     padding: 0.4rem 0.8rem;
-    background: rgba(163, 230, 53, 0.05);
-    border: 1px solid rgba(163, 230, 53, 0.2);
+    background: rgba(0, 210, 255, 0.05);
+    border: 1px solid rgba(0, 210, 255, 0.2);
     border-radius: 4px;
     margin-bottom: 2rem;
   }
@@ -211,8 +211,8 @@
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background-color: var(--accent-green);
-    box-shadow: 0 0 8px var(--accent-green);
+    background-color: var(--accent-blue);
+    box-shadow: 0 0 8px var(--accent-blue);
     animation: pulse 1.5s infinite ease-in-out;
   }
 
@@ -221,7 +221,7 @@
     font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 2px;
-    color: var(--accent-green);
+    color: var(--accent-blue);
   }
 
   .hero-title {
@@ -236,8 +236,8 @@
 
   .text-gradient {
     color: #fff;
-    text-shadow: 0 0 10px rgba(163, 230, 53, 0.2);
-    background: linear-gradient(135deg, #fff 30%, var(--accent-green) 100%);
+    text-shadow: 0 0 10px rgba(0, 210, 255, 0.2);
+    background: linear-gradient(135deg, #fff 30%, var(--accent-blue) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -264,7 +264,7 @@
     align-items: center;
     justify-content: center;
     padding: 1rem 2.2rem;
-    background: var(--accent-green);
+    background: var(--accent-blue);
     color: #060814;
     text-decoration: none;
     font-family: var(--font-display);
@@ -275,15 +275,15 @@
     border-radius: 4px;
     overflow: hidden;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    border: 1px solid var(--accent-green);
+    border: 1px solid var(--accent-blue);
   }
 
   .btn-cyber-primary:hover {
     transform: translateY(-2px);
     background: #000;
-    color: var(--accent-green);
-    border-color: var(--accent-green);
-    box-shadow: 0 0 25px rgba(163, 230, 53, 0.45);
+    color: var(--accent-blue);
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 25px rgba(0, 210, 255, 0.45);
   }
 
   .btn-glow-container {
@@ -329,10 +329,10 @@
   }
 
   .btn-cyber-secondary:hover {
-    border-color: var(--accent-green);
-    color: var(--accent-green);
-    background: rgba(163, 230, 53, 0.05);
-    box-shadow: 0 0 15px rgba(163, 230, 53, 0.15);
+    border-color: var(--accent-blue);
+    color: var(--accent-blue);
+    background: rgba(0, 210, 255, 0.05);
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.15);
     transform: translateY(-2px);
   }
 
@@ -386,11 +386,11 @@
     width: 280px;
     height: 280px;
     background: linear-gradient(135deg, #1c2030 0%, #0d0f17 100%);
-    border: 1px solid rgba(163, 230, 53, 0.25);
+    border: 1px solid rgba(0, 210, 255, 0.25);
     border-radius: 16px;
     box-shadow: 
       0 10px 40px rgba(0,0,0,0.6),
-      0 0 30px rgba(163, 230, 53, 0.15);
+      0 0 30px rgba(0, 210, 255, 0.15);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -403,7 +403,7 @@
     position: absolute;
     inset: 1px;
     border-radius: 15px;
-    box-shadow: inset 0 0 15px rgba(163, 230, 53, 0.15);
+    box-shadow: inset 0 0 15px rgba(0, 210, 255, 0.15);
     pointer-events: none;
   }
 
@@ -427,11 +427,11 @@
     width: 100px;
     height: 100px;
     background: radial-gradient(circle, #273045 0%, #151824 100%);
-    border: 1.5px solid var(--accent-green);
+    border: 1.5px solid var(--accent-blue);
     border-radius: 12px;
     box-shadow: 
-      0 0 20px rgba(163, 230, 53, 0.25),
-      inset 0 0 15px rgba(163, 230, 53, 0.2);
+      0 0 20px rgba(0, 210, 255, 0.25),
+      inset 0 0 15px rgba(0, 210, 255, 0.2);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -455,9 +455,9 @@
     font-size: 0.65rem;
     font-weight: 700;
     letter-spacing: 1.5px;
-    color: var(--accent-green);
+    color: var(--accent-blue);
     margin-top: 4px;
-    text-shadow: 0 0 5px rgba(163, 230, 53, 0.5);
+    text-shadow: 0 0 5px rgba(0, 210, 255, 0.5);
   }
 
   .core-glow-layer {
@@ -491,9 +491,9 @@
     color: var(--text-primary);
   }
 
-  .val-green {
-    color: var(--accent-green);
-    text-shadow: 0 0 4px rgba(163, 230, 53, 0.3);
+  .val-blue {
+    color: var(--accent-blue);
+    text-shadow: 0 0 4px rgba(0, 210, 255, 0.3);
   }
 
   .val-warn {
@@ -542,8 +542,8 @@
   }
 
   .pin {
-    background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(163, 230, 53, 0.3));
-    border: 1px solid rgba(163, 230, 53, 0.2);
+    background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(0, 210, 255, 0.3));
+    border: 1px solid rgba(0, 210, 255, 0.2);
     border-radius: 1px;
     transition: background 0.3s;
   }
@@ -570,12 +570,12 @@
 
   @keyframes corePulse {
     0%, 100% {
-      box-shadow: 0 0 20px rgba(163, 230, 53, 0.2), inset 0 0 15px rgba(163, 230, 53, 0.15);
-      border-color: rgba(163, 230, 53, 0.8);
+      box-shadow: 0 0 20px rgba(0, 210, 255, 0.2), inset 0 0 15px rgba(0, 210, 255, 0.15);
+      border-color: rgba(0, 210, 255, 0.8);
     }
     50% {
-      box-shadow: 0 0 35px rgba(163, 230, 53, 0.4), inset 0 0 25px rgba(163, 230, 53, 0.35);
-      border-color: var(--accent-green);
+      box-shadow: 0 0 35px rgba(0, 210, 255, 0.4), inset 0 0 25px rgba(0, 210, 255, 0.35);
+      border-color: var(--accent-blue);
     }
   }
 

@@ -231,7 +231,7 @@
     font-family: var(--font-display);
     font-size: 0.85rem;
     font-weight: 700;
-    color: var(--accent-green);
+    color: var(--accent-blue);
   }
 
   .label-text {
@@ -285,7 +285,7 @@
   /* Highlight specific/center card */
   .service-card.active {
     background: rgba(24, 28, 40, 0.65);
-    border-color: rgba(163, 230, 53, 0.25);
+    border-color: rgba(0, 210, 255, 0.25);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255,255,255,0.05);
   }
 
@@ -295,7 +295,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at top right, rgba(163, 230, 53, 0.08), transparent 50%);
+    background: radial-gradient(circle at top right, rgba(0, 210, 255, 0.08), transparent 50%);
     opacity: 0;
     transition: opacity 0.4s ease;
     pointer-events: none;
@@ -308,10 +308,10 @@
   .service-card:hover {
     transform: translateY(-8px);
     background: rgba(24, 28, 40, 0.7);
-    border-color: rgba(163, 230, 53, 0.45);
+    border-color: rgba(0, 210, 255, 0.45);
     box-shadow: 
       0 20px 40px rgba(0, 0, 0, 0.5),
-      0 0 20px rgba(163, 230, 53, 0.15);
+      0 0 20px rgba(0, 210, 255, 0.15);
   }
 
   .card-content {
@@ -333,19 +333,19 @@
     width: 48px;
     height: 48px;
     border-radius: 8px;
-    background: rgba(163, 230, 53, 0.05);
-    border: 1px solid rgba(163, 230, 53, 0.2);
+    background: rgba(0, 210, 255, 0.05);
+    border: 1px solid rgba(0, 210, 255, 0.2);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--accent-green);
+    color: var(--accent-blue);
     transition: all 0.3s ease;
   }
 
   .service-card:hover .service-icon {
-    background: var(--accent-green);
+    background: var(--accent-blue);
     color: #060814;
-    box-shadow: 0 0 15px rgba(163, 230, 53, 0.4);
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
     transform: scale(1.05);
   }
 
@@ -358,7 +358,7 @@
   }
 
   .service-card:hover .service-protocol {
-    color: var(--accent-green);
+    color: var(--accent-blue);
   }
 
   .service-name {
@@ -405,7 +405,7 @@
   .feat-check {
     width: 16px;
     height: 16px;
-    color: var(--accent-green);
+    color: var(--accent-blue);
     flex-shrink: 0;
     opacity: 0.8;
   }

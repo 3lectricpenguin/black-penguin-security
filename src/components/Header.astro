@@ -7,13 +7,13 @@
       <div class="logo-wrapper">
         <svg viewBox="0 0 100 100" class="logo-svg" xmlns="http://www.w3.org/2000/svg">
           <!-- Outer cyber hexagon shield -->
-          <polygon points="50,5 90,25 90,75 50,95 10,75 10,25" stroke="var(--accent-green)" stroke-width="6" stroke-linejoin="round" fill="rgba(0,0,0,0.3)"/>
+          <polygon points="50,5 90,25 90,75 50,95 10,75 10,25" stroke="var(--accent-blue)" stroke-width="6" stroke-linejoin="round" fill="rgba(0,0,0,0.3)"/>
           <!-- Stylized penguin body -->
           <path d="M50,20 L75,45 L75,75 L50,90 L25,75 L25,45 Z" fill="none" stroke="#ffffff" stroke-width="4" stroke-linejoin="round"/>
           <!-- Inner chest (white belly arch) -->
-          <path d="M50,50 L65,70 L50,85 L35,70 Z" fill="rgba(163, 230, 53, 0.1)" stroke="var(--accent-green)" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M50,50 L65,70 L50,85 L35,70 Z" fill="rgba(0, 210, 255, 0.1)" stroke="var(--accent-blue)" stroke-width="3" stroke-linejoin="round"/>
           <!-- Beak -->
-          <polygon points="50,42 55,33 45,33" fill="var(--accent-green)"/>
+          <polygon points="50,42 55,33 45,33" fill="var(--accent-blue)"/>
           <!-- Glowing eyes -->
           <circle cx="40" cy="27" r="2.5" fill="#ffffff"/>
           <circle cx="60" cy="27" r="2.5" fill="#ffffff"/>
@@ -21,7 +21,7 @@
         <div class="logo-glow"></div>
       </div>
       <div class="logo-text">
-        <span class="logo-brand">BLACK PENGUIN</span>
+        <span class="logo-brand">3LECTRIC PENGUIN</span>
         <span class="logo-sub">IT SECURITY</span>
       </div>
     </a>
@@ -56,7 +56,7 @@
     background: rgba(10, 11, 16, 0.75);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(163, 230, 53, 0.1);
+    border-bottom: 1px solid rgba(0, 210, 255, 0.1);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05);
     transition: background 0.3s ease, border-color 0.3s ease;
   }
@@ -83,8 +83,8 @@
     height: 40px;
     border-radius: 8px;
     overflow: hidden;
-    border: 1px solid rgba(163, 230, 53, 0.3);
-    box-shadow: 0 0 10px rgba(163, 230, 53, 0.1);
+    border: 1px solid rgba(0, 210, 255, 0.3);
+    box-shadow: 0 0 10px rgba(0, 210, 255, 0.1);
     transition: all 0.3s ease;
   }
 
@@ -100,14 +100,14 @@
     position: absolute;
     inset: 0;
     border-radius: 8px;
-    box-shadow: inset 0 0 8px rgba(163, 230, 53, 0.4);
+    box-shadow: inset 0 0 8px rgba(0, 210, 255, 0.4);
     opacity: 0;
     transition: opacity 0.3s ease;
   }
 
   .logo-link:hover .logo-wrapper {
-    border-color: var(--accent-green);
-    box-shadow: 0 0 15px rgba(163, 230, 53, 0.35);
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.35);
   }
 
   .logo-link:hover .logo-glow {
@@ -134,9 +134,9 @@
     font-size: 0.6rem;
     font-weight: 500;
     letter-spacing: 1.5px;
-    color: var(--accent-green);
+    color: var(--accent-blue);
     margin-top: 3px;
-    text-shadow: 0 0 8px rgba(163, 230, 53, 0.3);
+    text-shadow: 0 0 8px rgba(0, 210, 255, 0.3);
     white-space: nowrap;
   }
 
@@ -160,14 +160,14 @@
   }
 
   .nav-number {
-    color: var(--accent-green);
+    color: var(--accent-blue);
     font-size: 0.75rem;
     opacity: 0.8;
   }
 
   .nav-link:hover {
     color: var(--text-primary);
-    text-shadow: 0 0 8px rgba(163, 230, 53, 0.2);
+    text-shadow: 0 0 8px rgba(0, 210, 255, 0.2);
     transform: translateY(-1px);
   }
 
@@ -177,9 +177,9 @@
     display: inline-block;
     padding: 0.5rem 1.2rem;
     background: transparent;
-    border: 1px solid var(--accent-green);
+    border: 1px solid var(--accent-blue);
     border-radius: 4px;
-    color: var(--accent-green);
+    color: var(--accent-blue);
     text-decoration: none;
     font-family: var(--font-display);
     font-size: 0.75rem;
@@ -188,7 +188,7 @@
     text-transform: uppercase;
     overflow: hidden;
     transition: all 0.3s ease;
-    box-shadow: 0 0 10px rgba(163, 230, 53, 0.1);
+    box-shadow: 0 0 10px rgba(0, 210, 255, 0.1);
   }
 
   .btn-cyber-sm::before {
@@ -201,7 +201,7 @@
     background: linear-gradient(
       90deg,
       transparent,
-      rgba(163, 230, 53, 0.2),
+      rgba(0, 210, 255, 0.2),
       transparent
     );
     transition: all 0.5s ease;
@@ -212,8 +212,8 @@
   }
 
   .btn-cyber-sm:hover {
-    background: rgba(163, 230, 53, 0.1);
-    box-shadow: 0 0 15px rgba(163, 230, 53, 0.3);
+    background: rgba(0, 210, 255, 0.1);
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.3);
     color: #fff;
     border-color: #fff;
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);

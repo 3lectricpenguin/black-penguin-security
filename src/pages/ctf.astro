@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Cyber CTF | Black Penguin IT Security" description="Test your cybersecurity skills on the Black Penguin CTF platform. Solve challenges in cryptography, web security, reverse engineering, and SQL injection.">
+<Layout title="Cyber CTF | 3lectric Penguin IT Security" description="Test your cybersecurity skills on the 3lectric Penguin IT Security CTF platform. Solve challenges in cryptography, web security, reverse engineering, and SQL injection.">
   <div class="ctf-page-wrapper">
     <!-- Particles/Cyber grid background -->
     <div class="cyber-grid-overlay"></div>
@@ -17,14 +17,14 @@ import Layout from '../layouts/Layout.astro';
         <div class="portal-body">
           <div class="portal-logo">
             <svg viewBox="0 0 100 100" class="portal-svg" xmlns="http://www.w3.org/2000/svg">
-              <polygon points="50,5 90,25 90,75 50,95 10,75 10,25" stroke="var(--accent-green)" stroke-width="4" stroke-linejoin="round" fill="none"/>
-              <path d="M50,25 L70,45 L70,70 L50,85 L30,70 L30,45 Z" fill="none" stroke="var(--accent-green)" stroke-width="2" stroke-linejoin="round" stroke-dasharray="2,2"/>
-              <circle cx="50" cy="50" r="10" stroke="var(--accent-green)" stroke-width="2" fill="none"/>
+              <polygon points="50,5 90,25 90,75 50,95 10,75 10,25" stroke="var(--accent-blue)" stroke-width="4" stroke-linejoin="round" fill="none"/>
+              <path d="M50,25 L70,45 L70,70 L50,85 L30,70 L30,45 Z" fill="none" stroke="var(--accent-blue)" stroke-width="2" stroke-linejoin="round" stroke-dasharray="2,2"/>
+              <circle cx="50" cy="50" r="10" stroke="var(--accent-blue)" stroke-width="2" fill="none"/>
             </svg>
           </div>
           <h3>SECURE OPERATOR ACCESS</h3>
           <p class="portal-desc">
-            Welcome to the Black Penguin Sandbox CTF environment. Enter an operator nickname to log in, initialize tracking protocols, and access the challenges.
+            Welcome to the 3lectric Penguin IT Security Sandbox CTF environment. Enter an operator nickname to log in, initialize tracking protocols, and access the challenges.
           </p>
           <form id="nickname-form" class="portal-form">
             <div class="input-wrapper">
@@ -955,9 +955,9 @@ import Layout from '../layouts/Layout.astro';
           <p>Analyzing sub-nodes...</p>
           <span class="muted-tag">&lt;div class="node-root"&gt;</span>
           <div class="nested-node">
-            <span class="muted-tag">&lt;span class="cyber-badge"&gt;Black Penguin Security Node&lt;/span&gt;</span>
+            <span class="muted-tag">&lt;span class="cyber-badge"&gt;3lectric Penguin IT Security Node&lt;/span&gt;</span>
             <!-- Flag: FLAG{s3cr3t_s0urc3_5pts} -->
-            <p class="cyber-inspect-hint">Node structure secure. All systems green.</p>
+            <p class="cyber-inspect-hint">Node structure secure. All systems operational.</p>
           </div>
           <span class="muted-tag">&lt;/div&gt;</span>
         </div>
@@ -1022,7 +1022,7 @@ import Layout from '../layouts/Layout.astro';
       passBtn.addEventListener('click', () => {
         const val = passInput.value.trim();
         if (val.split('').reverse().join('') === 'n1ugn3p_kc4lb') {
-          passOutput.innerHTML = `STATUS: UNLOCKED<br/><span style="color:var(--accent-green);font-weight:bold;">FLAG: FLAG{js_obfuscation_20pts}</span>`;
+          passOutput.innerHTML = `STATUS: UNLOCKED<br/><span style="color:var(--accent-blue);font-weight:bold;">FLAG: FLAG{js_obfuscation_20pts}</span>`;
           passOutput.className = "sandbox-output success-val";
           addLog('[SUCCESS] Authenticator gate bypassed successfully.', 'success');
         } else {
@@ -1143,7 +1143,7 @@ import Layout from '../layouts/Layout.astro';
           sqliOutput.innerHTML = `
             <span class="success-val">AUTHENTICATION BYPASSED!</span><br/>
             <span>Role: Administrator (admin)</span><br/>
-            <span style="color:var(--accent-green);font-weight:bold;">FLAG: FLAG{sqli_bypass_50pts_winner}</span>
+            <span style="color:var(--accent-blue);font-weight:bold;">FLAG: FLAG{sqli_bypass_50pts_winner}</span>
           `;
           sqliOutput.className = "sandbox-output success-val";
           addLog('[SUCCESS] SQL injection detected. Authentication bypassed.', 'success');
@@ -1281,8 +1281,8 @@ import Layout from '../layouts/Layout.astro';
     pointer-events: none;
     background-size: 40px 40px;
     background-image: 
-      linear-gradient(to right, rgba(163, 230, 53, 0.02) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(163, 230, 53, 0.02) 1px, transparent 1px);
+      linear-gradient(to right, rgba(0, 210, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 210, 255, 0.02) 1px, transparent 1px);
     opacity: 0.8;
     z-index: 1;
   }
@@ -1297,7 +1297,7 @@ import Layout from '../layouts/Layout.astro';
   /* Core Card Layout */
   .ctf-card {
     background: rgba(17, 19, 28, 0.7);
-    border: 1px solid rgba(163, 230, 53, 0.1);
+    border: 1px solid rgba(0, 210, 255, 0.1);
     border-radius: 8px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(8px);
@@ -1306,19 +1306,19 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .ctf-card:hover {
-    border-color: rgba(163, 230, 53, 0.25);
+    border-color: rgba(0, 210, 255, 0.25);
   }
 
   .card-header-accent {
-    background: rgba(163, 230, 53, 0.05);
-    border-bottom: 1px solid rgba(163, 230, 53, 0.15);
+    background: rgba(0, 210, 255, 0.05);
+    border-bottom: 1px solid rgba(0, 210, 255, 0.15);
     padding: 1.25rem;
     text-align: center;
     font-family: var(--font-display);
     font-size: 0.9rem;
     letter-spacing: 2px;
     font-weight: 700;
-    color: var(--accent-green);
+    color: var(--accent-blue);
   }
 
   /* 1. ENTRY PORTAL STYLES */
@@ -1344,7 +1344,7 @@ import Layout from '../layouts/Layout.astro';
   .portal-svg {
     width: 100%;
     height: 100%;
-    filter: drop-shadow(0 0 10px rgba(163, 230, 53, 0.3));
+    filter: drop-shadow(0 0 10px rgba(0, 210, 255, 0.3));
   }
 
   .portal-body h3 {
@@ -1393,7 +1393,7 @@ import Layout from '../layouts/Layout.astro';
   .muted-label {
     font-family: var(--font-mono);
     font-size: 0.55rem;
-    color: var(--accent-green);
+    color: var(--accent-blue);
     text-transform: uppercase;
     opacity: 0.75;
   }
@@ -1437,8 +1437,8 @@ import Layout from '../layouts/Layout.astro';
 
   .input-wrapper input:focus {
     outline: none;
-    border-color: var(--accent-green);
-    box-shadow: 0 0 10px rgba(163, 230, 53, 0.1);
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 10px rgba(0, 210, 255, 0.1);
   }
 
   .btn-portal-submit {
@@ -1447,7 +1447,7 @@ import Layout from '../layouts/Layout.astro';
     justify-content: center;
     gap: 0.8rem;
     padding: 1rem;
-    background: var(--accent-green);
+    background: var(--accent-blue);
     border: none;
     border-radius: 4px;
     color: #060814;
@@ -1500,8 +1500,8 @@ import Layout from '../layouts/Layout.astro';
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: var(--accent-green);
-    box-shadow: 0 0 12px var(--accent-green);
+    background: var(--accent-blue);
+    box-shadow: 0 0 12px var(--accent-blue);
   }
 
   .profile-text {
@@ -1553,7 +1553,7 @@ import Layout from '../layouts/Layout.astro';
     font-family: monospace;
     font-weight: bold;
     font-size: 1.1rem;
-    color: var(--accent-green);
+    color: var(--accent-blue);
   }
 
   .progress-bar-container {
@@ -1566,8 +1566,8 @@ import Layout from '../layouts/Layout.astro';
 
   .progress-bar-fill {
     height: 100%;
-    background: var(--accent-green);
-    box-shadow: 0 0 8px var(--accent-green);
+    background: var(--accent-blue);
+    box-shadow: 0 0 8px var(--accent-blue);
     transition: width 0.4s ease;
   }
 
@@ -1625,7 +1625,7 @@ import Layout from '../layouts/Layout.astro';
   .title-indicator {
     width: 4px;
     height: 12px;
-    background: var(--accent-green);
+    background: var(--accent-blue);
   }
 
   .card-title h4 {
@@ -1640,11 +1640,11 @@ import Layout from '../layouts/Layout.astro';
   .live-pulse {
     font-family: monospace;
     font-size: 0.6rem;
-    color: var(--accent-green);
-    background: rgba(163, 230, 53, 0.1);
+    color: var(--accent-blue);
+    background: rgba(0, 210, 255, 0.1);
     padding: 2px 6px;
     border-radius: 3px;
-    border: 1px solid rgba(163, 230, 53, 0.2);
+    border: 1px solid rgba(0, 210, 255, 0.2);
     font-weight: bold;
     letter-spacing: 0.5px;
     animation: statusPulse 1.5s infinite;
@@ -1671,8 +1671,8 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .leaderboard-row.player-row {
-    background: rgba(163, 230, 53, 0.05);
-    border-color: rgba(163, 230, 53, 0.3);
+    background: rgba(0, 210, 255, 0.05);
+    border-color: rgba(0, 210, 255, 0.3);
     color: #fff;
     font-weight: bold;
   }
@@ -1682,7 +1682,7 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .player-row .hacker-rank {
-    color: var(--accent-green);
+    color: var(--accent-blue);
   }
 
   .hacker-name {
@@ -1696,7 +1696,7 @@ import Layout from '../layouts/Layout.astro';
 
   .you-badge {
     font-size: 0.55rem;
-    background: var(--accent-green);
+    background: var(--accent-blue);
     color: #060814;
     padding: 1px 4px;
     border-radius: 2px;
@@ -1714,7 +1714,7 @@ import Layout from '../layouts/Layout.astro';
 
   .hacker-pts {
     text-align: right;
-    color: var(--accent-green);
+    color: var(--accent-blue);
     font-weight: bold;
   }
 
@@ -1753,7 +1753,7 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .log-entry.success {
-    color: var(--accent-green);
+    color: var(--accent-blue);
   }
 
   .log-entry.warning {
@@ -1814,16 +1814,16 @@ import Layout from '../layouts/Layout.astro';
   .challenge-selector-card:hover {
     transform: translateY(-6px);
     background: rgba(24, 28, 40, 0.7);
-    border-color: rgba(163, 230, 53, 0.45);
+    border-color: rgba(0, 210, 255, 0.45);
     box-shadow: 
       0 15px 30px rgba(0, 0, 0, 0.5),
-      0 0 15px rgba(163, 230, 53, 0.15);
+      0 0 15px rgba(0, 210, 255, 0.15);
   }
 
   /* Active state is subtle, same as active service-card */
   .challenge-selector-card.active {
     background: rgba(24, 28, 40, 0.65);
-    border-color: rgba(163, 230, 53, 0.3);
+    border-color: rgba(0, 210, 255, 0.3);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255,255,255,0.05);
   }
 
@@ -1848,7 +1848,7 @@ import Layout from '../layouts/Layout.astro';
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at top right, rgba(163, 230, 53, 0.08), transparent 50%);
+    background: radial-gradient(circle at top right, rgba(0, 210, 255, 0.08), transparent 50%);
     opacity: 0;
     transition: opacity 0.4s ease;
     pointer-events: none;
@@ -1878,19 +1878,19 @@ import Layout from '../layouts/Layout.astro';
     width: 40px;
     height: 40px;
     border-radius: 8px;
-    background: rgba(163, 230, 53, 0.05);
-    border: 1px solid rgba(163, 230, 53, 0.2);
+    background: rgba(0, 210, 255, 0.05);
+    border: 1px solid rgba(0, 210, 255, 0.2);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--accent-green);
+    color: var(--accent-blue);
     transition: all 0.3s ease;
   }
 
   .challenge-selector-card:hover .service-icon {
-    background: var(--accent-green);
+    background: var(--accent-blue);
     color: #060814;
-    box-shadow: 0 0 12px rgba(163, 230, 53, 0.4);
+    box-shadow: 0 0 12px rgba(0, 210, 255, 0.4);
     transform: scale(1.05);
   }
 
@@ -1910,7 +1910,7 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .challenge-selector-card:hover .service-protocol {
-    color: var(--accent-green);
+    color: var(--accent-blue);
   }
 
   .challenge-selector-card.solved:hover .service-protocol {
@@ -1955,7 +1955,7 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .active .selector-status-text {
-    color: var(--accent-green);
+    color: var(--accent-blue);
   }
 
   .solved.active .selector-status-text {
@@ -1967,9 +1967,9 @@ import Layout from '../layouts/Layout.astro';
     font-size: 0.65rem;
     font-weight: bold;
     letter-spacing: 1px;
-    color: var(--accent-green);
-    background: rgba(163, 230, 53, 0.05);
-    border: 1px solid rgba(163, 230, 53, 0.3);
+    color: var(--accent-blue);
+    background: rgba(0, 210, 255, 0.05);
+    border: 1px solid rgba(0, 210, 255, 0.3);
     padding: 0.4rem 0.85rem;
     border-radius: 4px;
     transition: all 0.3s ease;
@@ -1977,10 +1977,10 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .challenge-selector-card:hover .selector-action-btn {
-    background: var(--accent-green);
+    background: var(--accent-blue);
     color: #060814;
-    box-shadow: 0 0 10px rgba(163, 230, 53, 0.3);
-    border-color: var(--accent-green);
+    box-shadow: 0 0 10px rgba(0, 210, 255, 0.3);
+    border-color: var(--accent-blue);
   }
 
   .challenge-selector-card.solved .selector-action-btn {
@@ -2023,11 +2023,11 @@ import Layout from '../layouts/Layout.astro';
     max-height: 90vh;
     overflow-y: auto;
     background: rgba(17, 19, 28, 0.95);
-    border: 1px solid rgba(163, 230, 53, 0.2);
+    border: 1px solid rgba(0, 210, 255, 0.2);
     border-radius: 12px;
     box-shadow: 
       0 20px 50px rgba(0, 0, 0, 0.6),
-      0 0 30px rgba(163, 230, 53, 0.05);
+      0 0 30px rgba(0, 210, 255, 0.05);
     animation: modalSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
@@ -2085,7 +2085,7 @@ import Layout from '../layouts/Layout.astro';
     font-size: 0.75rem;
     font-weight: bold;
     color: #060814;
-    background: var(--accent-green);
+    background: var(--accent-blue);
     padding: 3px 8px;
     border-radius: 4px;
   }
@@ -2134,7 +2134,7 @@ import Layout from '../layouts/Layout.astro';
   /* Interactive Sandbox Space */
   .challenge-sandbox {
     background: rgba(10, 11, 16, 0.9);
-    border: 1px solid rgba(163, 230, 53, 0.15);
+    border: 1px solid rgba(0, 210, 255, 0.15);
     border-radius: 6px;
     padding: 1.5rem;
     margin-bottom: 2rem;
@@ -2155,7 +2155,7 @@ import Layout from '../layouts/Layout.astro';
 
   .interactive-prompt::before {
     content: '❯';
-    color: var(--accent-green);
+    color: var(--accent-blue);
     font-weight: bold;
   }
 
@@ -2208,14 +2208,14 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .sandbox-input:focus {
-    border-color: var(--accent-green);
-    box-shadow: 0 0 8px rgba(163, 230, 53, 0.1);
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 8px rgba(0, 210, 255, 0.1);
   }
 
   .btn-sandbox {
     background: transparent;
-    border: 1px solid var(--accent-green);
-    color: var(--accent-green);
+    border: 1px solid var(--accent-blue);
+    color: var(--accent-blue);
     border-radius: 4px;
     padding: 0.75rem 1.5rem;
     font-family: var(--font-display);
@@ -2227,9 +2227,9 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .btn-sandbox:hover {
-    background: var(--accent-green);
+    background: var(--accent-blue);
     color: #060814;
-    box-shadow: 0 0 15px rgba(163, 230, 53, 0.3);
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.3);
     transform: translateY(-2px);
   }
 
@@ -2249,9 +2249,9 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .sandbox-output.success-val {
-    border-left-color: var(--accent-green);
-    color: var(--accent-green);
-    background: rgba(163, 230, 53, 0.02);
+    border-left-color: var(--accent-blue);
+    color: var(--accent-blue);
+    background: rgba(0, 210, 255, 0.02);
   }
 
   .sandbox-output.error-val {
@@ -2314,9 +2314,9 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .sql-inject {
-    color: var(--accent-green);
+    color: var(--accent-blue);
     font-weight: bold;
-    text-shadow: 0 0 5px rgba(163, 230, 53, 0.25);
+    text-shadow: 0 0 5px rgba(0, 210, 255, 0.25);
   }
 
   /* Decoder tool */
@@ -2386,12 +2386,12 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .flag-input-group input:focus {
-    border-color: var(--accent-green);
-    box-shadow: 0 0 10px rgba(163, 230, 53, 0.1);
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 10px rgba(0, 210, 255, 0.1);
   }
 
   .btn-submit-flag {
-    background: var(--accent-green);
+    background: var(--accent-blue);
     border: none;
     color: #060814;
     border-radius: 4px;
@@ -2425,9 +2425,9 @@ import Layout from '../layouts/Layout.astro';
 
   .flag-feedback.success-text {
     display: block;
-    background: rgba(163, 230, 53, 0.08);
-    border: 1px solid rgba(163, 230, 53, 0.3);
-    color: var(--accent-green);
+    background: rgba(0, 210, 255, 0.08);
+    border: 1px solid rgba(0, 210, 255, 0.3);
+    color: var(--accent-blue);
   }
 
   .flag-feedback.error-text {

@@ -10,7 +10,7 @@
       </div>
       <h2 class="section-title">Interactive Terminal</h2>
       <p class="section-subtitle">
-        Test our simulated network toolkit. Run vulnerability scans, decrypt packets, or review Black Penguin protocols in real-time.
+        Test our simulated network toolkit. Run vulnerability scans, decrypt packets, or review 3lectric Penguin IT Security protocols in real-time.
       </p>
     </div>
 
@@ -23,22 +23,22 @@
           <span class="win-btn minimize"></span>
           <span class="win-btn maximize"></span>
         </div>
-        <div class="terminal-title">guest@blackpenguin-node:~</div>
+        <div class="terminal-title">guest@3lectricpenguin-node:~</div>
         <div class="terminal-status">SECURE CONNECTED</div>
       </div>
       
       <!-- Terminal Screen -->
       <div class="terminal-screen" id="terminal-screen">
         <div class="terminal-log">
-          <div class="log-line system-welcome">BLACK PENGUIN IT SECURITY PROTOCOL [VERSION 2.40.1]</div>
-          <div class="log-line system-welcome">© {new Date().getFullYear()} Black Penguin IT Security. All access logged.</div>
+          <div class="log-line system-welcome">3LECTRIC PENGUIN IT SECURITY PROTOCOL [VERSION 2.40.1]</div>
+          <div class="log-line system-welcome">© {new Date().getFullYear()} 3lectric Penguin IT Security. All access logged.</div>
           <div class="log-line system-welcome">Type <span class="cmd-highlight">help</span> for a list of available operations.</div>
           <br />
         </div>
         
         <!-- Terminal Input Line -->
         <div class="terminal-input-line">
-          <span class="terminal-prompt">guest@blackpenguin-node:~$</span>
+          <span class="terminal-prompt">guest@3lectricpenguin-node:~$</span>
           <input type="text" id="terminal-input" autocomplete="off" spellcheck="false" max-length="40" />
           <span class="custom-cursor"></span>
         </div>
@@ -54,7 +54,7 @@
 
   const COMMAND_LIST = {
     help: 'List of protocols: help, about, scan, decrypt, harden, clear',
-    about: 'Black Penguin IT Security: High-performance web development combined with professional-grade penetration testing and defensive engineering.',
+    about: '3lectric Penguin IT Security: High-performance web development combined with professional-grade penetration testing and defensive engineering.',
     clear: '',
   };
 
@@ -70,7 +70,7 @@
         const cmd = inputVal.toLowerCase();
         
         // Output prompt
-        appendLog(`guest@blackpenguin-node:~$ ${inputVal}`, 'user-cmd');
+        appendLog(`guest@3lectricpenguin-node:~$ ${inputVal}`, 'user-cmd');
         termInput.value = '';
 
         if (cmd === '') return;
@@ -153,7 +153,7 @@
         await sleep(250);
       }
       
-      decryptLine.innerText = '[HASH DECRYPT] blackpenguin_auth_token_hash_ok :: verified';
+      decryptLine.innerText = '[HASH DECRYPT] 3lectricpenguin_auth_token_hash_ok :: verified';
       decryptLine.className = 'log-line sys-success';
     }
 
@@ -199,7 +199,7 @@
     font-family: var(--font-display);
     font-size: 0.85rem;
     font-weight: 700;
-    color: var(--accent-green);
+    color: var(--accent-blue);
   }
 
   .label-text {
@@ -231,11 +231,11 @@
     max-width: 900px;
     margin: 0 auto;
     background: rgba(13, 15, 23, 0.95);
-    border: 1px solid rgba(163, 230, 53, 0.25);
+    border: 1px solid rgba(0, 210, 255, 0.25);
     border-radius: 8px;
     box-shadow: 
       0 20px 50px rgba(0, 0, 0, 0.5),
-      0 0 30px rgba(163, 230, 53, 0.08);
+      0 0 30px rgba(0, 210, 255, 0.08);
     overflow: hidden;
   }
 
@@ -277,11 +277,11 @@
     font-size: 0.65rem;
     font-weight: 700;
     letter-spacing: 1px;
-    color: var(--accent-green);
-    background: rgba(163, 230, 53, 0.08);
+    color: var(--accent-blue);
+    background: rgba(0, 210, 255, 0.08);
     padding: 0.15rem 0.5rem;
     border-radius: 4px;
-    border: 1px solid rgba(163, 230, 53, 0.15);
+    border: 1px solid rgba(0, 210, 255, 0.15);
   }
 
   .terminal-screen {
@@ -292,7 +292,7 @@
     font-size: 0.9rem;
     color: #cbd5e1;
     line-height: 1.5;
-    background: radial-gradient(circle at center, rgba(163, 230, 53, 0.02) 0%, transparent 80%);
+    background: radial-gradient(circle at center, rgba(0, 210, 255, 0.02) 0%, transparent 80%);
   }
 
   /* Custom scrollbar for terminal */
@@ -303,11 +303,11 @@
     background: transparent;
   }
   .terminal-screen::-webkit-scrollbar-thumb {
-    background: rgba(163, 230, 53, 0.2);
+    background: rgba(0, 210, 255, 0.2);
     border-radius: 3px;
   }
   .terminal-screen::-webkit-scrollbar-thumb:hover {
-    background: var(--accent-green);
+    background: var(--accent-blue);
   }
 
   .log-line {
@@ -321,9 +321,9 @@
   }
 
   .cmd-highlight {
-    color: var(--accent-green);
+    color: var(--accent-blue);
     font-weight: bold;
-    text-shadow: 0 0 5px rgba(163, 230, 53, 0.3);
+    text-shadow: 0 0 5px rgba(0, 210, 255, 0.3);
   }
 
   .user-cmd {
@@ -340,14 +340,14 @@
   }
 
   .sys-loader {
-    color: var(--accent-green);
+    color: var(--accent-blue);
     opacity: 0.85;
   }
 
   .sys-success {
-    color: var(--accent-green);
+    color: var(--accent-blue);
     font-weight: bold;
-    text-shadow: 0 0 8px rgba(163, 230, 53, 0.4);
+    text-shadow: 0 0 8px rgba(0, 210, 255, 0.4);
   }
 
   .sys-error {
@@ -361,7 +361,7 @@
   }
 
   .terminal-prompt {
-    color: var(--accent-green);
+    color: var(--accent-blue);
     margin-right: 0.6rem;
     font-weight: bold;
   }
@@ -383,7 +383,7 @@
     display: inline-block;
     width: 8px;
     height: 15px;
-    background: var(--accent-green);
+    background: var(--accent-blue);
     animation: blink 0.8s infinite;
     position: absolute;
     /* align position to end of text */
@@ -397,7 +397,7 @@
   
   /* Fallback: using default caret is simpler and more responsive, we'll keep caret-color white */
   #terminal-input {
-    caret-color: var(--accent-green);
+    caret-color: var(--accent-blue);
   }
   .custom-cursor {
     display: none;
