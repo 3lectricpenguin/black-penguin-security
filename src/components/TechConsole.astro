@@ -407,4 +407,35 @@
     0%, 100% { opacity: 0; }
     50% { opacity: 1; }
   }
+
+  @media (max-width: 768px) {
+    .console-section {
+      padding: 4rem 1.5rem;
+    }
+
+    .terminal-screen {
+      height: 320px;
+      padding: 1rem;
+      font-size: 0.85rem;
+    }
+
+    .terminal-bar {
+      padding: 0.6rem 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .terminal-status {
+      display: none;
+    }
+
+    .terminal-screen {
+      height: 280px;
+      font-size: 0.8rem;
+    }
+    
+    .section-title {
+      font-size: 2rem;
+    }
+  }
 </style>
