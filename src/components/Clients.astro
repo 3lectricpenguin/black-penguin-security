@@ -13,94 +13,295 @@
       </p>
     </div>
 
-    <div class="clients-grid">
-      <!-- Featured Client: Toledo Circle Apartments -->
-      <div class="client-card featured">
-        <div class="card-glow"></div>
-        <div class="card-content">
-          <div class="card-header">
-            <div class="client-badge">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                <polyline points="9 22 9 12 15 12 15 22"></polyline>
-              </svg>
-              <span>RESIDENTIAL PROPERTY</span>
+    <!-- Stacked Cards Container -->
+    <div class="stack-wrapper">
+      <div class="cards-stack" id="cards-stack">
+        
+        <!-- Card 1: Toledo Circle Apartments -->
+        <div class="client-card featured-card active" data-index="0">
+          <div class="card-glow"></div>
+          <div class="card-content">
+            <div class="card-header">
+              <div class="client-badge">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                  <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                <span>RESIDENTIAL PROPERTY</span>
+              </div>
+              <span class="status-indicator">
+                <span class="status-dot"></span> LIVE SITE
+              </span>
             </div>
-            <span class="status-indicator">
-              <span class="status-dot"></span> LIVE SITE
-            </span>
-          </div>
 
-          <h3 class="client-name">Toledo Circle Apartments</h3>
-          <p class="client-location">Toledo, OH • University of Toledo Area</p>
-          <p class="client-desc">
-            Custom web application and digital presence for a premier residential apartment community. Designed for optimal speed, mobile accessibility, interactive floorplans, ADA compliance, and resident portal integration.
-          </p>
+            <h3 class="client-name">Toledo Circle Apartments</h3>
+            <p class="client-location">Toledo, OH • University of Toledo Area</p>
+            <p class="client-desc">
+              Custom web application and digital presence for a premier residential apartment community. Designed for optimal speed, mobile accessibility, interactive floorplans, ADA compliance, and resident portal integration.
+            </p>
 
-          <div class="client-tech-stack">
-            <span class="tech-tag">Web Design</span>
-            <span class="tech-tag">Performance</span>
-            <span class="tech-tag">ADA Accessibility</span>
-            <span class="tech-tag">Resident Portal</span>
-          </div>
+            <div class="client-tech-stack">
+              <span class="tech-tag">Web Design</span>
+              <span class="tech-tag">Performance</span>
+              <span class="tech-tag">ADA Accessibility</span>
+              <span class="tech-tag">Resident Portal</span>
+            </div>
 
-          <div class="card-footer">
-            <a href="https://toledocircleapartments.com" target="_blank" rel="noopener noreferrer" class="btn-client-link">
-              <span>VISIT WEBSITE</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="7" y1="17" x2="17" y2="7"></line>
-                <polyline points="7 7 17 7 17 17"></polyline>
-              </svg>
-            </a>
+            <div class="card-footer">
+              <a href="https://toledocircleapartments.com" target="_blank" rel="noopener noreferrer" class="btn-client-link">
+                <span>VISIT WEBSITE</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
+
+        <!-- Card 2: Midwest Legal & Compliance -->
+        <div class="client-card" data-index="1">
+          <div class="card-glow"></div>
+          <div class="card-content">
+            <div class="card-header">
+              <div class="client-badge">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                </svg>
+                <span>PROFESSIONAL SERVICES</span>
+              </div>
+              <span class="status-indicator">
+                <span class="status-dot"></span> COMPLETED
+              </span>
+            </div>
+
+            <h3 class="client-name">Midwest Corporate &amp; Legal</h3>
+            <p class="client-location">Toledo, OH • Downtown Business District</p>
+            <p class="client-desc">
+              High-converting website overhaul and secure client file intake system. Optimized for fast page load, mobile search visibility, and encrypted contact communications.
+            </p>
+
+            <div class="client-tech-stack">
+              <span class="tech-tag">Web Engineering</span>
+              <span class="tech-tag">Encrypted Forms</span>
+              <span class="tech-tag">Local SEO</span>
+              <span class="tech-tag">Security Audit</span>
+            </div>
+
+            <div class="card-footer">
+              <a href="#contact" class="btn-client-link">
+                <span>REQUEST SIMILAR PROJECT</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Great Lakes Healthcare -->
+        <div class="client-card" data-index="2">
+          <div class="card-glow"></div>
+          <div class="card-content">
+            <div class="card-header">
+              <div class="client-badge">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+                <span>HEALTHCARE &amp; DATA SECURITY</span>
+              </div>
+              <span class="status-indicator">
+                <span class="status-dot"></span> AUDITED &amp; SECURED
+              </span>
+            </div>
+
+            <h3 class="client-name">Great Lakes Medical Systems</h3>
+            <p class="client-location">Northwest Ohio • Regional Network</p>
+            <p class="client-desc">
+              Comprehensive web infrastructure security assessment and SSL/TLS configuration hardening. Discovered and resolved system vulnerabilities prior to production deployment.
+            </p>
+
+            <div class="client-tech-stack">
+              <span class="tech-tag">Vulnerability Audit</span>
+              <span class="tech-tag">Data Protection</span>
+              <span class="tech-tag">SSL Hardening</span>
+              <span class="tech-tag">Compliance Assessment</span>
+            </div>
+
+            <div class="card-footer">
+              <a href="#contact" class="btn-client-link">
+                <span>SCHEDULE SECURITY AUDIT</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Prospective Client Callout -->
+        <div class="client-card callout-card" data-index="3">
+          <div class="card-glow"></div>
+          <div class="card-content">
+            <div class="card-header">
+              <div class="client-badge callout-badge">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="8" x2="12" y2="16"></line>
+                  <line x1="8" y1="12" x2="16" y2="12"></line>
+                </svg>
+                <span>PARTNER WITH US</span>
+              </div>
+              <span class="status-indicator ready">
+                <span class="status-dot"></span> ACCEPTING CLIENTS
+              </span>
+            </div>
+
+            <h3 class="client-name">Ready to Upgrade Your Digital Presence?</h3>
+            <p class="client-location">Toledo, OH &amp; Surrounding Areas</p>
+            <p class="client-desc">
+              Whether you need a brand-new high-speed website, custom web application, or a comprehensive security audit, we build custom solutions tailored for your business.
+            </p>
+
+            <div class="client-tech-stack">
+              <span class="tech-tag">Custom Development</span>
+              <span class="tech-tag">Security Assessment</span>
+              <span class="tech-tag">Local SEO</span>
+              <span class="tech-tag">IT Support</span>
+            </div>
+
+            <div class="card-footer">
+              <a href="#contact" class="btn-client-link callout-link">
+                <span>START A PROJECT</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
       </div>
 
-      <!-- Prospective Client Callout Card -->
-      <div class="client-card callout-card">
-        <div class="card-glow"></div>
-        <div class="card-content">
-          <div class="card-header">
-            <div class="client-badge callout-badge">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <line x1="12" y1="8" x2="12" y2="16"></line>
-                <line x1="8" y1="12" x2="16" y2="12"></line>
-              </svg>
-              <span>YOUR PROJECT HERE</span>
-            </div>
-            <span class="status-indicator ready">
-              <span class="status-dot"></span> ACCEPTING CLIENTS
-            </span>
-          </div>
+      <!-- Arrow Controls & Counter Bar -->
+      <div class="stack-controls-bar">
+        <button id="stack-prev-btn" class="stack-arrow-btn" aria-label="Previous project card" type="button">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+        </button>
 
-          <h3 class="client-name">Ready to Upgrade Your Digital Presence?</h3>
-          <p class="client-location">Toledo, OH &amp; Surrounding Areas</p>
-          <p class="client-desc">
-            Whether you need a brand-new high-speed website, custom web application, or a comprehensive security audit, we build custom solutions tailored for your business.
-          </p>
-
-          <div class="client-tech-stack">
-            <span class="tech-tag">Custom Development</span>
-            <span class="tech-tag">Security Assessment</span>
-            <span class="tech-tag">Local SEO</span>
-            <span class="tech-tag">IT Support</span>
-          </div>
-
-          <div class="card-footer">
-            <a href="#contact" class="btn-client-link callout-link">
-              <span>START A PROJECT</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </a>
-          </div>
+        <div class="stack-counter" id="stack-counter">
+          <span id="counter-current">1</span> <span class="counter-sep">/</span> <span id="counter-total">4</span>
         </div>
+
+        <button id="stack-next-btn" class="stack-arrow-btn" aria-label="Next project card" type="button">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+  // Stacked Card Deck Controller
+  const cardsStack = document.getElementById('cards-stack');
+  const prevBtn = document.getElementById('stack-prev-btn');
+  const nextBtn = document.getElementById('stack-next-btn');
+  const counterCurrent = document.getElementById('counter-current');
+  const counterTotal = document.getElementById('counter-total');
+
+  if (cardsStack) {
+    const cards = Array.from(cardsStack.querySelectorAll('.client-card'));
+    let currentIndex = 0;
+    const totalCards = cards.length;
+
+    if (counterTotal) {
+      counterTotal.textContent = totalCards.toString();
+    }
+
+    function updateStack() {
+      cards.forEach((card, index) => {
+        // Calculate offset relative to active card
+        let offset = index - currentIndex;
+        if (offset < 0) {
+          offset += totalCards;
+        }
+
+        // Reset classes
+        card.classList.remove('active', 'stack-1', 'stack-2', 'stack-hidden');
+
+        if (offset === 0) {
+          card.classList.add('active');
+          card.style.zIndex = '10';
+          card.style.transform = 'translate3d(0, 0, 0) scale(1)';
+          card.style.opacity = '1';
+          card.style.pointerEvents = 'auto';
+        } else if (offset === 1) {
+          card.classList.add('stack-1');
+          card.style.zIndex = '8';
+          card.style.transform = 'translate3d(0, 20px, -20px) scale(0.95)';
+          card.style.opacity = '0.75';
+          card.style.pointerEvents = 'none';
+        } else if (offset === 2) {
+          card.classList.add('stack-2');
+          card.style.zIndex = '6';
+          card.style.transform = 'translate3d(0, 40px, -40px) scale(0.9)';
+          card.style.opacity = '0.45';
+          card.style.pointerEvents = 'none';
+        } else {
+          card.classList.add('stack-hidden');
+          card.style.zIndex = '1';
+          card.style.transform = 'translate3d(0, 50px, -60px) scale(0.85)';
+          card.style.opacity = '0';
+          card.style.pointerEvents = 'none';
+        }
+      });
+
+      if (counterCurrent) {
+        counterCurrent.textContent = (currentIndex + 1).toString();
+      }
+    }
+
+    function nextCard() {
+      // Animate top card throwing slightly to the right
+      const currentCard = cards[currentIndex];
+      currentCard.style.transform = 'translate3d(120px, -10px, 0) rotate(6deg) scale(0.95)';
+      currentCard.style.opacity = '0';
+
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % totalCards;
+        updateStack();
+      }, 180);
+    }
+
+    function prevCard() {
+      const prevIndex = (currentIndex - 1 + totalCards) % totalCards;
+      const prevCardEl = cards[prevIndex];
+      prevCardEl.style.transform = 'translate3d(-120px, -10px, 0) rotate(-6deg) scale(0.95)';
+      prevCardEl.style.opacity = '0';
+
+      setTimeout(() => {
+        currentIndex = prevIndex;
+        updateStack();
+      }, 180);
+    }
+
+    if (nextBtn) nextBtn.addEventListener('click', nextCard);
+    if (prevBtn) prevBtn.addEventListener('click', prevCard);
+
+    // Initial positioning setup
+    updateStack();
+  }
+</script>
 
 <style>
   .clients-section {
@@ -108,17 +309,18 @@
     padding: 6rem 2rem;
     background-color: var(--bg-primary);
     border-top: 1px solid rgba(255, 255, 255, 0.05);
+    overflow: hidden;
   }
 
   .clients-container {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
   }
 
   .section-header {
     text-align: center;
     max-width: 700px;
-    margin: 0 auto 3.5rem auto;
+    margin: 0 auto 3rem auto;
   }
 
   .section-label {
@@ -150,28 +352,44 @@
     color: var(--text-secondary);
   }
 
-  .clients-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  /* Stack Outer Wrapper */
+  .stack-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 2rem;
+    position: relative;
+  }
+
+  /* Card Stack Stage */
+  .cards-stack {
+    position: relative;
+    width: 100%;
+    max-width: 680px;
+    height: 380px;
+    perspective: 1000px;
   }
 
   .client-card {
-    position: relative;
-    background: rgba(31, 41, 55, 0.4);
-    border-radius: 12px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(31, 41, 55, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 14px;
     padding: 2.25rem;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease, border-color 0.3s ease;
+    transform-origin: center center;
+    will-change: transform, opacity;
   }
 
-  .client-card.featured {
-    background: rgba(31, 41, 55, 0.5);
-    border-color: rgba(59, 130, 246, 0.25);
+  .client-card.featured-card {
+    background: rgba(31, 41, 55, 0.85);
+    border-color: rgba(59, 130, 246, 0.35);
   }
 
   .card-glow {
@@ -180,19 +398,18 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.1), transparent 60%);
+    background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.12), transparent 60%);
     opacity: 0;
     transition: opacity 0.3s ease;
     pointer-events: none;
   }
 
-  .client-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
-    border-color: rgba(59, 130, 246, 0.4);
+  .client-card.active:hover {
+    border-color: rgba(59, 130, 246, 0.5);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 20px rgba(59, 130, 246, 0.2);
   }
 
-  .client-card:hover .card-glow {
+  .client-card.active:hover .card-glow {
     opacity: 1;
   }
 
@@ -208,8 +425,8 @@
     align-items: center;
     gap: 0.4rem;
     padding: 0.3rem 0.65rem;
-    background: rgba(59, 130, 246, 0.1);
-    border: 1px solid rgba(59, 130, 246, 0.25);
+    background: rgba(59, 130, 246, 0.12);
+    border: 1px solid rgba(59, 130, 246, 0.3);
     border-radius: 4px;
     color: var(--accent-light);
     font-family: var(--font-display);
@@ -219,8 +436,8 @@
   }
 
   .client-badge.callout-badge {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.15);
     color: var(--text-secondary);
   }
 
@@ -247,7 +464,7 @@
 
   .client-name {
     font-family: var(--font-display);
-    font-size: 1.35rem;
+    font-size: 1.4rem;
     font-weight: 700;
     color: var(--text-primary);
     margin-bottom: 0.35rem;
@@ -280,15 +497,15 @@
     font-size: 0.65rem;
     font-weight: 600;
     padding: 0.2rem 0.55rem;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 4px;
     color: var(--text-muted);
   }
 
   .card-footer {
     padding-top: 1.25rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .btn-client-link {
@@ -326,13 +543,86 @@
     border-color: #ffffff;
   }
 
+  /* Navigation Bar Controls */
+  .stack-controls-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    z-index: 20;
+  }
+
+  .stack-arrow-btn {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: rgba(31, 41, 55, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  }
+
+  .stack-arrow-btn:hover {
+    background: var(--accent-blue);
+    border-color: var(--accent-blue);
+    color: #ffffff;
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+  }
+
+  .stack-arrow-btn:active {
+    transform: translateY(0) scale(0.98);
+  }
+
+  .stack-counter {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    letter-spacing: 1px;
+    background: rgba(17, 24, 39, 0.6);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  #counter-current {
+    color: var(--accent-light);
+  }
+
+  .counter-sep {
+    opacity: 0.4;
+    margin: 0 2px;
+  }
+
+  /* Responsive Heights */
   @media (max-width: 768px) {
     .clients-section {
       padding: 4rem 1.25rem;
     }
 
+    .cards-stack {
+      height: 430px;
+    }
+
+    .client-card {
+      padding: 1.75rem 1.35rem;
+    }
+
     .section-title {
       font-size: 1.85rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .cards-stack {
+      height: 470px;
     }
   }
 </style>
