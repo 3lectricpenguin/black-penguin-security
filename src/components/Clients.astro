@@ -19,7 +19,6 @@
         
         <!-- Card 1: Toledo Circle Apartments -->
         <div class="client-card featured-card active" data-index="0">
-          <div class="card-glow"></div>
           <div class="card-content">
             <div class="card-header">
               <div class="client-badge">
@@ -59,92 +58,8 @@
           </div>
         </div>
 
-        <!-- Card 2: Midwest Legal & Compliance -->
-        <div class="client-card" data-index="1">
-          <div class="card-glow"></div>
-          <div class="card-content">
-            <div class="card-header">
-              <div class="client-badge">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-                </svg>
-                <span>PROFESSIONAL SERVICES</span>
-              </div>
-              <span class="status-indicator">
-                <span class="status-dot"></span> COMPLETED
-              </span>
-            </div>
-
-            <h3 class="client-name">Midwest Corporate &amp; Legal</h3>
-            <p class="client-location">Toledo, OH • Downtown Business District</p>
-            <p class="client-desc">
-              High-converting website overhaul and secure client file intake system. Optimized for fast page load, mobile search visibility, and encrypted contact communications.
-            </p>
-
-            <div class="client-tech-stack">
-              <span class="tech-tag">Web Engineering</span>
-              <span class="tech-tag">Encrypted Forms</span>
-              <span class="tech-tag">Local SEO</span>
-              <span class="tech-tag">Security Audit</span>
-            </div>
-
-            <div class="card-footer">
-              <a href="#contact" class="btn-client-link">
-                <span>REQUEST SIMILAR PROJECT</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 3: Great Lakes Healthcare -->
-        <div class="client-card" data-index="2">
-          <div class="card-glow"></div>
-          <div class="card-content">
-            <div class="card-header">
-              <div class="client-badge">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                </svg>
-                <span>HEALTHCARE &amp; DATA SECURITY</span>
-              </div>
-              <span class="status-indicator">
-                <span class="status-dot"></span> AUDITED &amp; SECURED
-              </span>
-            </div>
-
-            <h3 class="client-name">Great Lakes Medical Systems</h3>
-            <p class="client-location">Northwest Ohio • Regional Network</p>
-            <p class="client-desc">
-              Comprehensive web infrastructure security assessment and SSL/TLS configuration hardening. Discovered and resolved system vulnerabilities prior to production deployment.
-            </p>
-
-            <div class="client-tech-stack">
-              <span class="tech-tag">Vulnerability Audit</span>
-              <span class="tech-tag">Data Protection</span>
-              <span class="tech-tag">SSL Hardening</span>
-              <span class="tech-tag">Compliance Assessment</span>
-            </div>
-
-            <div class="card-footer">
-              <a href="#contact" class="btn-client-link">
-                <span>SCHEDULE SECURITY AUDIT</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 4: Prospective Client Callout -->
-        <div class="client-card callout-card" data-index="3">
-          <div class="card-glow"></div>
+        <!-- Card 2: Accepting New Clients Callout -->
+        <div class="client-card callout-card" data-index="1">
           <div class="card-content">
             <div class="card-header">
               <div class="client-badge callout-badge">
@@ -160,10 +75,10 @@
               </span>
             </div>
 
-            <h3 class="client-name">Ready to Upgrade Your Digital Presence?</h3>
+            <h3 class="client-name">Accepting New Clients</h3>
             <p class="client-location">Toledo, OH &amp; Surrounding Areas</p>
             <p class="client-desc">
-              Whether you need a brand-new high-speed website, custom web application, or a comprehensive security audit, we build custom solutions tailored for your business.
+              Whether you need a brand-new high-speed website, custom web application, or a comprehensive digital security audit, we build custom solutions tailored for your business.
             </p>
 
             <div class="client-tech-stack">
@@ -197,7 +112,7 @@
         </button>
 
         <div class="stack-counter" id="stack-counter">
-          <span id="counter-current">1</span> <span class="counter-sep">/</span> <span id="counter-total">4</span>
+          <span id="counter-current">1</span> <span class="counter-sep">/</span> <span id="counter-total">2</span>
         </div>
 
         <button id="stack-next-btn" class="stack-arrow-btn" aria-label="Next project card" type="button">
@@ -212,7 +127,6 @@
 </section>
 
 <script>
-  // Stacked Card Deck Controller
   const cardsStack = document.getElementById('cards-stack');
   const prevBtn = document.getElementById('stack-prev-btn');
   const nextBtn = document.getElementById('stack-next-btn');
@@ -230,38 +144,21 @@
 
     function updateStack() {
       cards.forEach((card, index) => {
-        // Calculate offset relative to active card
         let offset = index - currentIndex;
         if (offset < 0) {
           offset += totalCards;
         }
 
-        // Reset classes
-        card.classList.remove('active', 'stack-1', 'stack-2', 'stack-hidden');
+        // 100% opacity for all cards - strictly non-transparent
+        card.style.opacity = '1';
 
         if (offset === 0) {
-          card.classList.add('active');
           card.style.zIndex = '10';
           card.style.transform = 'translate3d(0, 0, 0) scale(1)';
-          card.style.opacity = '1';
           card.style.pointerEvents = 'auto';
-        } else if (offset === 1) {
-          card.classList.add('stack-1');
-          card.style.zIndex = '8';
-          card.style.transform = 'translate3d(0, 20px, -20px) scale(0.95)';
-          card.style.opacity = '0.75';
-          card.style.pointerEvents = 'none';
-        } else if (offset === 2) {
-          card.classList.add('stack-2');
-          card.style.zIndex = '6';
-          card.style.transform = 'translate3d(0, 40px, -40px) scale(0.9)';
-          card.style.opacity = '0.45';
-          card.style.pointerEvents = 'none';
         } else {
-          card.classList.add('stack-hidden');
-          card.style.zIndex = '1';
-          card.style.transform = 'translate3d(0, 50px, -60px) scale(0.85)';
-          card.style.opacity = '0';
+          card.style.zIndex = '5';
+          card.style.transform = 'translate3d(16px, 16px, 0) scale(0.96)';
           card.style.pointerEvents = 'none';
         }
       });
@@ -272,33 +169,29 @@
     }
 
     function nextCard() {
-      // Animate top card throwing slightly to the right
       const currentCard = cards[currentIndex];
-      currentCard.style.transform = 'translate3d(120px, -10px, 0) rotate(6deg) scale(0.95)';
-      currentCard.style.opacity = '0';
-
+      currentCard.style.transform = 'translate3d(100px, -10px, 0) rotate(5deg) scale(0.96)';
+      
       setTimeout(() => {
         currentIndex = (currentIndex + 1) % totalCards;
         updateStack();
-      }, 180);
+      }, 160);
     }
 
     function prevCard() {
       const prevIndex = (currentIndex - 1 + totalCards) % totalCards;
       const prevCardEl = cards[prevIndex];
-      prevCardEl.style.transform = 'translate3d(-120px, -10px, 0) rotate(-6deg) scale(0.95)';
-      prevCardEl.style.opacity = '0';
+      prevCardEl.style.transform = 'translate3d(-100px, -10px, 0) rotate(-5deg) scale(0.96)';
 
       setTimeout(() => {
         currentIndex = prevIndex;
         updateStack();
-      }, 180);
+      }, 160);
     }
 
     if (nextBtn) nextBtn.addEventListener('click', nextCard);
     if (prevBtn) prevBtn.addEventListener('click', prevCard);
 
-    // Initial positioning setup
     updateStack();
   }
 </script>
@@ -367,50 +260,27 @@
     width: 100%;
     max-width: 680px;
     height: 380px;
-    perspective: 1000px;
   }
 
+  /* Completely Opaque 100% Solid Cards */
   .client-card {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(31, 41, 55, 0.7);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background: #171e2e; /* 100% solid, fully opaque background */
     border-radius: 14px;
     padding: 2.25rem;
     border: 1px solid rgba(255, 255, 255, 0.12);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease, border-color 0.3s ease;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
     transform-origin: center center;
-    will-change: transform, opacity;
+    opacity: 1 !important; /* 100% solid opacity - no transparency */
   }
 
   .client-card.featured-card {
-    background: rgba(31, 41, 55, 0.85);
+    background: #1a2336; /* 100% solid opaque background */
     border-color: rgba(59, 130, 246, 0.35);
-  }
-
-  .card-glow {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.12), transparent 60%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-  }
-
-  .client-card.active:hover {
-    border-color: rgba(59, 130, 246, 0.5);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 20px rgba(59, 130, 246, 0.2);
-  }
-
-  .client-card.active:hover .card-glow {
-    opacity: 1;
   }
 
   .card-header {
@@ -425,7 +295,7 @@
     align-items: center;
     gap: 0.4rem;
     padding: 0.3rem 0.65rem;
-    background: rgba(59, 130, 246, 0.12);
+    background: rgba(59, 130, 246, 0.15);
     border: 1px solid rgba(59, 130, 246, 0.3);
     border-radius: 4px;
     color: var(--accent-light);
@@ -436,8 +306,8 @@
   }
 
   .client-badge.callout-badge {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.18);
     color: var(--text-secondary);
   }
 
@@ -497,8 +367,8 @@
     font-size: 0.65rem;
     font-weight: 600;
     padding: 0.2rem 0.55rem;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 4px;
     color: var(--text-muted);
   }
@@ -557,7 +427,7 @@
     width: 46px;
     height: 46px;
     border-radius: 50%;
-    background: rgba(31, 41, 55, 0.8);
+    background: #1f2937;
     border: 1px solid rgba(255, 255, 255, 0.15);
     color: var(--text-primary);
     display: flex;
@@ -586,10 +456,10 @@
     font-weight: 700;
     color: var(--text-secondary);
     letter-spacing: 1px;
-    background: rgba(17, 24, 39, 0.6);
+    background: #111827;
     padding: 0.4rem 1rem;
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   #counter-current {
@@ -601,7 +471,6 @@
     margin: 0 2px;
   }
 
-  /* Responsive Heights */
   @media (max-width: 768px) {
     .clients-section {
       padding: 4rem 1.25rem;
