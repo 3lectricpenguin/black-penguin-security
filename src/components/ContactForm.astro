@@ -98,27 +98,28 @@
 
       <!-- Contact Form -->
       <div class="contact-form-container">
-        <form class="secure-form" id="secure-contact-form" action="https://submit.jotform.com/submit/261798536543066" method="POST">
-          <!-- Jotform ID & Helper fields -->
-          <input type="hidden" name="formID" value="261798536543066" />
-          <input type="hidden" class="simple_spc" id="simple_spc" name="simple_spc" value="261798536543066-261798536543066" />
+        <form class="secure-form" id="secure-contact-form" action="https://formsubmit.co/3lectricpenguin@gmail.com" method="POST">
+          <!-- FormSubmit Configuration -->
+          <input type="hidden" name="_subject" value="New Contact Form Submission - 3lectric Penguin IT Security" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
           
           <div class="form-row split">
             <div class="form-group">
               <label for="form-name">YOUR NAME / COMPANY</label>
-              <input type="text" id="form-name" name="q5_yourName" placeholder="John Doe or Acme Corp" required />
+              <input type="text" id="form-name" name="name" placeholder="John Doe or Acme Corp" required />
               <span class="focus-line"></span>
             </div>
             <div class="form-group">
               <label for="form-email">YOUR EMAIL ADDRESS</label>
-              <input type="email" id="form-email" name="q6_yourEmail" placeholder="you@domain.com" required />
+              <input type="email" id="form-email" name="email" placeholder="you@domain.com" required />
               <span class="focus-line"></span>
             </div>
           </div>
 
           <div class="form-group">
             <label for="form-protocol">WHAT DO YOU NEED HELP WITH?</label>
-            <select id="form-protocol" name="q8_whatDo" required>
+            <select id="form-protocol" name="service" required>
               <option value="" disabled selected>Select a service...</option>
               <option value="Web Design & Development">Web Design & Development</option>
               <option value="Security Audit & Assessment">Security Audit & Assessment</option>
@@ -130,7 +131,7 @@
 
           <div class="form-group">
             <label for="form-message">PROJECT DETAILS / MESSAGE</label>
-            <textarea id="form-message" name="q9_projectDetails" rows="5" placeholder="Tell us about your project, goals, or what you need assistance with..." required></textarea>
+            <textarea id="form-message" name="message" rows="5" placeholder="Tell us about your project, goals, or what you need assistance with..." required></textarea>
             <span class="focus-line"></span>
           </div>
 
@@ -223,14 +224,29 @@
         }
         return;
       }
-      
-      const formData = new FormData(form as HTMLFormElement);
-      
-      // Submit via fetch to Jotform (no-cors mode to allow redirect responses)
-      fetch('https://submit.jotform.com/submit/261798536543066', {
+
+      const nameInput = document.getElementById('form-name') as HTMLInputElement;
+      const protocolInput = document.getElementById('form-protocol') as HTMLSelectElement;
+      const messageInput = document.getElementById('form-message') as HTMLTextAreaElement;
+
+      // Submit via fetch to FormSubmit pointing to 3lectricpenguin@gmail.com
+      fetch('https://formsubmit.co/ajax/3lectricpenguin@gmail.com', {
         method: 'POST',
-        body: formData,
-        mode: 'no-cors'
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: nameInput ? nameInput.value.trim() : '',
+          email: email,
+          service: protocolInput ? protocolInput.value : '',
+          message: messageInput ? messageInput.value.trim() : '',
+          _subject: 'New Contact Form Submission - 3lectric Penguin IT Security'
+        })
+      })
+      .then((res) => {
+        if (!res.ok) throw new Error('Network response was not ok');
+        return res.json();
       })
       .then(() => {
         // Visual feedback response
