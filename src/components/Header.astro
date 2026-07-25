@@ -6,50 +6,36 @@
     <a href="/" class="logo-link">
       <div class="logo-wrapper">
         <svg viewBox="0 0 100 100" class="logo-svg" xmlns="http://www.w3.org/2000/svg">
-          <!-- Outer cyber hexagon shield -->
-          <polygon points="50,5 90,25 90,75 50,95 10,75 10,25" stroke="var(--accent-blue)" stroke-width="6" stroke-linejoin="round" fill="rgba(0,0,0,0.3)"/>
+          <!-- Outer hexagon shield -->
+          <polygon points="50,5 90,25 90,75 50,95 10,75 10,25" stroke="var(--accent-blue)" stroke-width="6" stroke-linejoin="round" fill="rgba(15,23,42,0.6)"/>
           <!-- Stylized penguin body -->
           <path d="M50,20 L75,45 L75,75 L50,90 L25,75 L25,45 Z" fill="none" stroke="#ffffff" stroke-width="4" stroke-linejoin="round"/>
-          <!-- Inner chest (white belly arch) -->
-          <path d="M50,50 L65,70 L50,85 L35,70 Z" fill="rgba(0, 210, 255, 0.1)" stroke="var(--accent-blue)" stroke-width="3" stroke-linejoin="round"/>
+          <!-- Inner chest -->
+          <path d="M50,50 L65,70 L50,85 L35,70 Z" fill="rgba(59, 130, 246, 0.15)" stroke="var(--accent-blue)" stroke-width="3" stroke-linejoin="round"/>
           <!-- Beak -->
           <polygon points="50,42 55,33 45,33" fill="var(--accent-blue)"/>
-          <!-- Glowing eyes -->
+          <!-- Eyes -->
           <circle cx="40" cy="27" r="2.5" fill="#ffffff"/>
           <circle cx="60" cy="27" r="2.5" fill="#ffffff"/>
         </svg>
-        <div class="logo-glow"></div>
       </div>
       <div class="logo-text">
-        <span class="logo-brand">3LECTRIC PENGUIN</span>
-        <span class="logo-sub">IT SECURITY</span>
+        <span class="logo-brand">ELECTRIC PENGUIN</span>
+        <span class="logo-sub">IT &amp; WEB SOLUTIONS</span>
       </div>
     </a>
     <nav class="nav-menu">
-      <a href="/#services" class="nav-link">
-        <span class="nav-number">01.</span> Services
-      </a>
-      <a href="/#console" class="nav-link">
-        <span class="nav-number">02.</span> Sandbox
-      </a>
-      <a href="/#clients" class="nav-link">
-        <span class="nav-number">03.</span> Clients
-      </a>
-      <a href="/#contact" class="nav-link">
-        <span class="nav-number">04.</span> Contact
-      </a>
-      <a href="/ctf" class="nav-link">
-        <span class="nav-number">05.</span> CTF
-      </a>
-      <a href="/#contact" class="btn-cyber-sm mobile-only-cta">
-        <span class="btn-text">Audit System</span>
-        <span class="btn-glitch-line"></span>
+      <a href="/#services" class="nav-link">Services</a>
+      <a href="/#clients" class="nav-link">Our Work</a>
+      <a href="/#console" class="nav-link">Interactive Demo</a>
+      <a href="/#contact" class="nav-link">Contact</a>
+      <a href="/#contact" class="btn-primary-sm mobile-only-cta">
+        <span>Get Free Quote</span>
       </a>
     </nav>
     <div class="header-actions">
-      <a href="/#contact" class="btn-cyber-sm">
-        <span class="btn-text">Audit System</span>
-        <span class="btn-glitch-line"></span>
+      <a href="/#contact" class="btn-primary-sm">
+        <span>Get Free Quote</span>
       </a>
     </div>
     <!-- Mobile Hamburger Toggle -->
@@ -66,11 +52,11 @@
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(10, 11, 16, 0.75);
+    background: rgba(11, 15, 25, 0.85);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(0, 210, 255, 0.1);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
     transition: background 0.3s ease, border-color 0.3s ease;
   }
 
@@ -96,8 +82,8 @@
     height: 40px;
     border-radius: 8px;
     overflow: hidden;
-    border: 1px solid rgba(0, 210, 255, 0.3);
-    box-shadow: 0 0 10px rgba(0, 210, 255, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    background: rgba(17, 24, 39, 0.8);
     transition: all 0.3s ease;
   }
 
@@ -109,22 +95,9 @@
     position: relative;
   }
 
-  .logo-glow {
-    position: absolute;
-    inset: 0;
-    border-radius: 8px;
-    box-shadow: inset 0 0 8px rgba(0, 210, 255, 0.4);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
   .logo-link:hover .logo-wrapper {
     border-color: var(--accent-blue);
-    box-shadow: 0 0 15px rgba(0, 210, 255, 0.35);
-  }
-
-  .logo-link:hover .logo-glow {
-    opacity: 1;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
   }
 
   .logo-text {
@@ -134,28 +107,27 @@
 
   .logo-brand {
     font-family: var(--font-display);
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     font-weight: 800;
-    letter-spacing: 1px;
+    letter-spacing: -0.3px;
     color: var(--text-primary);
-    line-height: 1;
+    line-height: 1.1;
     white-space: nowrap;
   }
 
   .logo-sub {
     font-family: var(--font-display);
-    font-size: 0.6rem;
-    font-weight: 500;
-    letter-spacing: 1.5px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 1px;
     color: var(--accent-blue);
-    margin-top: 3px;
-    text-shadow: 0 0 8px rgba(0, 210, 255, 0.3);
+    margin-top: 2px;
     white-space: nowrap;
   }
 
   .nav-menu {
     display: flex;
-    gap: 2.5rem;
+    gap: 2rem;
     align-items: center;
   }
 
@@ -163,73 +135,39 @@
     text-decoration: none;
     color: var(--text-secondary);
     font-family: var(--font-display);
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     font-weight: 500;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 0.35rem;
-  }
-
-  .nav-number {
-    color: var(--accent-blue);
-    font-size: 0.75rem;
-    opacity: 0.8;
+    transition: all 0.2s ease;
   }
 
   .nav-link:hover {
     color: var(--text-primary);
-    text-shadow: 0 0 8px rgba(0, 210, 255, 0.2);
     transform: translateY(-1px);
   }
 
-  /* Cyber Button Small */
-  .btn-cyber-sm {
-    position: relative;
-    display: inline-block;
-    padding: 0.5rem 1.2rem;
-    background: transparent;
+  /* Modern Primary Button */
+  .btn-primary-sm {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.55rem 1.25rem;
+    background: var(--accent-blue);
     border: 1px solid var(--accent-blue);
-    border-radius: 4px;
-    color: var(--accent-blue);
+    border-radius: 6px;
+    color: #ffffff;
     text-decoration: none;
     font-family: var(--font-display);
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 10px rgba(0, 210, 255, 0.1);
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.25);
   }
 
-  .btn-cyber-sm::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(0, 210, 255, 0.2),
-      transparent
-    );
-    transition: all 0.5s ease;
-  }
-
-  .btn-cyber-sm:hover::before {
-    left: 100%;
-  }
-
-  .btn-cyber-sm:hover {
-    background: rgba(0, 210, 255, 0.1);
-    box-shadow: 0 0 15px rgba(0, 210, 255, 0.3);
-    color: #fff;
-    border-color: #fff;
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  .btn-primary-sm:hover {
+    background: #2563eb;
+    border-color: #2563eb;
+    box-shadow: 0 4px 14px rgba(59, 130, 246, 0.35);
+    transform: translateY(-1px);
   }
 
   /* Mobile Toggler Styling */
@@ -281,18 +219,18 @@
     .nav-menu {
       position: fixed;
       inset: 0;
-      top: 72px; /* Header height */
-      background: rgba(10, 11, 16, 0.98);
+      top: 70px;
+      background: rgba(11, 15, 25, 0.98);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       flex-direction: column;
       justify-content: center;
-      gap: 2.5rem;
+      gap: 2rem;
       padding: 2rem;
       z-index: 999;
       transform: translateX(100%);
-      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-      border-left: 1px solid rgba(0, 210, 255, 0.1);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      border-left: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .nav-menu.mobile-open {
@@ -300,16 +238,16 @@
     }
 
     .nav-link {
-      font-size: 1.35rem;
+      font-size: 1.2rem;
       width: 100%;
-      justify-content: center;
+      text-align: center;
     }
 
     .mobile-only-cta {
-      display: inline-block;
-      margin-top: 1.5rem;
+      display: inline-flex;
+      margin-top: 1rem;
       padding: 0.8rem 2rem;
-      font-size: 0.85rem;
+      font-size: 0.95rem;
     }
 
     .header-actions {

@@ -10,7 +10,7 @@ interface Props {
 
 const { 
 	title, 
-	description = "3lectric Penguin IT Security provides high-performance web engineering and enterprise-grade penetration testing to protect your digital assets and accelerate your growth.",
+	description = "Electric Penguin IT Security provides high-performance web design, custom software development, and proactive digital security to help Toledo small businesses grow.",
 	image = "/favicon.svg"
 } = Astro.props;
 
@@ -46,18 +46,18 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || Astro.url.origin)
 
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		
-		<!-- Google Fonts for High-End Cyber Aesthetics -->
+		<!-- Google Fonts: Plus Jakarta Sans & Inter -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@500;700;800;900&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
 
 		<!-- Schema.org JSON-LD Structured Data for Local Business SEO -->
 		<script type="application/ld+json" is:inline>
 			{
 				"@context": "https://schema.org",
 				"@type": "ProfessionalService",
-				"name": "3lectric Penguin IT Security",
-				"description": "Professional web design, custom website development, and enterprise-grade cybersecurity audits for small businesses in Toledo, Ohio.",
+				"name": "Electric Penguin IT Security",
+				"description": "Professional web design, custom website development, and IT security services for small businesses in Toledo, Ohio.",
 				"url": "https://3lectricpenguin.com",
 				"logo": "https://3lectricpenguin.com/favicon.svg",
 				"image": "https://3lectricpenguin.com/favicon.svg",
@@ -67,34 +67,34 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || Astro.url.origin)
 					"addressRegion": "Ohio",
 					"addressCountry": "US"
 				},
-				"telephone": "+14194076342",
 				"geo": {
 					"@type": "GeoCircle",
 					"geoMidpoint": {
 						"@type": "GeoCoordinates",
-						"latitude": "42.3314",
-						"longitude": "-83.0458"
+						"latitude": "41.6528",
+						"longitude": "-83.5379"
 					},
-					"radius": "500000"
+					"radius": "50000"
 				},
-				"priceRange": "$$$"
+				"priceRange": "$$"
 			}
 		</script>
 		
 		<style is:global>
 			:root {
-				--bg-primary: #0a0b10;
-				--bg-secondary: #11131c;
-				--bg-tertiary: #181c28;
-				--accent-blue: #00d2ff; /* Electric blue matching the logo core */
-				--accent-blue-rgb: 0, 210, 255;
+				--bg-primary: #0b0f19;
+				--bg-secondary: #111827;
+				--bg-tertiary: #1f2937;
+				--accent-blue: #3b82f6;
+				--accent-light: #60a5fa;
+				--accent-glow: rgba(59, 130, 246, 0.15);
 				
 				--text-primary: #f8fafc;
-				--text-secondary: #94a3b8;
-				--text-muted: #64748b;
+				--text-secondary: #cbd5e1;
+				--text-muted: #94a3b8;
 				
 				--font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-				--font-display: 'Orbitron', var(--font-sans);
+				--font-display: 'Plus Jakarta Sans', var(--font-sans);
 			}
 
 			* {
@@ -121,7 +121,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || Astro.url.origin)
 
 			/* Global Selection Style */
 			::selection {
-				background-color: rgba(0, 210, 255, 0.25);
+				background-color: rgba(59, 130, 246, 0.3);
 				color: #fff;
 			}
 
@@ -133,7 +133,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || Astro.url.origin)
 				background: var(--bg-primary);
 			}
 			::-webkit-scrollbar-thumb {
-				background: rgba(0, 210, 255, 0.25);
+				background: rgba(59, 130, 246, 0.3);
 				border-radius: 4px;
 				border: 2px solid var(--bg-primary);
 			}

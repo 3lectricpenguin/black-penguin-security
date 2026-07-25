@@ -7,12 +7,11 @@
       <!-- Contact Info -->
       <div class="contact-info">
         <div class="section-label">
-          <span class="label-number">04 //</span>
-          <span class="label-text">GET IN TOUCH</span>
+          <span class="label-text">CONTACT US</span>
         </div>
         <h2 class="section-title">Start a Conversation</h2>
         <p class="contact-desc">
-          Based in Toledo, Ohio, we focus on small businesses' online success and security. Have a project in mind, need to secure your systems, or looking for IT support? Feel free to reach out via the form, email, or call us directly.
+          Based in Toledo, Ohio, we focus on small business online growth and digital security. Have a project in mind, need a security audit, or looking for IT support? Reach out via our form or email us directly.
         </p>
 
         <div class="contact-channels">
@@ -42,19 +41,6 @@
             </div>
           </div>
 
-          <!-- Direct Phone Line -->
-          <div class="channel-item">
-            <div class="channel-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-              </svg>
-            </div>
-            <div class="channel-details">
-              <span class="channel-lbl">DIRECT LINE</span>
-              <a href="tel:+14194076342" class="channel-val">(419) 407-6342</a>
-            </div>
-          </div>
-
           <!-- Response Time -->
           <div class="channel-item">
             <div class="channel-icon">
@@ -78,20 +64,20 @@
               </svg>
             </div>
             <div class="channel-details">
-              <span class="channel-lbl">SERVICE COVERAGE</span>
-              <span class="channel-val">Remote & Physical Support in Ohio, Michigan, and Indiana.</span>
+              <span class="channel-lbl">LOCATION &amp; COVERAGE</span>
+              <span class="channel-val">Toledo, OH • Remote &amp; On-Site Support</span>
             </div>
           </div>
         </div>
 
-        <!-- Privacy Guarantee Box -->
+        <!-- Privacy Box -->
         <div class="privacy-box">
           <div class="privacy-header">
             <span class="privacy-dot"></span>
-            <span>PRIVACY & CONFIDENTIALITY</span>
+            <span>PRIVACY &amp; CONFIDENTIALITY</span>
           </div>
           <p class="privacy-text">
-            Your connection is secure. All messages are encrypted in transit and handled with strict confidentiality.
+            Your privacy is strictly respected. All project inquiries and messages remain confidential.
           </p>
         </div>
       </div>
@@ -99,40 +85,35 @@
       <!-- Contact Form -->
       <div class="contact-form-container">
         <form class="secure-form" id="secure-contact-form" action="https://formsubmit.co/3lectricpenguin@gmail.com" method="POST">
-          <!-- FormSubmit Configuration -->
-          <input type="hidden" name="_subject" value="New Contact Form Submission - 3lectric Penguin IT Security" />
+          <input type="hidden" name="_subject" value="New Contact Inquiry - Electric Penguin IT Security" />
           <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="_template" value="table" />
           
           <div class="form-row split">
             <div class="form-group">
               <label for="form-name">YOUR NAME / COMPANY</label>
-              <input type="text" id="form-name" name="name" placeholder="John Doe or Acme Corp" required />
-              <span class="focus-line"></span>
+              <input type="text" id="form-name" name="name" placeholder="John Doe or Local Business LLC" required />
             </div>
             <div class="form-group">
               <label for="form-email">YOUR EMAIL ADDRESS</label>
               <input type="email" id="form-email" name="email" placeholder="you@domain.com" required />
-              <span class="focus-line"></span>
             </div>
           </div>
 
           <div class="form-group">
-            <label for="form-protocol">WHAT DO YOU NEED HELP WITH?</label>
+            <label for="form-protocol">HOW CAN WE HELP YOU?</label>
             <select id="form-protocol" name="service" required>
               <option value="" disabled selected>Select a service...</option>
-              <option value="Web Design & Development">Web Design & Development</option>
-              <option value="Security Audit & Assessment">Security Audit & Assessment</option>
-              <option value="Penetration Testing (Ethical Hacking)">Penetration Testing (Ethical Hacking)</option>
-              <option value="IT Consulting & Support">IT Consulting & Support</option>
+              <option value="Web Design & Development">Custom Web Design &amp; Development</option>
+              <option value="Website & Data Security Audit">Website &amp; Data Security Audit</option>
+              <option value="IT Support & Infrastructure">IT Support &amp; Infrastructure</option>
+              <option value="General Inquiry">General Inquiry</option>
             </select>
-            <span class="focus-line"></span>
           </div>
 
           <div class="form-group">
             <label for="form-message">PROJECT DETAILS / MESSAGE</label>
-            <textarea id="form-message" name="message" rows="5" placeholder="Tell us about your project, goals, or what you need assistance with..." required></textarea>
-            <span class="focus-line"></span>
+            <textarea id="form-message" name="message" rows="5" placeholder="Tell us about your project, goals, or what technical help you need..." required></textarea>
           </div>
 
           <button type="submit" class="btn-submit">
@@ -165,8 +146,8 @@
       const emailInput = document.getElementById('form-email') as HTMLInputElement;
       const email = emailInput ? emailInput.value.trim() : '';
       
-      // Strict regex validation for email
-      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      // Clean email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!email || !emailRegex.test(email)) {
         feedback.style.display = 'block';
         feedback.style.opacity = '1';
@@ -174,62 +155,22 @@
         feedback.innerHTML = '❌ Please enter a valid email address.';
         return;
       }
-      
-      const domain = email.split('@')[1];
-      if (!domain) {
-        feedback.style.display = 'block';
-        feedback.style.opacity = '1';
-        feedback.className = 'form-feedback error';
-        feedback.innerHTML = '❌ Invalid email format.';
-        return;
-      }
 
-      // Show verifying status and disable submit button
+      // Show sending state
       if (submitBtn && btnText) {
         submitBtn.disabled = true;
-        btnText.textContent = 'VERIFYING EMAIL...';
+        btnText.textContent = 'SENDING MESSAGE...';
       }
       feedback.style.display = 'block';
       feedback.style.opacity = '1';
       feedback.className = 'form-feedback success';
-      feedback.innerHTML = '🔍 Checking email server status...';
-
-      // Perform DNS MX/A record verification
-      let isDomainValid = true;
-      try {
-        const mxResponse = await fetch(`https://dns.google/resolve?name=${encodeURIComponent(domain)}&type=MX`);
-        const mxData = await mxResponse.json();
-        
-        const hasMX = mxData.Answer && mxData.Answer.length > 0;
-        
-        if (!hasMX) {
-          // Fallback to checking A records
-          const aResponse = await fetch(`https://dns.google/resolve?name=${encodeURIComponent(domain)}&type=A`);
-          const aData = await aResponse.json();
-          const hasA = aData.Answer && aData.Answer.length > 0;
-          if (!hasA) {
-            isDomainValid = false;
-          }
-        }
-      } catch (err) {
-        console.error('DNS verification failed, failing open:', err);
-      }
-
-      if (!isDomainValid) {
-        feedback.className = 'form-feedback error';
-        feedback.innerHTML = `❌ The domain '@${domain}' does not appear to be configured to receive email. Please check for typos.`;
-        if (submitBtn && btnText) {
-          submitBtn.disabled = false;
-          btnText.textContent = originalBtnText;
-        }
-        return;
-      }
+      feedback.innerHTML = 'Sending your message...';
 
       const nameInput = document.getElementById('form-name') as HTMLInputElement;
       const protocolInput = document.getElementById('form-protocol') as HTMLSelectElement;
       const messageInput = document.getElementById('form-message') as HTMLTextAreaElement;
 
-      // Submit via fetch to FormSubmit pointing to 3lectricpenguin@gmail.com
+      // Direct FormSubmit fetch API
       fetch('https://formsubmit.co/ajax/3lectricpenguin@gmail.com', {
         method: 'POST',
         headers: {
@@ -241,19 +182,16 @@
           email: email,
           service: protocolInput ? protocolInput.value : '',
           message: messageInput ? messageInput.value.trim() : '',
-          _subject: 'New Contact Form Submission - 3lectric Penguin IT Security'
+          _subject: 'New Contact Inquiry - Electric Penguin IT Security'
         })
       })
       .then((res) => {
-        if (!res.ok) throw new Error('Network response was not ok');
+        if (!res.ok) throw new Error('Response error');
         return res.json();
       })
       .then(() => {
-        // Visual feedback response
         feedback.className = 'form-feedback success';
         feedback.innerHTML = '✔ Message sent successfully! We will get back to you shortly.';
-        
-        // Reset form
         (form as HTMLFormElement).reset();
         
         setTimeout(() => {
@@ -300,7 +238,6 @@
         }, 2000);
       }).catch(err => {
         console.error('Failed to copy email: ', err);
-        if (tooltip) tooltip.textContent = 'Failed to copy';
       });
     });
   }
@@ -311,7 +248,7 @@
     position: relative;
     padding: 6rem 2rem;
     background-color: var(--bg-secondary);
-    border-top: 1px solid rgba(255, 255, 255, 0.03);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
   }
 
   .contact-container {
@@ -334,28 +271,20 @@
   .section-label {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .label-number {
-    font-family: var(--font-display);
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: var(--accent-blue);
+    margin-bottom: 0.75rem;
   }
 
   .label-text {
     font-family: var(--font-display);
     font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 2px;
-    color: var(--text-muted);
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--accent-light);
   }
 
   .section-title {
     font-family: var(--font-display);
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     font-weight: 800;
     color: var(--text-primary);
     margin-bottom: 1rem;
@@ -366,14 +295,14 @@
     font-size: 1.05rem;
     line-height: 1.6;
     color: var(--text-secondary);
-    margin-bottom: 2.5rem;
+    margin-bottom: 2.25rem;
   }
 
   .contact-channels {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
   }
 
   .channel-item {
@@ -385,20 +314,14 @@
   .channel-icon {
     width: 40px;
     height: 40px;
-    border-radius: 6px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.2);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--accent-blue);
-    transition: all 0.3s ease;
-  }
-
-  .channel-item:hover .channel-icon {
-    border-color: var(--accent-blue);
-    box-shadow: 0 0 10px rgba(0, 210, 255, 0.2);
-    background: rgba(0, 210, 255, 0.05);
+    color: var(--accent-light);
+    flex-shrink: 0;
   }
 
   .channel-details {
@@ -409,21 +332,15 @@
   .channel-lbl {
     font-family: var(--font-display);
     font-size: 0.65rem;
-    font-weight: bold;
+    font-weight: 700;
     color: var(--text-muted);
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
   }
 
   .channel-val {
     font-size: 0.95rem;
     color: var(--text-primary);
     text-decoration: none;
-    transition: color 0.3s;
-  }
-
-  a.channel-val:hover {
-    color: var(--accent-blue);
-    text-shadow: 0 0 5px rgba(0, 210, 255, 0.2);
   }
 
   /* Copy Email Button Styling */
@@ -439,13 +356,12 @@
     align-items: center;
     gap: 0.5rem;
     position: relative;
-    transition: color 0.3s;
+    transition: color 0.25s;
     text-align: left;
   }
 
   .copy-email-btn:hover {
-    color: var(--accent-blue);
-    text-shadow: 0 0 5px rgba(0, 210, 255, 0.2);
+    color: var(--accent-light);
   }
 
   .copy-icon-wrapper {
@@ -453,66 +369,40 @@
     align-items: center;
     justify-content: center;
     color: var(--text-muted);
-    transition: color 0.3s;
   }
 
   .copy-email-btn:hover .copy-icon-wrapper {
-    color: var(--accent-blue);
+    color: var(--accent-light);
   }
 
   .copy-tooltip {
     position: absolute;
-    bottom: calc(100% + 8px);
+    bottom: calc(100% + 6px);
     left: 50%;
-    transform: translateX(-50%) translateY(4px);
+    transform: translateX(-50%);
     background: var(--bg-tertiary);
-    border: 1px solid rgba(0, 210, 255, 0.3);
-    color: var(--accent-blue);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--text-primary);
     padding: 4px 8px;
     border-radius: 4px;
     font-size: 0.7rem;
     font-family: var(--font-display);
-    font-weight: bold;
-    letter-spacing: 0.5px;
+    font-weight: 600;
     white-space: nowrap;
     opacity: 0;
     pointer-events: none;
-    transition: all 0.2s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    z-index: 10;
-  }
-
-  .copy-tooltip::after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    border-width: 4px;
-    border-style: solid;
-    border-color: rgba(0, 210, 255, 0.3) transparent transparent transparent;
+    transition: opacity 0.2s ease;
   }
 
   .copy-email-btn:hover .copy-tooltip {
     opacity: 1;
-    transform: translateX(-50%) translateY(0);
-  }
-
-  .copy-email-btn.copied .copy-tooltip {
-    background: var(--accent-blue);
-    color: #060814;
-    border-color: var(--accent-blue);
-  }
-
-  .copy-email-btn.copied .copy-tooltip::after {
-    border-top-color: var(--accent-blue);
   }
 
   /* Privacy Box Styling */
   .privacy-box {
-    background: rgba(10, 11, 16, 0.6);
-    border: 1px dashed rgba(0, 210, 255, 0.25);
-    border-radius: 6px;
+    background: rgba(15, 23, 42, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
     padding: 1.25rem;
     max-width: 380px;
   }
@@ -522,11 +412,11 @@
     align-items: center;
     gap: 0.5rem;
     font-family: var(--font-display);
-    font-size: 0.65rem;
-    font-weight: bold;
-    color: var(--accent-blue);
-    letter-spacing: 1px;
-    margin-bottom: 0.5rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--accent-light);
+    letter-spacing: 0.5px;
+    margin-bottom: 0.4rem;
   }
 
   .privacy-dot {
@@ -534,11 +424,10 @@
     height: 6px;
     border-radius: 50%;
     background: var(--accent-blue);
-    box-shadow: 0 0 5px var(--accent-blue);
   }
 
   .privacy-text {
-    font-size: 0.8rem;
+    font-size: 0.825rem;
     color: var(--text-secondary);
     line-height: 1.5;
     margin: 0;
@@ -546,22 +435,22 @@
 
   /* Contact Form Container */
   .contact-form-container {
-    background: rgba(24, 28, 40, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(31, 41, 55, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 12px;
-    padding: 3rem;
+    padding: 2.5rem;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
   }
 
   .secure-form {
     display: flex;
     flex-direction: column;
-    gap: 1.8rem;
+    gap: 1.5rem;
   }
 
   .form-row {
     display: flex;
-    gap: 1.5rem;
+    gap: 1.25rem;
   }
 
   .form-row.split .form-group {
@@ -571,32 +460,30 @@
   .form-group {
     display: flex;
     flex-direction: column;
-    position: relative;
   }
 
   .form-group label {
     font-family: var(--font-display);
     font-size: 0.7rem;
-    font-weight: bold;
-    letter-spacing: 1px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
     color: var(--text-secondary);
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.5rem;
   }
 
   .form-group input,
   .form-group select,
   .form-group textarea {
-    background: rgba(10, 11, 16, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
-    padding: 0.9rem 1.1rem;
-    color: #fff;
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 6px;
+    padding: 0.85rem 1rem;
+    color: #ffffff;
     font-family: var(--font-sans);
     font-size: 0.95rem;
-    transition: all 0.3s ease;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
   }
 
-  /* Remove default styling for select arrow */
   .form-group select {
     appearance: none;
     -webkit-appearance: none;
@@ -609,33 +496,15 @@
 
   .form-group input::placeholder,
   .form-group textarea::placeholder {
-    color: rgba(255, 255, 255, 0.25);
+    color: var(--text-muted);
   }
 
   .form-group input:focus,
   .form-group select:focus,
   .form-group textarea:focus {
     outline: none;
-    border-color: rgba(0, 210, 255, 0.6);
-    box-shadow: 0 0 10px rgba(0, 210, 255, 0.15);
-    background: #0a0b10;
-  }
-
-  .focus-line {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 1.5px;
-    background: var(--accent-blue);
-    transition: all 0.3s ease;
-  }
-
-  .form-group input:focus ~ .focus-line,
-  .form-group select:focus ~ .focus-line,
-  .form-group textarea:focus ~ .focus-line {
-    left: 0;
-    width: 100%;
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
   }
 
   /* Submit Button */
@@ -643,78 +512,66 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.8rem;
-    padding: 1.1rem 2.5rem;
-    background: transparent;
+    gap: 0.6rem;
+    padding: 0.95rem 2rem;
+    background: var(--accent-blue);
     border: 1px solid var(--accent-blue);
-    border-radius: 4px;
-    color: var(--accent-blue);
+    border-radius: 6px;
+    color: #ffffff;
     font-family: var(--font-display);
     font-size: 0.85rem;
     font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
+    letter-spacing: 0.5px;
     cursor: pointer;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 10px rgba(0, 210, 255, 0.08);
+    transition: all 0.25s ease;
   }
 
   .btn-submit:hover {
-    background: var(--accent-blue);
-    color: #060814;
-    box-shadow: 0 0 25px rgba(0, 210, 255, 0.4);
-    transform: translateY(-2px);
+    background: #2563eb;
+    border-color: #2563eb;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.35);
   }
 
   .btn-submit:disabled {
-    opacity: 0.5;
+    opacity: 0.6;
     cursor: not-allowed;
-    pointer-events: none;
     transform: none;
-    box-shadow: none;
   }
 
   .submit-arrow {
-    transition: transform 0.3s ease;
+    transition: transform 0.25s ease;
   }
 
   .btn-submit:hover .submit-arrow {
-    transform: translateX(4px);
+    transform: translateX(3px);
   }
 
   /* Feedback box */
   .form-feedback {
     display: none;
-    padding: 1rem;
-    border-radius: 4px;
-    font-family: monospace;
-    font-size: 0.8rem;
-    margin-top: 1rem;
-    transition: opacity 0.5s ease;
+    padding: 0.85rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
   }
 
   .form-feedback.success {
-    background: rgba(0, 210, 255, 0.08);
-    border: 1px solid rgba(0, 210, 255, 0.3);
-    color: var(--accent-blue);
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    color: #10b981;
   }
 
   .form-feedback.error {
-    background: rgba(239, 68, 68, 0.08);
+    background: rgba(239, 68, 68, 0.1);
     border: 1px solid rgba(239, 68, 68, 0.3);
     color: #ef4444;
   }
 
-  /* Responsive Styling */
   @media (max-width: 992px) {
     .contact-grid {
       grid-template-columns: 1fr;
       gap: 3rem;
-    }
-    
-    .contact-form-container {
-      padding: 2rem;
     }
   }
 
@@ -724,25 +581,16 @@
     }
 
     .contact-form-container {
-      padding: 1.75rem 1.25rem;
+      padding: 1.5rem 1.25rem;
     }
 
     .section-title {
-      font-size: 2rem;
+      font-size: 1.85rem;
     }
 
     .form-row.split {
       flex-direction: column;
-      gap: 1.8rem;
-    }
-
-    .email-text {
-      font-size: 0.85rem;
-      word-break: break-all;
-    }
-
-    .channel-val {
-      font-size: 0.85rem;
+      gap: 1.5rem;
     }
 
     .btn-submit {

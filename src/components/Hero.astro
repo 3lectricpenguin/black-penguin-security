@@ -2,180 +2,166 @@
 // Hero.astro
 ---
 <section class="hero-section">
-  <!-- Cyber Background Elements -->
-  <div class="cyber-grid"></div>
-  <div class="circuit-bg">
-    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="circuit-glow" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="rgba(0, 210, 255,0.01)" />
-          <stop offset="50%" stop-color="rgba(0, 210, 255,0.08)" />
-          <stop offset="100%" stop-color="rgba(0, 210, 255,0.01)" />
-        </linearGradient>
-      </defs>
-      <!-- Circuit paths representing logo lines -->
-      <path d="M 50,100 L 150,100 L 200,150 L 200,300 M 350,100 L 400,150 L 500,150" stroke="url(#circuit-glow)" stroke-width="1.5" fill="none" />
-      <path d="M 100,500 L 200,500 L 250,450 L 250,350 M 900,200 L 800,200 L 750,250" stroke="url(#circuit-glow)" stroke-width="1.5" fill="none" />
-      <path d="M 850,600 L 750,600 L 700,550 L 700,450" stroke="url(#circuit-glow)" stroke-width="1.5" fill="none" />
-    </svg>
-  </div>
+  <!-- Subtle Background Grid & Glow -->
+  <div class="hero-bg-grid"></div>
+  <div class="hero-bg-glow"></div>
 
   <div class="hero-container">
     <div class="hero-content">
       <div class="status-indicator">
         <span class="status-dot"></span>
-        <span class="status-text">SYSTEMS ACTIVE // FIREWALL ENGAGED</span>
+        <span class="status-text">TOLEDO, OH • WEB DESIGN &amp; IT SECURITY</span>
       </div>
       
       <h1 class="hero-title">
-        Toledo Web Design <br/>
-        & <span class="text-gradient">Cyber Defense</span>
+        High-Speed Websites &amp; Proactive <span class="text-gradient">IT Security</span>
       </h1>
       
       <p class="hero-description">
-        We build fast, secure websites and perform enterprise-grade cybersecurity assessments. 3lectric Penguin IT helps Toledo small businesses succeed online with expert web design, secure hosting, and defensive engineering.
+        We build fast, secure websites and provide dependable IT protection tailored for Toledo small businesses. Turn visitors into loyal customers with modern web design built for growth.
       </p>
 
       <div class="hero-buttons">
-        <a href="#contact" class="btn-cyber-primary">
-          <span class="btn-glow-container">
-            <span class="btn-glow"></span>
-          </span>
-          <span class="btn-label">Book Security Audit</span>
+        <a href="#contact" class="btn-primary">
+          <span>Get a Free Consultation</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
         </a>
-        <a href="#console" class="btn-cyber-secondary">
-          <span class="btn-label">Explore Sandbox</span>
+        <a href="#clients" class="btn-secondary">
+          <span>View Featured Work</span>
         </a>
       </div>
 
       <div class="hero-features">
         <div class="hero-feat-item">
-          <span class="feat-val">99.9%</span>
-          <span class="feat-lbl">Uptime Standard</span>
+          <span class="feat-val">100%</span>
+          <span class="feat-lbl">Page Speed Focus</span>
         </div>
         <div class="hero-feat-item">
-          <span class="feat-val">&lt; 100ms</span>
-          <span class="feat-lbl">Response Latency</span>
+          <span class="feat-val">&lt; 1s</span>
+          <span class="feat-lbl">Target Load Time</span>
         </div>
         <div class="hero-feat-item">
-          <span class="feat-val">ZERO</span>
-          <span class="feat-lbl">Breach History</span>
+          <span class="feat-val">Local</span>
+          <span class="feat-lbl">Toledo, OH Support</span>
         </div>
       </div>
     </div>
 
-    <!-- Interactive Microchip Centerpiece -->
+    <!-- Modern Performance Showcase Card -->
     <div class="hero-visual">
-      <div class="chip-container">
-        <!-- Pins around the chip -->
-        <div class="chip-pins top-pins">
-          {Array.from({ length: 12 }).map((_, i) => <div class="pin" style={`--delay: ${i * 0.1}s`}></div>)}
-        </div>
-        <div class="chip-pins bottom-pins">
-          {Array.from({ length: 12 }).map((_, i) => <div class="pin" style={`--delay: ${i * 0.1}s`}></div>)}
-        </div>
-        <div class="chip-pins left-pins">
-          {Array.from({ length: 10 }).map((_, i) => <div class="pin" style={`--delay: ${i * 0.15}s`}></div>)}
-        </div>
-        <div class="chip-pins right-pins">
-          {Array.from({ length: 10 }).map((_, i) => <div class="pin" style={`--delay: ${i * 0.15}s`}></div>)}
+      <div class="showcase-card">
+        <div class="showcase-header">
+          <div class="showcase-dots">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <div class="showcase-url">electricpenguin.com/status</div>
+          <span class="status-pill">LIVE</span>
         </div>
 
-        <!-- The Microchip Body -->
-        <div class="chip-body">
-          <div class="chip-inner-glow"></div>
-          <div class="chip-metallic-texture"></div>
-          
-          <!-- Circuit traces on the chip -->
-          <svg class="chip-svg-traces" viewBox="0 0 200 200">
-            <path d="M 20,40 L 60,40 L 80,60" stroke="rgba(0, 210, 255, 0.2)" stroke-width="1" fill="none" />
-            <path d="M 180,40 L 140,40 L 120,60" stroke="rgba(0, 210, 255, 0.2)" stroke-width="1" fill="none" />
-            <path d="M 20,160 L 60,160 L 80,140" stroke="rgba(0, 210, 255, 0.2)" stroke-width="1" fill="none" />
-            <path d="M 180,160 L 140,160 L 120,140" stroke="rgba(0, 210, 255, 0.2)" stroke-width="1" fill="none" />
-            <path d="M 100,20 L 100,50" stroke="rgba(0, 210, 255, 0.2)" stroke-width="1" fill="none" />
-            <path d="M 100,180 L 100,150" stroke="rgba(0, 210, 255, 0.2)" stroke-width="1" fill="none" />
-          </svg>
-
-          <!-- Core of the chip -->
-          <div class="chip-core">
-            <div class="core-black">3LECTRIC</div>
-            <div class="core-tech">PENGUIN</div>
-            <div class="core-glow-layer"></div>
+        <div class="showcase-body">
+          <div class="metric-card score-card">
+            <div class="score-ring">
+              <svg viewBox="0 0 36 36" class="circular-chart blue">
+                <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                <path class="circle" stroke-dasharray="99, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                <text x="18" y="20.35" class="percentage">99</text>
+              </svg>
+            </div>
+            <div class="metric-info">
+              <span class="metric-title">Performance Score</span>
+              <span class="metric-sub">Google Lighthouse Standard</span>
+            </div>
           </div>
 
-          <!-- Live telemetry reads -->
-          <div class="chip-telemetry">
-            <div class="telemetry-row">
-              <span>FW_STATUS</span>
-              <span class="tele-val val-blue">ACTIVE</span>
+          <div class="status-rows">
+            <div class="status-row">
+              <div class="row-icon check">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <div class="row-text">
+                <span class="row-title">SSL Encryption &amp; Security</span>
+                <span class="row-desc">256-Bit TLS Active</span>
+              </div>
+              <span class="row-badge">Verified</span>
             </div>
-            <div class="telemetry-row">
-              <span>SCAN_PROC</span>
-              <span class="tele-val" id="tele-scan">100%</span>
+
+            <div class="status-row">
+              <div class="row-icon check">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <div class="row-text">
+                <span class="row-title">Mobile Responsive Design</span>
+                <span class="row-desc">All Screen Sizes Supported</span>
+              </div>
+              <span class="row-badge">Optimized</span>
             </div>
-            <div class="telemetry-row">
-              <span>SYS_TEMP</span>
-              <span class="tele-val" id="tele-temp">38°C</span>
+
+            <div class="status-row">
+              <div class="row-icon check">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <div class="row-text">
+                <span class="row-title">Local SEO Structure</span>
+                <span class="row-desc">Schema &amp; Meta Pre-Configured</span>
+              </div>
+              <span class="row-badge">Ready</span>
             </div>
           </div>
+        </div>
+
+        <div class="showcase-footer">
+          <span>Engineered for Toledo Businesses</span>
+          <span class="footer-badge">Electric Penguin</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<script>
-  // Simple simulation of chip state
-  const scanEl = document.getElementById('tele-scan');
-  const tempEl = document.getElementById('tele-temp');
-  
-  if (scanEl && tempEl) {
-    setInterval(() => {
-      // Random temperature fluctuation
-      const temp = Math.floor(36 + Math.random() * 6);
-      tempEl.textContent = `${temp}°C`;
-
-      // Cycle load process
-      const load = Math.floor(70 + Math.random() * 30);
-      scanEl.textContent = `${load}%`;
-      if (load > 90) {
-        scanEl.className = 'tele-val val-warn';
-      } else {
-        scanEl.className = 'tele-val val-blue';
-      }
-    }, 2000);
-  }
-</script>
-
 <style>
   .hero-section {
     position: relative;
-    padding: 8rem 2rem 6rem 2rem;
-    min-height: 85vh;
+    padding: 6rem 2rem 5rem 2rem;
+    min-height: 80vh;
     display: flex;
     align-items: center;
     overflow: hidden;
     background-color: var(--bg-primary);
   }
 
-  .cyber-grid {
+  .hero-bg-grid {
     position: absolute;
     inset: 0;
     background-image: 
-      linear-gradient(rgba(0, 210, 255, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0, 210, 255, 0.03) 1px, transparent 1px);
-    background-size: 50px 50px;
-    mask-image: radial-gradient(circle at 60% 40%, black, transparent 75%);
-    -webkit-mask-image: radial-gradient(circle at 60% 40%, black, transparent 75%);
+      linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: radial-gradient(circle at 60% 40%, black, transparent 80%);
+    -webkit-mask-image: radial-gradient(circle at 60% 40%, black, transparent 80%);
     pointer-events: none;
     z-index: 1;
   }
 
-  .circuit-bg {
+  .hero-bg-glow {
     position: absolute;
-    inset: 0;
+    top: 20%;
+    right: 15%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, transparent 70%);
     pointer-events: none;
-    z-index: 2;
+    z-index: 1;
   }
 
   .hero-container {
@@ -183,7 +169,7 @@
     margin: 0 auto;
     width: 100%;
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-columns: 1.15fr 0.85fr;
     gap: 4rem;
     align-items: center;
     position: relative;
@@ -197,142 +183,107 @@
   }
 
   .status-indicator {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 0.6rem;
-    padding: 0.4rem 0.8rem;
-    background: rgba(0, 210, 255, 0.05);
-    border: 1px solid rgba(0, 210, 255, 0.2);
-    border-radius: 4px;
-    margin-bottom: 2rem;
+    padding: 0.4rem 0.9rem;
+    background: rgba(59, 130, 246, 0.08);
+    border: 1px solid rgba(59, 130, 246, 0.25);
+    border-radius: 20px;
+    margin-bottom: 1.75rem;
   }
 
   .status-dot {
-    width: 6px;
-    height: 6px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
     background-color: var(--accent-blue);
-    box-shadow: 0 0 8px var(--accent-blue);
-    animation: pulse 1.5s infinite ease-in-out;
+    box-shadow: 0 0 10px var(--accent-blue);
   }
 
   .status-text {
     font-family: var(--font-display);
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     font-weight: 700;
-    letter-spacing: 2px;
-    color: var(--accent-blue);
+    letter-spacing: 0.5px;
+    color: var(--accent-light);
   }
 
   .hero-title {
     font-family: var(--font-display);
-    font-size: 3.5rem;
-    font-weight: 900;
+    font-size: 3.25rem;
+    font-weight: 800;
     line-height: 1.15;
-    letter-spacing: -0.5px;
+    letter-spacing: -1px;
     color: var(--text-primary);
     margin-bottom: 1.5rem;
   }
 
   .text-gradient {
-    color: #fff;
-    text-shadow: 0 0 10px rgba(0, 210, 255, 0.2);
-    background: linear-gradient(135deg, #fff 30%, var(--accent-blue) 100%);
+    background: linear-gradient(135deg, #ffffff 30%, var(--accent-light) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
   .hero-description {
-    font-size: 1.15rem;
-    line-height: 1.6;
+    font-size: 1.1rem;
+    line-height: 1.65;
     color: var(--text-secondary);
-    margin-bottom: 2.5rem;
+    margin-bottom: 2.25rem;
     max-width: 580px;
   }
 
   .hero-buttons {
     display: flex;
-    gap: 1.5rem;
-    margin-bottom: 4rem;
+    gap: 1.25rem;
+    margin-bottom: 3.5rem;
     flex-wrap: wrap;
   }
 
-  /* Cyber Button Primary */
-  .btn-cyber-primary {
-    position: relative;
+  /* Primary Button */
+  .btn-primary {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 1rem 2.2rem;
+    gap: 0.6rem;
+    padding: 0.9rem 1.8rem;
     background: var(--accent-blue);
-    color: #060814;
+    color: #ffffff;
     text-decoration: none;
     font-family: var(--font-display);
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    border-radius: 4px;
-    overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    border: 1px solid var(--accent-blue);
+    border-radius: 8px;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
   }
 
-  .btn-cyber-primary:hover {
+  .btn-primary:hover {
+    background: #2563eb;
     transform: translateY(-2px);
-    background: #000;
-    color: var(--accent-blue);
-    border-color: var(--accent-blue);
-    box-shadow: 0 0 25px rgba(0, 210, 255, 0.45);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
   }
 
-  .btn-glow-container {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-    pointer-events: none;
-  }
-
-  .btn-glow {
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 70%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  .btn-cyber-primary:hover .btn-glow {
-    opacity: 1;
-    animation: rotateGlow 3s linear infinite;
-  }
-
-  /* Cyber Button Secondary */
-  .btn-cyber-secondary {
+  /* Secondary Button */
+  .btn-secondary {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 1rem 2.2rem;
-    background: transparent;
+    padding: 0.9rem 1.8rem;
+    background: rgba(255, 255, 255, 0.04);
     color: var(--text-primary);
     text-decoration: none;
     font-family: var(--font-display);
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    border-radius: 4px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    transition: all 0.3s ease;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    transition: all 0.25s ease;
   }
 
-  .btn-cyber-secondary:hover {
-    border-color: var(--accent-blue);
-    color: var(--accent-blue);
-    background: rgba(0, 210, 255, 0.05);
-    box-shadow: 0 0 15px rgba(0, 210, 255, 0.15);
+  .btn-secondary:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.08);
     transform: translateY(-2px);
   }
 
@@ -351,241 +302,213 @@
 
   .feat-val {
     font-family: var(--font-display);
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: 800;
     color: var(--text-primary);
     line-height: 1.2;
   }
 
   .feat-lbl {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 1px;
     margin-top: 4px;
   }
 
-  /* Microchip Styling */
+  /* Showcase Card Styling */
   .hero-visual {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
   }
 
-  .chip-container {
-    position: relative;
-    width: 320px;
-    height: 320px;
-  }
-
-  .chip-body {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 280px;
-    height: 280px;
-    background: linear-gradient(135deg, #1c2030 0%, #0d0f17 100%);
-    border: 1px solid rgba(0, 210, 255, 0.25);
-    border-radius: 16px;
-    box-shadow: 
-      0 10px 40px rgba(0,0,0,0.6),
-      0 0 30px rgba(0, 210, 255, 0.15);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    z-index: 5;
-  }
-
-  .chip-inner-glow {
-    position: absolute;
-    inset: 1px;
-    border-radius: 15px;
-    box-shadow: inset 0 0 15px rgba(0, 210, 255, 0.15);
-    pointer-events: none;
-  }
-
-  .chip-metallic-texture {
-    position: absolute;
-    inset: 0;
-    background-image: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.03) 0%, transparent 60%);
-    pointer-events: none;
-  }
-
-  .chip-svg-traces {
-    position: absolute;
-    inset: 0;
+  .showcase-card {
     width: 100%;
-    height: 100%;
-    pointer-events: none;
+    max-width: 440px;
+    background: var(--bg-secondary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(59, 130, 246, 0.1);
+    overflow: hidden;
   }
 
-  .chip-core {
-    position: relative;
-    width: 100px;
-    height: 100px;
-    background: radial-gradient(circle, #273045 0%, #151824 100%);
-    border: 1.5px solid var(--accent-blue);
-    border-radius: 12px;
-    box-shadow: 
-      0 0 20px rgba(0, 210, 255, 0.25),
-      inset 0 0 15px rgba(0, 210, 255, 0.2);
+  .showcase-header {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-    animation: corePulse 4s infinite ease-in-out;
+    justify-content: space-between;
+    padding: 0.85rem 1.25rem;
+    background: rgba(15, 23, 42, 0.6);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   }
 
-  .core-black {
-    font-family: var(--font-display);
-    font-size: 1.7rem;
-    font-weight: 900;
-    letter-spacing: 2px;
-    color: #fff;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
-    line-height: 1;
+  .showcase-dots {
+    display: flex;
+    gap: 6px;
   }
 
-  .core-tech {
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+  .dot.red { background: #ef4444; }
+  .dot.yellow { background: #f59e0b; }
+  .dot.green { background: #10b981; }
+
+  .showcase-url {
+    font-family: monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    background: rgba(0, 0, 0, 0.25);
+    padding: 0.2rem 0.75rem;
+    border-radius: 4px;
+  }
+
+  .status-pill {
     font-family: var(--font-display);
     font-size: 0.65rem;
     font-weight: 700;
-    letter-spacing: 1.5px;
-    color: var(--accent-blue);
-    margin-top: 4px;
-    text-shadow: 0 0 5px rgba(0, 210, 255, 0.5);
+    color: #10b981;
+    background: rgba(16, 185, 129, 0.1);
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
   }
 
-  .core-glow-layer {
-    position: absolute;
-    inset: -2px;
-    border-radius: 14px;
-    border: 1px solid rgba(255,255,255,0.4);
-    opacity: 0.15;
-    animation: coreRing 2s infinite linear;
-  }
-
-  .chip-telemetry {
-    width: 80%;
-    font-family: monospace;
-    font-size: 0.7rem;
-    color: var(--text-secondary);
+  .showcase-body {
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    gap: 0.4rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
-    padding-top: 1rem;
+    gap: 1.25rem;
   }
 
-  .telemetry-row {
+  .score-card {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.25rem;
+    background: rgba(31, 41, 55, 0.5);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 10px;
   }
 
-  .tele-val {
-    font-weight: bold;
+  .score-ring {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+  }
+
+  .circular-chart {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .circle-bg {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.08);
+    stroke-width: 3.5;
+  }
+
+  .circle {
+    fill: none;
+    stroke-width: 3.5;
+    stroke-linecap: round;
+    stroke: var(--accent-blue);
+  }
+
+  .percentage {
+    fill: var(--text-primary);
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 0.65rem;
+    text-anchor: middle;
+  }
+
+  .metric-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .metric-title {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 700;
     color: var(--text-primary);
   }
 
-  .val-blue {
-    color: var(--accent-blue);
-    text-shadow: 0 0 4px rgba(0, 210, 255, 0.3);
+  .metric-sub {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 2px;
   }
 
-  .val-warn {
-    color: #f59e0b;
-    text-shadow: 0 0 4px rgba(245, 158, 11, 0.3);
+  .status-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
   }
 
-  /* Chip pins */
-  .chip-pins {
-    position: absolute;
+  .status-row {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.75rem 1rem;
+    background: rgba(15, 23, 42, 0.4);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+  }
+
+  .row-icon.check {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .row-text {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .row-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .row-desc {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+
+  .row-badge {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--accent-light);
+    background: rgba(59, 130, 246, 0.1);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+  }
+
+  .showcase-footer {
+    padding: 0.85rem 1.25rem;
+    background: rgba(15, 23, 42, 0.6);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
     display: flex;
     justify-content: space-between;
-    pointer-events: none;
+    align-items: center;
+    font-size: 0.75rem;
+    color: var(--text-muted);
   }
 
-  .top-pins {
-    top: 0;
-    left: 40px;
-    right: 40px;
-    height: 20px;
-    flex-direction: row;
-  }
-
-  .bottom-pins {
-    bottom: 0;
-    left: 40px;
-    right: 40px;
-    height: 20px;
-    flex-direction: row;
-  }
-
-  .left-pins {
-    left: 0;
-    top: 40px;
-    bottom: 40px;
-    width: 20px;
-    flex-direction: column;
-  }
-
-  .right-pins {
-    right: 0;
-    top: 40px;
-    bottom: 40px;
-    width: 20px;
-    flex-direction: column;
-  }
-
-  .pin {
-    background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(0, 210, 255, 0.3));
-    border: 1px solid rgba(0, 210, 255, 0.2);
-    border-radius: 1px;
-    transition: background 0.3s;
-  }
-
-  .top-pins .pin, .bottom-pins .pin {
-    width: 6px;
-    height: 20px;
-    background: linear-gradient(to bottom, #2b3040, #141722);
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
-  }
-
-  .left-pins .pin, .right-pins .pin {
-    width: 20px;
-    height: 6px;
-    background: linear-gradient(to right, #2b3040, #141722);
-    box-shadow: inset 1px 0 0 rgba(255,255,255,0.05);
-  }
-
-  /* Animations */
-  @keyframes pulse {
-    0%, 100% { opacity: 0.6; }
-    50% { opacity: 1; }
-  }
-
-  @keyframes corePulse {
-    0%, 100% {
-      box-shadow: 0 0 20px rgba(0, 210, 255, 0.2), inset 0 0 15px rgba(0, 210, 255, 0.15);
-      border-color: rgba(0, 210, 255, 0.8);
-    }
-    50% {
-      box-shadow: 0 0 35px rgba(0, 210, 255, 0.4), inset 0 0 25px rgba(0, 210, 255, 0.35);
-      border-color: var(--accent-blue);
-    }
-  }
-
-  @keyframes coreRing {
-    0% { transform: scale(1); opacity: 0.4; }
-    100% { transform: scale(1.15); opacity: 0; }
-  }
-
-  @keyframes rotateGlow {
-    100% { transform: rotate(360deg); }
+  .footer-badge {
+    font-weight: 700;
+    color: var(--text-primary);
   }
 
   /* Responsive breakpoints */
@@ -616,17 +539,7 @@
     
     .hero-features {
       flex-direction: column;
-      gap: 1.5rem;
-    }
-    
-    .chip-container {
-      width: 280px;
-      height: 280px;
-    }
-    
-    .chip-body {
-      width: 240px;
-      height: 240px;
+      gap: 1.25rem;
     }
   }
 </style>

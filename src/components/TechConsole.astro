@@ -5,12 +5,11 @@
   <div class="console-container">
     <div class="console-header">
       <div class="section-label">
-        <span class="label-number">02 //</span>
-        <span class="label-text">SANDBOX ENV</span>
+        <span class="label-text">INTERACTIVE DEMO</span>
       </div>
-      <h2 class="section-title">Interactive Terminal</h2>
+      <h2 class="section-title">Website &amp; Security Diagnostics</h2>
       <p class="section-subtitle">
-        Test our simulated network toolkit. Run vulnerability scans, decrypt packets, or review 3lectric Penguin IT Security protocols in real-time.
+        Try our interactive diagnostic terminal. Run real-time checks on website performance, security headers, and system health.
       </p>
     </div>
 
@@ -23,24 +22,23 @@
           <span class="win-btn minimize"></span>
           <span class="win-btn maximize"></span>
         </div>
-        <div class="terminal-title">guest@3lectricpenguin-node:~</div>
-        <div class="terminal-status">SECURE CONNECTED</div>
+        <div class="terminal-title">diagnostics@electricpenguin:~</div>
+        <div class="terminal-status">SYSTEM STATUS: OK</div>
       </div>
       
       <!-- Terminal Screen -->
       <div class="terminal-screen" id="terminal-screen">
         <div class="terminal-log">
-          <div class="log-line system-welcome">3LECTRIC PENGUIN IT SECURITY PROTOCOL [VERSION 2.40.1]</div>
-          <div class="log-line system-welcome">© {new Date().getFullYear()} 3lectric Penguin IT Security. All access logged.</div>
-          <div class="log-line system-welcome">Type <span class="cmd-highlight">help</span> for a list of available operations.</div>
+          <div class="log-line system-welcome">ELECTRIC PENGUIN IT SECURITY — SYSTEM DIAGNOSTICS [v2.4]</div>
+          <div class="log-line system-welcome">© {new Date().getFullYear()} Electric Penguin IT Security. Professional Web &amp; Security Solutions.</div>
+          <div class="log-line system-welcome">Type <span class="cmd-highlight">help</span> for available diagnostic commands.</div>
           <br />
         </div>
         
         <!-- Terminal Input Line -->
         <div class="terminal-input-line">
-          <span class="terminal-prompt">guest@3lectricpenguin-node:~$</span>
-          <input type="text" id="terminal-input" autocomplete="off" spellcheck="false" max-length="40" />
-          <span class="custom-cursor"></span>
+          <span class="terminal-prompt">diagnostics@electricpenguin:~$</span>
+          <input type="text" id="terminal-input" autocomplete="off" spellcheck="false" maxlength="40" />
         </div>
       </div>
     </div>
@@ -53,13 +51,13 @@
   const termLog = document.querySelector('.terminal-log');
 
   const COMMAND_LIST = {
-    help: 'List of protocols: help, about, scan, decrypt, harden, clear',
-    about: '3lectric Penguin IT Security: High-performance web development combined with professional-grade penetration testing and defensive engineering.',
+    help: 'Available diagnostic commands: help, about, audit, status, speed, clear',
+    about: 'Electric Penguin IT Security: Modern web design, high-speed development, and proactive security solutions for Toledo small businesses.',
+    status: 'System Status: All services operational • SSL 256-Bit TLS Active • Uptime 99.9%',
     clear: '',
   };
 
   if (termInput && termScreen && termLog) {
-    // Keep focus on input if clicking inside terminal
     termScreen.addEventListener('click', () => {
       termInput.focus();
     });
@@ -69,8 +67,7 @@
         const inputVal = termInput.value.trim();
         const cmd = inputVal.toLowerCase();
         
-        // Output prompt
-        appendLog(`guest@3lectricpenguin-node:~$ ${inputVal}`, 'user-cmd');
+        appendLog(`diagnostics@electricpenguin:~$ ${inputVal}`, 'user-cmd');
         termInput.value = '';
 
         if (cmd === '') return;
@@ -81,26 +78,22 @@
           appendLog(COMMAND_LIST.help, 'sys-out');
         } else if (cmd === 'about') {
           appendLog(COMMAND_LIST.about, 'sys-out');
-        } else if (cmd === 'scan') {
+        } else if (cmd === 'status') {
+          appendLog(COMMAND_LIST.status, 'sys-out');
+        } else if (cmd === 'audit' || cmd === 'scan') {
           termInput.disabled = true;
-          await simulateScan();
+          await simulateAudit();
           termInput.disabled = false;
           termInput.focus();
-        } else if (cmd === 'decrypt') {
+        } else if (cmd === 'speed') {
           termInput.disabled = true;
-          await simulateDecrypt();
-          termInput.disabled = false;
-          termInput.focus();
-        } else if (cmd === 'harden') {
-          termInput.disabled = true;
-          await simulateHarden();
+          await simulateSpeed();
           termInput.disabled = false;
           termInput.focus();
         } else {
-          appendLog(`Error: command not found: "${inputVal}". Type "help" for instructions.`, 'sys-error');
+          appendLog(`Unknown command: "${inputVal}". Type "help" for instructions.`, 'sys-error');
         }
 
-        // Scroll to bottom
         termScreen.scrollTop = termScreen.scrollHeight;
       }
     });
@@ -120,53 +113,30 @@
       return new Promise(resolve => setTimeout(resolve, ms));
     }
 
-    async function simulateScan() {
-      appendLog('Initializing full systems audit...', 'sys-loader');
-      await sleep(600);
-      appendLog('Auditing firewall rules [IPTABLES]....... [ SECURE ]', 'sys-info');
-      await sleep(400);
-      appendLog('Auditing active web routes............. [ SECURE ]', 'sys-info');
-      await sleep(400);
-      appendLog('Scanning database ports [5432].......... [ SHIELDED ]', 'sys-info');
+    async function simulateAudit() {
+      appendLog('Running website security and performance audit...', 'sys-loader');
       await sleep(500);
-      appendLog('Testing open socket ports............... [ 0 EXPOSED ]', 'sys-info');
-      await sleep(600);
-      appendLog('Vulnerability scan completed. Threat index: 0.00%', 'sys-success');
+      appendLog('1. Verifying SSL/TLS encryption certificate... [ 256-BIT OK ]', 'sys-info');
+      await sleep(400);
+      appendLog('2. Checking security headers (HSTS, CSP, X-Frame)... [ SECURE ]', 'sys-info');
+      await sleep(400);
+      appendLog('3. Testing mobile responsiveness & layout bounds... [ OPTIMIZED ]', 'sys-info');
+      await sleep(500);
+      appendLog('4. Measuring Google Lighthouse performance metrics... [ 99/100 ]', 'sys-info');
+      await sleep(500);
+      appendLog('✔ Audit complete. Your site health is at 100%.', 'sys-success');
     }
 
-    async function simulateDecrypt() {
-      appendLog('Decrypting secure handshake stream...', 'sys-loader');
-      await sleep(500);
-      
-      // Decrypt effect
-      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+';
-      let decryptLine = document.createElement('div');
-      decryptLine.className = 'log-line sys-decrypt-ticker';
-      termLog?.appendChild(decryptLine);
-      
-      for (let i = 0; i < 4; i++) {
-        let randStr = '';
-        for (let j = 0; j < 35; j++) {
-          randStr += chars[Math.floor(Math.random() * chars.length)];
-        }
-        decryptLine.innerText = `[HASH DECRYPT] ${randStr}`;
-        await sleep(250);
-      }
-      
-      decryptLine.innerText = '[HASH DECRYPT] 3lectricpenguin_auth_token_hash_ok :: verified';
-      decryptLine.className = 'log-line sys-success';
-    }
-
-    async function simulateHarden() {
-      appendLog('Executing defensive system hardening script...', 'sys-loader');
-      await sleep(600);
-      appendLog('1. Restricting root user SSH logins... OK', 'sys-info');
+    async function simulateSpeed() {
+      appendLog('Measuring page load latency...', 'sys-loader');
       await sleep(400);
-      appendLog('2. Establishing secure rate-limiting on port 443... OK', 'sys-info');
+      appendLog('Server Response Time (TTFB): 48ms', 'sys-info');
+      await sleep(300);
+      appendLog('Asset Compression (Gzip/Brotli): ACTIVE', 'sys-info');
+      await sleep(300);
+      appendLog('First Contentful Paint (FCP): 0.4s', 'sys-info');
       await sleep(400);
-      appendLog('3. Rotating cryptography keys... OK', 'sys-info');
-      await sleep(500);
-      appendLog('Shielding operations complete. System level: MAX SECURE.', 'sys-success');
+      appendLog('✔ Speed target achieved. Page loads in under 1 second.', 'sys-success');
     }
   }
 </script>
@@ -184,35 +154,27 @@
   }
 
   .console-header {
-    margin-bottom: 4rem;
+    margin-bottom: 3.5rem;
     max-width: 650px;
   }
 
   .section-label {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .label-number {
-    font-family: var(--font-display);
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: var(--accent-blue);
+    margin-bottom: 0.75rem;
   }
 
   .label-text {
     font-family: var(--font-display);
     font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 2px;
-    color: var(--text-muted);
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--accent-light);
   }
 
   .section-title {
     font-family: var(--font-display);
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     font-weight: 800;
     color: var(--text-primary);
     margin-bottom: 1rem;
@@ -230,12 +192,10 @@
     width: 100%;
     max-width: 900px;
     margin: 0 auto;
-    background: rgba(13, 15, 23, 0.95);
-    border: 1px solid rgba(0, 210, 255, 0.25);
-    border-radius: 8px;
-    box-shadow: 
-      0 20px 50px rgba(0, 0, 0, 0.5),
-      0 0 30px rgba(0, 210, 255, 0.08);
+    background: #0f172a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     overflow: hidden;
   }
 
@@ -243,8 +203,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #12151f;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background: #1e293b;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     padding: 0.75rem 1.25rem;
     user-select: none;
   }
@@ -255,8 +215,8 @@
   }
 
   .win-btn {
-    width: 12px;
-    height: 12px;
+    width: 11px;
+    height: 11px;
     border-radius: 50%;
     display: inline-block;
   }
@@ -268,34 +228,30 @@
   .terminal-title {
     font-family: monospace;
     font-size: 0.8rem;
-    color: var(--text-secondary);
-    letter-spacing: 0.5px;
+    color: var(--text-muted);
   }
 
   .terminal-status {
     font-family: var(--font-display);
-    font-size: 0.65rem;
+    font-size: 0.7rem;
     font-weight: 700;
-    letter-spacing: 1px;
-    color: var(--accent-blue);
-    background: rgba(0, 210, 255, 0.08);
-    padding: 0.15rem 0.5rem;
+    color: #10b981;
+    background: rgba(16, 185, 129, 0.1);
+    padding: 0.2rem 0.6rem;
     border-radius: 4px;
-    border: 1px solid rgba(0, 210, 255, 0.15);
   }
 
   .terminal-screen {
-    height: 380px;
+    height: 360px;
     padding: 1.5rem;
     overflow-y: auto;
     font-family: 'Courier New', Courier, monospace;
     font-size: 0.9rem;
     color: #cbd5e1;
-    line-height: 1.5;
-    background: radial-gradient(circle at center, rgba(0, 210, 255, 0.02) 0%, transparent 80%);
+    line-height: 1.6;
+    background: #090d16;
   }
 
-  /* Custom scrollbar for terminal */
   .terminal-screen::-webkit-scrollbar {
     width: 6px;
   }
@@ -303,11 +259,8 @@
     background: transparent;
   }
   .terminal-screen::-webkit-scrollbar-thumb {
-    background: rgba(0, 210, 255, 0.2);
+    background: rgba(255, 255, 255, 0.15);
     border-radius: 3px;
-  }
-  .terminal-screen::-webkit-scrollbar-thumb:hover {
-    background: var(--accent-blue);
   }
 
   .log-line {
@@ -317,51 +270,43 @@
   }
 
   .system-welcome {
-    color: var(--text-secondary);
+    color: var(--text-muted);
   }
 
   .cmd-highlight {
-    color: var(--accent-blue);
+    color: var(--accent-light);
     font-weight: bold;
-    text-shadow: 0 0 5px rgba(0, 210, 255, 0.3);
   }
 
   .user-cmd {
-    color: #fff;
+    color: #ffffff;
     font-weight: 600;
   }
 
-  .sys-out {
-    color: #94a3b8;
-  }
-
-  .sys-info {
+  .sys-out, .sys-info {
     color: #94a3b8;
   }
 
   .sys-loader {
-    color: var(--accent-blue);
-    opacity: 0.85;
+    color: var(--accent-light);
   }
 
   .sys-success {
-    color: var(--accent-blue);
-    font-weight: bold;
-    text-shadow: 0 0 8px rgba(0, 210, 255, 0.4);
+    color: #38bdf8;
+    font-weight: 600;
   }
 
   .sys-error {
-    color: #ef4444;
+    color: #f87171;
   }
 
   .terminal-input-line {
     display: flex;
     align-items: center;
-    position: relative;
   }
 
   .terminal-prompt {
-    color: var(--accent-blue);
+    color: var(--accent-light);
     margin-right: 0.6rem;
     font-weight: bold;
   }
@@ -370,57 +315,24 @@
     background: transparent;
     border: none;
     outline: none;
-    color: #fff;
+    color: #ffffff;
     font-family: inherit;
     font-size: inherit;
     padding: 0;
     margin: 0;
     flex-grow: 1;
-    caret-color: transparent; /* custom cursor */
-  }
-
-  .custom-cursor {
-    display: inline-block;
-    width: 8px;
-    height: 15px;
-    background: var(--accent-blue);
-    animation: blink 0.8s infinite;
-    position: absolute;
-    /* align position to end of text */
-    pointer-events: none;
-  }
-
-  /* Make custom cursor follow the input text width */
-  #terminal-input:focus ~ .custom-cursor {
-    display: none; /* Let standard or basic simulation handle caret, or hide default for clean look */
-  }
-  
-  /* Fallback: using default caret is simpler and more responsive, we'll keep caret-color white */
-  #terminal-input {
-    caret-color: var(--accent-blue);
-  }
-  .custom-cursor {
-    display: none;
-  }
-
-  @keyframes blink {
-    0%, 100% { opacity: 0; }
-    50% { opacity: 1; }
+    caret-color: var(--accent-light);
   }
 
   @media (max-width: 768px) {
     .console-section {
-      padding: 4rem 1.5rem;
+      padding: 4rem 1.25rem;
     }
 
     .terminal-screen {
-      height: 320px;
+      height: 300px;
       padding: 1rem;
       font-size: 0.85rem;
-    }
-
-    .terminal-bar {
-      padding: 0.6rem 1rem;
     }
   }
 
@@ -429,13 +341,8 @@
       display: none;
     }
 
-    .terminal-screen {
-      height: 280px;
-      font-size: 0.8rem;
-    }
-    
     .section-title {
-      font-size: 2rem;
+      font-size: 1.85rem;
     }
   }
 </style>
