@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - 24/7 Bail Bonds</title>
+  <meta name="description" content="Speak to a licensed bail bondsman immediately. Call our emergency hotline at 1-866-322-2245 or send us a secure online message. We are available 24/7/365.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- FIXED EMERGENCY CALL BUTTON -->
+  <a href="tel:1-866-322-2245" class="emergency-fixed-btn" aria-label="Call Emergency Bail Line">
+    <div class="pulse-ring-effect"></div>
+    <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6.62 10.79a15.15 15.15 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.27c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.24.2 2.45.57 3.57a1 1 0 01-.27 1.11z"/>
+    </svg>
+  </a>
+
+  <!-- SUCCESS MODAL OVERLAY -->
+  <div class="modal-overlay" id="successModal" role="dialog" aria-modal="true" aria-labelledby="successTitle">
+    <div class="modal-card">
+      <div class="icon-success">
+        <svg width="36" height="36" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="margin: auto;">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+        </svg>
+      </div>
+      <h3 id="successTitle">Message Sent Successfully</h3>
+      <p>Thank you for contacting 24/7 Bail Bonds. Our administrative team or a licensed agent will review your inquiry and follow up shortly.</p>
+      
+      <div id="successDetails">
+        <!-- Dynmically filled by JavaScript -->
+      </div>
+      
+      <button class="btn btn-secondary" id="modalClose" style="margin-top: 24px; width: 100%;">Close Window</button>
+    </div>
+  </div>
+
+  <!-- NAVIGATION HEADER -->
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="brand-logo">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 6h2v2h-2V7zm0 4h2v6h-2v-6z"/>
+        </svg>
+        <span>
+          24/7 Bail Bonds
+          <span class="brand-subtitle">Michigan &amp; Ohio</span>
+        </span>
+      </a>
+      <nav class="navbar" aria-label="Main Navigation">
+        <button class="hamburger-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="navbar-nav">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="services.html#attorneys" class="nav-link">Attorneys</a></li>
+          <li><a href="blog.html" class="nav-link">Blog</a></li>
+          <li><a href="application.html" class="nav-link">Bail Application</a></li>
+          <li class="has-dropdown">
+            <a href="locations.html" class="nav-link dropdown-toggle" aria-expanded="false">
+              <span>Counties Served</span>
+              <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </a>
+            <div class="dropdown-menu">
+              <div class="dropdown-header-title">Coverage Area Directory</div>
+              <div class="dropdown-columns">
+                <div class="dropdown-col">
+                  <div class="dropdown-col-heading">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+                    Michigan Counties
+                  </div>
+                  <ul class="dropdown-list">
+                    <li>
+                      <a href="branch-county-mi.html" class="dropdown-item featured-link">
+                        <span>Branch County</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="hillsdale-county-mi.html" class="dropdown-item featured-link">
+                        <span>Hillsdale County</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="jackson-county-mi.html" class="dropdown-item featured-link">
+                        <span>Jackson County</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="lenawee-county-mi.html" class="dropdown-item featured-link">
+                        <span>Lenawee County</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="livingston-county-mi.html" class="dropdown-item featured-link">
+                        <span>Livingston County</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="macomb-county-mi.html" class="dropdown-item featured-link">
+                        <span>Macomb County</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="monroe-county-mi.html" class="dropdown-item featured-link">
+                        <span>Monroe County</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="oakland-county-mi.html" class="dropdown-item featured-link">
+                        <span>Oakland County</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="saginaw-county-mi.html" class="dropdown-item featured-link">
+                        <span>Saginaw County</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="washtenaw-county-mi.html" class="dropdown-item featured-link">
+                        <span>Washtenaw County</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="wayne-county-mi.html" class="dropdown-item featured-link">
+                        <span>Wayne County</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="dropdown-col">
+                  <div class="dropdown-col-heading">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+                    Ohio Counties
+                  </div>
+                  <ul class="dropdown-list">
+                    <li>
+                      <a href="allen-county-oh.html" class="dropdown-item featured-link">
+                        <span>Allen County</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="erie-county-oh.html" class="dropdown-item featured-link">
+                        <span>Erie County</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="hancock-county-oh.html" class="dropdown-item featured-link">
+                        <span>Hancock County</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="henry-county-oh.html" class="dropdown-item featured-link">
+                        <span>Henry County</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="lucas-county-oh.html" class="dropdown-item featured-link">
+                        <span>Lucas County</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="ottawa-county-oh.html" class="dropdown-item featured-link">
+                        <span>Ottawa County</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="sandusky-county-oh.html" class="dropdown-item featured-link">
+                        <span>Sandusky County</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="seneca-county-oh.html" class="dropdown-item featured-link">
+                        <span>Seneca County</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="wood-county-oh.html" class="dropdown-item featured-link">
+                        <span>Wood County</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="dropdown-footer">
+                <a href="locations.html" class="dropdown-callout-btn">
+                  <span>View All Counties &amp; Directory &rarr;</span>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li><a href="contact.html" class="nav-link active">Contact Us</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <a href="tel:1-866-322-2245" class="btn btn-emergency">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="margin-right: 4px;">
+            <path d="M6.62 10.79a15.15 15.15 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.27c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.24.2 2.45.57 3.57a1 1 0 01-.27 1.11z"/>
+          </svg>
+          <span>1-866-322-2245</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- PAGE HERO HEADER -->
+    <section class="section-dark" style="padding: 60px 0; background-color: var(--color-navy-950); text-align: center;">
+      <div class="container" style="max-width: 900px;">
+        <h1 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 16px;">Speak to a Licensed Bail Agent Immediately</h1>
+        <p class="text-lead" style="color: var(--color-navy-500); margin-bottom: 0;">We are here for you 24 hours a day, 7 days a week. Call us now or send us a secure message.</p>
+      </div>
+    </section>
+
+    <!-- CONTENT GRID (INFO + FORM) -->
+    <section class="section">
+      <div class="container">
+        <div class="grid grid-2" style="gap: 50px;">
+          
+          <!-- Column 1: Info & Guidelines -->
+          <div>
+            <div style="background-color: var(--color-white); border-radius: var(--border-radius-lg); padding: 36px; border: 1px solid var(--color-bg-alt); box-shadow: var(--shadow-sm); margin-bottom: 30px;">
+              <h2 style="font-size: 1.5rem; color: var(--color-navy-950); margin-bottom: 12px;">Direct Emergency Line</h2>
+              <p>If you have a loved one in jail right now, do not wait. Call our toll-free hotline for immediate, confidential assistance. A live, licensed agent will answer your call.</p>
+              
+              <div style="margin: 24px 0; background-color: var(--color-gold-50); border: 1px dashed var(--color-gold-400); border-radius: var(--border-radius-md); padding: 20px; display: flex; align-items: center; gap: 16px;">
+                <div style="background: var(--color-gold-500); color: var(--color-navy-950); width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0;">
+                  📞
+                </div>
+                <div>
+                  <a href="tel:1-866-322-2245" style="font-size: 1.5rem; font-weight: 800; color: var(--color-navy-950);">1-866-322-2245</a>
+                  <p style="font-size: 0.8rem; color: var(--color-gold-600); margin-bottom: 0; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Available 24/7/365 — Weekends & Holidays</p>
+                </div>
+              </div>
+            </div>
+
+            <div style="background-color: var(--color-white); border-radius: var(--border-radius-lg); padding: 36px; border: 1px solid var(--color-bg-alt); box-shadow: var(--shadow-sm); margin-bottom: 30px;">
+              <h3 style="font-size: 1.25rem; color: var(--color-navy-950); margin-bottom: 16px;">Guidelines for Calling</h3>
+              <ul style="display: flex; flex-direction: column; gap: 16px; list-style: none;">
+                <li style="display: flex; gap: 12px; align-items: flex-start;">
+                  <span style="font-weight: 700; color: var(--color-gold-600); font-size: 1.1rem; line-height: 1;">1.</span>
+                  <div>
+                    <strong>Stay Calm:</strong> We know this is a stressful situation, but we are here to guide you and handle all jail logistics.
+                  </div>
+                </li>
+                <li style="display: flex; gap: 12px; align-items: flex-start;">
+                  <span style="font-weight: 700; color: var(--color-gold-600); font-size: 1.1rem; line-height: 1;">2.</span>
+                  <div>
+                    <strong>Have Information Ready:</strong> Let us know the defendant's full name, date of birth, and the jail they are currently held in (if known).
+                  </div>
+                </li>
+                <li style="display: flex; gap: 12px; align-items: flex-start;">
+                  <span style="font-weight: 700; color: var(--color-gold-600); font-size: 1.1rem; line-height: 1;">3.</span>
+                  <div>
+                    <strong>Ask Questions:</strong> Our licensed agents are happy to explain the charges, bond amounts, and customized payment plans.
+                  </div>
+                </li>
+                <li style="display: flex; gap: 12px; align-items: flex-start;">
+                  <span style="font-weight: 700; color: var(--color-gold-600); font-size: 1.1rem; line-height: 1;">4.</span>
+                  <div>
+                    <strong>Confirm Co-signer Eligibility:</strong> Be prepared to discuss employment, residency, or collateral details to secure the bond.
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div style="background-color: var(--color-navy-900); border-radius: var(--border-radius-lg); padding: 36px; border: 1px solid rgba(255,255,255,0.05); color: var(--color-white);">
+              <h3 style="font-size: 1.25rem; color: var(--color-white); margin-bottom: 16px;">Service Regions Covered by Agents</h3>
+              <p style="font-size: 0.9rem; color: var(--color-navy-500); line-height: 1.6; margin-bottom: 14px;">
+                <strong>Michigan Dispatch:</strong> Direct coverage for Macomb, Oakland, Wayne, Monroe, Lenawee, Jackson, Washtenaw, Livingston, Branch, Midland, Saginaw, and Hillsdale counties.
+              </p>
+              <p style="font-size: 0.9rem; color: var(--color-navy-500); line-height: 1.6; margin-bottom: 24px;">
+                <strong>Ohio Dispatch:</strong> Direct coverage for Wood, Lucas, Ottawa, Henry, Hancock, Seneca, Erie, Sandusky, and Allen counties.
+              </p>
+              <div style="font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 16px; color: var(--color-navy-500);">
+                <strong>Office Hours:</strong> Administrative/billing open Monday – Friday, 9:00 AM – 5:00 PM. Emergency dispatch open 24/7/365.
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: Premium Contact Form -->
+          <div>
+            <div class="contact-card-form">
+              <h2 style="font-size: 1.5rem; color: var(--color-navy-950); margin-bottom: 8px;">Online Contact Form</h2>
+              <p style="font-size: 0.9rem; color: var(--color-navy-600); margin-bottom: 30px;">
+                Use this secure contact form for non-emergency inquiries, payment questions, or general consultation requests. For immediate bail assistance, please call us directly.
+              </p>
+
+              <form id="contactForm" novalidate>
+                <div class="form-group">
+                  <label for="fullName" class="form-label">Your Full Name *</label>
+                  <input type="text" id="fullName" class="form-control" placeholder="John Doe" required>
+                </div>
+
+                <div class="form-group-grid">
+                  <div class="form-group">
+                    <label for="phoneNumber" class="form-label">Your Phone Number *</label>
+                    <input type="tel" id="phoneNumber" class="form-control" placeholder="(555) 555-5555" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="emailAddress" class="form-label">Your Email Address *</label>
+                    <input type="email" id="emailAddress" class="form-control" placeholder="john@example.com" required>
+                  </div>
+                </div>
+
+                <div class="form-group-grid">
+                  <div class="form-group">
+                    <label for="defendantName" class="form-label">Defendant's Full Name (If applicable)</label>
+                    <input type="text" id="defendantName" class="form-control" placeholder="Optional defendant name">
+                  </div>
+                  <div class="form-group">
+                    <label for="jailLocation" class="form-label">Jail Location (If applicable)</label>
+                    <input type="text" id="jailLocation" class="form-control" placeholder="e.g. Macomb County Jail">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="messageContent" class="form-label">How Can We Help You? *</label>
+                  <textarea id="messageContent" class="form-control" placeholder="Tell us about your inquiry (charges, payment questions, general consultation)..." required></textarea>
+                </div>
+
+                <div class="form-checkbox-row">
+                  <input type="checkbox" id="termsCheck" required>
+                  <label for="termsCheck">
+                    I agree to receive communications and understand that all submitted data is handled in accordance with the <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a>.
+                  </label>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%; height: 52px; font-size: 1rem;">Submit Secure Request</button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- BOTTOM CTA BANNER -->
+    <section class="section section-dark" style="background-color: var(--color-navy-900); text-align: center;">
+      <div class="container" style="max-width: 800px;">
+        <h2 style="margin-bottom: 20px;">Don't Wait in Uncertainty</h2>
+        <p class="text-lead" style="color: var(--color-navy-500); margin-bottom: 30px;">Secure your loved one's release today. Licensed agents are standing by to post bail at the jail.</p>
+        <a href="tel:1-866-322-2245" class="btn btn-primary" style="padding: 16px 36px; font-size: 1.1rem;">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.62 10.79a15.15 15.15 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.27c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.24.2 2.45.57 3.57a1 1 0 01-.27 1.11z"/>
+          </svg>
+          <span>Call 1-866-322-2245</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-logo-wrap">
+          <a href="index.html" class="brand-logo" style="color: var(--color-white);">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="fill: var(--color-gold-500); height: 32px;">
+              <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 6h2v2h-2V7zm0 4h2v6h-2v-6z"/>
+            </svg>
+            <span style="display: flex; flex-direction: column;">
+              24/7 Bail Bonds
+              <span class="brand-subtitle" style="color: var(--color-navy-500);">Michigan & Ohio</span>
+            </span>
+          </a>
+          <p>Providing professional, confidential, and prompt bail bond services across Michigan and Ohio for over 30 years. Family-owned and operated, available 24/7/365.</p>
+          <div class="social-links">
+            <a href="#" class="social-btn" aria-label="Facebook">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="Twitter">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="LinkedIn">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="about.html" class="footer-link">About Us</a></li>
+            <li><a href="services.html" class="footer-link">Services</a></li>
+            <li><a href="services.html#attorneys" class="footer-link">Attorneys</a></li>
+            <li><a href="blog.html" class="footer-link">Blog</a></li>
+            <li><a href="application.html" class="footer-link">Bail Application</a></li>
+            <li><a href="locations.html" class="footer-link">Counties Served</a></li>
+            <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Our Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html" class="footer-link">Surety Bail Bonds</a></li>
+            <li><a href="services.html" class="footer-link">Transfer Bonds</a></li>
+            <li><a href="services.html#how-bail-works" class="footer-link">24/7 Emergency Bail</a></li>
+            <li><a href="locations.html" class="footer-link">Court & Jail Support</a></li>
+            <li><a href="contact.html" class="footer-link">Flexible Payment Plans</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Contact Info</h4>
+          <ul class="footer-links">
+            <li class="footer-link footer-contact-item">
+              <svg class="footer-contact-icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+              <span>24/7 Toll-Free Hotline:<br><a href="tel:1-866-322-2245" style="font-weight: 700; color: var(--color-white);">1-866-322-2245</a></span>
+            </li>
+            <li class="footer-link footer-contact-item">
+              <svg class="footer-contact-icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+              <span>Email Us:<br><a href="mailto:247bailbondz@gmail.com" style="color: var(--color-white);">247bailbondz@gmail.com</a></span>
+            </li>
+            <li class="footer-link footer-contact-item" style="margin-top: 8px; font-size: 0.88rem; line-height: 1.5; color: var(--color-slate-400);">
+              <svg class="footer-contact-icon" width="18" height="18" fill="currentColor" viewBox="0 0 24 24" style="color: var(--color-yellow-500); flex-shrink: 0;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              <span>Looking for your local office? Please visit your <a href="locations.html" style="color: var(--color-yellow-500); text-decoration: underline; font-weight: 600;">County Page</a> for direct local contact numbers.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">
+          &copy; 2026 24/7 Bail Bonds. All Rights Reserved. Fully Licensed and Bonded in Michigan and Ohio.
+        </div>
+        <div class="footer-legal-links">
+          <a href="#" class="footer-legal-link">Privacy Policy</a>
+          <a href="#" class="footer-legal-link">Terms of Service</a>
+          <a href="#" class="footer-legal-link">Legal Disclaimer</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="global.js"></script>
+</body>
+</html>
