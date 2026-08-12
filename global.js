@@ -171,6 +171,19 @@ document.addEventListener('DOMContentLoaded', () => {
         filterLocations();
       });
     });
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const stateParam = urlParams.get('state');
+    if (stateParam) {
+      const formatted = stateParam.charAt(0).toUpperCase() + stateParam.slice(1).toLowerCase();
+      if (formatted === 'Michigan' || formatted === 'Ohio') {
+        currentFilter = formatted;
+        filterPills.forEach(p => p.classList.remove('active'));
+        const activePill = Array.from(filterPills).find(p => p.getAttribute('data-filter') === formatted);
+        if (activePill) activePill.classList.add('active');
+      }
+    }
+    filterLocations();
   }
 
   // 6. Generic Form Validation and Success Overlay Popup
