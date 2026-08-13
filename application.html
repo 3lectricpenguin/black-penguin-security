@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -235,87 +235,743 @@
             <input type="hidden" name="_next" value="https://247bailbonds.com/application.html?success=true">
             <input type="hidden" name="_captcha" value="false">
 
-            <!-- Section 1: Defendant Information -->
-            <h3 class="form-section-title" style="color: var(--color-navy-700); border-bottom: 2px solid var(--color-slate-200); padding-bottom: 10px; margin-bottom: 20px;">1. Defendant Information</h3>
+                        <!-- Section 1: Application Information -->
+            <h3 class="form-section-title" style="color: var(--color-navy-700); border-bottom: 2px solid var(--color-slate-200); padding-bottom: 10px; margin-bottom: 20px;">1. Application Details</h3>
             <div class="form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px;">
               <div class="form-group">
-                <label for="def_name" style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--color-slate-800);">Defendant's Full Name *</label>
-                <input type="text" id="def_name" name="Defendant_Name" required style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                <label for="agent">Agent</label>
+                <input type="text" id="agent" name="Agent" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
               </div>
               <div class="form-group">
-                <label for="def_dob" style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--color-slate-800);">Date of Birth *</label>
-                <input type="date" id="def_dob" name="Defendant_DOB" required style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-              </div>
-              <div class="form-group">
-                <label for="def_ssn" style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--color-slate-800);">Social Security Number</label>
-                <input type="text" id="def_ssn" name="Defendant_SSN" placeholder="XXX-XX-XXXX" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-              </div>
-              <div class="form-group">
-                <label for="def_phone" style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--color-slate-800);">Phone Number</label>
-                <input type="tel" id="def_phone" name="Defendant_Phone" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-              </div>
-              <div class="form-group" style="grid-column: span 2;">
-                <label for="def_address" style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--color-slate-800);">Present Address *</label>
-                <input type="text" id="def_address" name="Defendant_Address" required placeholder="Street, City, State, Zip" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                <label for="app_date">Date of Application</label>
+                <input type="date" id="app_date" name="Date_of_Application" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
               </div>
             </div>
 
-            <!-- Section 2: Bond/Charge Information -->
-            <h3 class="form-section-title" style="color: var(--color-navy-700); border-bottom: 2px solid var(--color-slate-200); padding-bottom: 10px; margin-bottom: 20px;">2. Bond & Court Information</h3>
-            <div class="form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px;">
-              <div class="form-group">
-                <label for="charge" style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--color-slate-800);">Charge / Offense</label>
-                <input type="text" id="charge" name="Charge" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+            <!-- Offenses -->
+            <div style="margin-bottom: 30px;">
+              <label style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--color-slate-800);">Offenses</label>
+              <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 10px; margin-bottom: 10px; font-size: 0.85rem; font-weight: 600;">
+                <div>Offense</div><div>Case #</div><div>Power #</div><div>Amount</div><div>Premium</div>
               </div>
-              <div class="form-group">
-                <label for="court" style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--color-slate-800);">Court Name / Location</label>
-                <input type="text" id="court" name="Court" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 10px; margin-bottom: 10px;">
+                <input type="text" name="Offense_1" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                <input type="text" name="Case_1" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                <input type="text" name="Power_1" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                <input type="text" name="Amount_1" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                <input type="text" name="Premium_1" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
               </div>
-              <div class="form-group">
-                <label for="bond_amount" style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--color-slate-800);">Total Bond Amount ($)</label>
-                <input type="number" id="bond_amount" name="Bond_Amount" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 10px; margin-bottom: 10px;">
+                <input type="text" name="Offense_2" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                <input type="text" name="Case_2" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                <input type="text" name="Power_2" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                <input type="text" name="Amount_2" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                <input type="text" name="Premium_2" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
               </div>
-              <div class="form-group">
-                <label for="booking_num" style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--color-slate-800);">Case or Booking Number</label>
-                <input type="text" id="booking_num" name="Case_Number" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 10px; margin-bottom: 10px;">
+                <input type="text" name="Offense_3" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                <input type="text" name="Case_3" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                <input type="text" name="Power_3" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                <input type="text" name="Amount_3" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                <input type="text" name="Premium_3" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 10px; margin-bottom: 10px;">
+                <input type="text" name="Offense_4" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                <input type="text" name="Case_4" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                <input type="text" name="Power_4" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                <input type="text" name="Amount_4" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                <input type="text" name="Premium_4" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 15px;">
+                <div class="form-group">
+                  <label for="total_bond">Total Bond Amount</label>
+                  <input type="text" id="total_bond" name="Total_Bond_Amount" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                </div>
+                <div class="form-group">
+                  <label for="total_prem">Total Prem.</label>
+                  <input type="text" id="total_prem" name="Total_Prem" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                </div>
+              </div>
+              <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-top: 15px;">
+                <div class="form-group">
+                  <label for="court">Court</label>
+                  <input type="text" id="court" name="Court" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                </div>
+                <div class="form-group">
+                  <label for="app_date_court">Appearance Date</label>
+                  <input type="date" id="app_date_court" name="Appearance_Date" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                </div>
+                <div class="form-group">
+                  <label for="time">Time</label>
+                  <input type="time" id="time" name="Time" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                </div>
               </div>
             </div>
 
-            <!-- Section 3: Indemnitor (Co-Signer) Information -->
-            <h3 class="form-section-title" style="color: var(--color-navy-700); border-bottom: 2px solid var(--color-slate-200); padding-bottom: 10px; margin-bottom: 20px;">3. Indemnitor (Co-Signer) Information</h3>
+            <!-- Section 2: Defendant Information -->
+            <h3 class="form-section-title" style="color: var(--color-navy-700); border-bottom: 2px solid var(--color-slate-200); padding-bottom: 10px; margin-bottom: 20px;">2. Defendant Information</h3>
             <div class="form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px;">
               <div class="form-group">
-                <label for="ind_name" style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--color-slate-800);">Indemnitor Full Name *</label>
-                <input type="text" id="ind_name" name="Indemnitor_Name" required style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                <label>Defendant's Full Name (First, Middle, Last)</label>
+                <input type="text" name="Defendant_Name" required style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
               </div>
               <div class="form-group">
-                <label for="ind_relation" style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--color-slate-800);">Relationship to Defendant *</label>
-                <input type="text" id="ind_relation" name="Indemnitor_Relation" required style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-              </div>
-              <div class="form-group">
-                <label for="ind_phone" style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--color-slate-800);">Phone Number *</label>
-                <input type="tel" id="ind_phone" name="Indemnitor_Phone" required style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-              </div>
-              <div class="form-group">
-                <label for="ind_employer" style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--color-slate-800);">Employer</label>
-                <input type="text" id="ind_employer" name="Indemnitor_Employer" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                <label>Phone</label>
+                <input type="tel" name="Defendant_Phone" required style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
               </div>
               <div class="form-group" style="grid-column: span 2;">
-                <label for="ind_address" style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--color-slate-800);">Address *</label>
-                <input type="text" id="ind_address" name="Indemnitor_Address" required placeholder="Street, City, State, Zip" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                <label>Alias/Nickname/Street Name</label>
+                <input type="text" name="Defendant_Alias" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Date of Birth</label>
+                <input type="date" name="Defendant_DOB" required style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Place of Birth</label>
+                <input type="text" name="Defendant_POB" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Social Security No.</label>
+                <input type="text" name="Defendant_SSN" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                  <div class="form-group">
+                    <label>Height</label>
+                    <input type="text" name="Defendant_Height" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+                  <div class="form-group">
+                    <label>Weight</label>
+                    <input type="text" name="Defendant_Weight" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+              </div>
+              <div class="form-group">
+                <label>Eye Color</label>
+                <input type="text" name="Defendant_EyeColor" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Hair Color</label>
+                <input type="text" name="Defendant_HairColor" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Race</label>
+                <input type="text" name="Defendant_Race" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Scars/Tattoos/Marks, etc.</label>
+                <input type="text" name="Defendant_Scars" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group" style="grid-column: span 2;">
+                <label>Address</label>
+                <input type="text" name="Defendant_Address" required style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Apt. #</label>
+                <input type="text" name="Defendant_Apt" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group" style="display: flex; align-items: center; gap: 20px;">
+                <label><input type="radio" name="HousingStatus" value="Own"> Own</label>
+                <label><input type="radio" name="HousingStatus" value="Rent"> Rent</label>
+              </div>
+              <div class="form-group">
+                <label>Landlord</label>
+                <input type="text" name="Defendant_Landlord" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>City, State/Zip Code</label>
+                <input type="text" name="Defendant_CityStateZip" required style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group" style="grid-column: span 2;">
+                <label>Previous Address</label>
+                <input type="text" name="Defendant_PrevAddress" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
               </div>
             </div>
-            
+
+            <!-- Section 3: Occupation & Family Info -->
+            <h3 class="form-section-title" style="color: var(--color-navy-700); border-bottom: 2px solid var(--color-slate-200); padding-bottom: 10px; margin-bottom: 20px;">3. Occupation & Family Info</h3>
+            <div class="form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px;">
+              <div class="form-group">
+                <label>Present Occupation(s)</label>
+                <input type="text" name="Def_PresentOcc" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Previous Occupation(s)</label>
+                <input type="text" name="Def_PrevOcc" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Employer</label>
+                <input type="text" name="Def_Employer" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                  <div>
+                    <label>Shift</label>
+                    <input type="text" name="Def_Shift" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+                  <div>
+                    <label>How Long</label>
+                    <input type="text" name="Def_HowLong" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+              </div>
+              <div class="form-group" style="grid-column: span 2;">
+                <label>Address (Employer)</label>
+                <input type="text" name="Def_EmpAddress" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Job Title</label>
+                <input type="text" name="Def_JobTitle" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Phone (Employer)</label>
+                <input type="text" name="Def_EmpPhone" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Previous Employer</label>
+                <input type="text" name="Def_PrevEmp" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>How Long</label>
+                <input type="text" name="Def_PrevEmpHowLong" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Union</label>
+                <input type="text" name="Def_Union" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Local #</label>
+                <input type="text" name="Def_LocalNum" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+
+              <!-- Spouse -->
+              <div class="form-group" style="grid-column: span 2;">
+                <h4 style="margin: 15px 0 10px; color: var(--color-slate-700);">Spouse Information</h4>
+              </div>
+              <div class="form-group">
+                <label>Spouse Full Name</label>
+                <input type="text" name="Spouse_Name" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                  <div>
+                    <label>Date of Birth</label>
+                    <input type="date" name="Spouse_DOB" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+                  <div>
+                    <label>Social Security No.</label>
+                    <input type="text" name="Spouse_SSN" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+              </div>
+              <div class="form-group">
+                <label>Maiden Name</label>
+                <input type="text" name="Spouse_MaidenName" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Occupation(s)</label>
+                <input type="text" name="Spouse_Occupation" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Employer</label>
+                <input type="text" name="Spouse_Employer" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                  <div>
+                    <label>Shift</label>
+                    <input type="text" name="Spouse_Shift" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+                  <div>
+                    <label>How Long</label>
+                    <input type="text" name="Spouse_HowLong" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+              </div>
+              <div class="form-group" style="grid-column: span 2;">
+                <label>Address (Employer)</label>
+                <input type="text" name="Spouse_EmpAddress" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Job Title</label>
+                <input type="text" name="Spouse_JobTitle" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Phone</label>
+                <input type="text" name="Spouse_EmpPhone" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+            </div>
+
+            <!-- Children -->
+            <div style="margin-bottom: 30px;">
+              <label style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--color-slate-800);">Children Info</label>
+              <div style="display: grid; grid-template-columns: 1fr 3fr 2fr 1.5fr; gap: 10px; margin-bottom: 10px; font-size: 0.85rem; font-weight: 600;">
+                <div>Age</div><div>Child's Name/Address</div><div>School/Employer</div><div>Phone</div>
+              </div>
+              <div style="display: grid; grid-template-columns: 1fr 3fr 2fr 1.5fr; gap: 10px; margin-bottom: 10px;">
+                <input type="text" name="Child1_Age" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                <input type="text" name="Child1_NameAddress" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                <input type="text" name="Child1_SchoolEmp" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                <input type="text" name="Child1_Phone" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div style="display: grid; grid-template-columns: 1fr 3fr 2fr 1.5fr; gap: 10px; margin-bottom: 10px;">
+                <input type="text" name="Child2_Age" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                <input type="text" name="Child2_NameAddress" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                <input type="text" name="Child2_SchoolEmp" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                <input type="text" name="Child2_Phone" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div style="display: grid; grid-template-columns: 1fr 3fr 2fr 1.5fr; gap: 10px; margin-bottom: 10px;">
+                <input type="text" name="Child3_Age" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                <input type="text" name="Child3_NameAddress" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                <input type="text" name="Child3_SchoolEmp" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                <input type="text" name="Child3_Phone" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+            </div>
+
+            <!-- Section 4: Auto & Legal/Criminal History -->
+            <h3 class="form-section-title" style="color: var(--color-navy-700); border-bottom: 2px solid var(--color-slate-200); padding-bottom: 10px; margin-bottom: 20px;">4. Auto & Additional Information</h3>
+            <div class="form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px;">
+              <div class="form-group" style="grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; gap: 10px;">
+                <div>
+                    <label>Auto Year</label>
+                    <input type="text" name="Auto_Year" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                </div>
+                <div>
+                    <label>Make</label>
+                    <input type="text" name="Auto_Make" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                </div>
+                <div>
+                    <label>Model</label>
+                    <input type="text" name="Auto_Model" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                </div>
+                <div>
+                    <label>Color</label>
+                    <input type="text" name="Auto_Color" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                </div>
+                <div>
+                    <label>Tag#</label>
+                    <input type="text" name="Auto_Tag" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                </div>
+                <div>
+                    <label>State</label>
+                    <input type="text" name="Auto_State" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Amount Owed</label>
+                <input type="text" name="Auto_AmtOwed" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Lien Holder</label>
+                <input type="text" name="Auto_LienHolder" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group" style="grid-column: span 2;">
+                <label>Insurance Agent/Company</label>
+                <input type="text" name="Insurance_Co" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              
+              <!-- Legal History -->
+              <div class="form-group" style="grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+                <div>
+                    <label>Driver's License #</label>
+                    <input type="text" name="Drivers_Lic" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                </div>
+                <div>
+                    <label>State</label>
+                    <input type="text" name="DL_State" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                </div>
+                <div>
+                    <label>Expiration</label>
+                    <input type="text" name="DL_Exp" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Previous Arrests for</label>
+                <input type="text" name="Prev_Arrests" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Where</label>
+                <input type="text" name="Prev_Arrests_Where" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>On Probation/Parole?</label>
+                <input type="text" name="Probation_Parole" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                  <div>
+                    <label>Where</label>
+                    <input type="text" name="Probation_Where" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+                  <div>
+                    <label>Officer</label>
+                    <input type="text" name="Probation_Officer" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+              </div>
+              <div class="form-group">
+                <label>Credit Card Company 1</label>
+                <input type="text" name="CC1_Name" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Account #</label>
+                <input type="text" name="CC1_Acc" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Credit Card Company 2</label>
+                <input type="text" name="CC2_Name" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Account #</label>
+                <input type="text" name="CC2_Acc" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Attorney</label>
+                <input type="text" name="Attorney" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group" style="display: grid; grid-template-columns: 2fr 1fr; gap: 10px;">
+                  <div>
+                    <label>Address</label>
+                    <input type="text" name="Attorney_Address" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+                  <div>
+                    <label>Phone</label>
+                    <input type="text" name="Attorney_Phone" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+              </div>
+            </div>
+
+            <!-- Relatives / Friends -->
+            <div style="margin-bottom: 30px; overflow-x: auto;">
+              <label style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--color-slate-800);">Relatives / Friends</label>
+              <table style="width: 100%; border-collapse: collapse; min-width: 600px;">
+                  <thead>
+                      <tr style="background: var(--color-slate-100);">
+                          <th style="padding: 8px; border: 1px solid var(--color-slate-300); text-align: left;">Relation</th>
+                          <th style="padding: 8px; border: 1px solid var(--color-slate-300); text-align: left;">Name</th>
+                          <th style="padding: 8px; border: 1px solid var(--color-slate-300); text-align: left;">Address, City, State, Zip</th>
+                          <th style="padding: 8px; border: 1px solid var(--color-slate-300); text-align: left;">Phone</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);">Mother</td>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_Mother_Name" style="width: 100%; border: none;"></td>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_Mother_Address" style="width: 100%; border: none;"></td>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_Mother_Phone" style="width: 100%; border: none;"></td>
+                      </tr>
+                      <tr>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);">Father</td>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_Father_Name" style="width: 100%; border: none;"></td>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_Father_Address" style="width: 100%; border: none;"></td>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_Father_Phone" style="width: 100%; border: none;"></td>
+                      </tr>
+                      <tr>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);">Brother</td>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_Bro1_Name" style="width: 100%; border: none;"></td>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_Bro1_Address" style="width: 100%; border: none;"></td>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_Bro1_Phone" style="width: 100%; border: none;"></td>
+                      </tr>
+                      <tr>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);">Brother</td>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_Bro2_Name" style="width: 100%; border: none;"></td>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_Bro2_Address" style="width: 100%; border: none;"></td>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_Bro2_Phone" style="width: 100%; border: none;"></td>
+                      </tr>
+                      <tr>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);">Sister</td>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_Sis1_Name" style="width: 100%; border: none;"></td>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_Sis1_Address" style="width: 100%; border: none;"></td>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_Sis1_Phone" style="width: 100%; border: none;"></td>
+                      </tr>
+                      <tr>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);">Sister</td>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_Sis2_Name" style="width: 100%; border: none;"></td>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_Sis2_Address" style="width: 100%; border: none;"></td>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_Sis2_Phone" style="width: 100%; border: none;"></td>
+                      </tr>
+                      <tr>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);">M-Law</td>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_MLaw_Name" style="width: 100%; border: none;"></td>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_MLaw_Address" style="width: 100%; border: none;"></td>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_MLaw_Phone" style="width: 100%; border: none;"></td>
+                      </tr>
+                      <tr>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);">F-Law</td>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_FLaw_Name" style="width: 100%; border: none;"></td>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_FLaw_Address" style="width: 100%; border: none;"></td>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_FLaw_Phone" style="width: 100%; border: none;"></td>
+                      </tr>
+                      <tr>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);">Gr. Parents</td>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_GrParents_Name" style="width: 100%; border: none;"></td>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_GrParents_Address" style="width: 100%; border: none;"></td>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_GrParents_Phone" style="width: 100%; border: none;"></td>
+                      </tr>
+                      <tr>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);">Ex Spouse</td>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_ExSpouse_Name" style="width: 100%; border: none;"></td>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_ExSpouse_Address" style="width: 100%; border: none;"></td>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_ExSpouse_Phone" style="width: 100%; border: none;"></td>
+                      </tr>
+                  </tbody>
+              </table>
+            </div>
+
+            <!-- Indemnitor Information (x3) -->
+            <h3 class="form-section-title" style="color: var(--color-navy-700); border-bottom: 2px solid var(--color-slate-200); padding-bottom: 10px; margin-bottom: 20px;">5. Indemnitors (Co-Signers)</h3>
+            <p style="color: var(--color-slate-600); margin-bottom: 20px;">Up to 3 indemnitors can be added.</p>            <div style="background: var(--color-slate-50); padding: 20px; border: 1px solid var(--color-slate-200); border-radius: 4px; margin-bottom: 20px;">
+                <h4 style="margin-bottom: 15px;">Indemnitor 1</h4>
+                <div class="form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                  <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" name="Indemnitor1_Name" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+                  <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                    <div>
+                        <label>Employment</label>
+                        <input type="text" name="Indemnitor1_Employment" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                    <div>
+                        <label>Employer</label>
+                        <input type="text" name="Indemnitor1_Employer" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Address</label>
+                    <input type="text" name="Indemnitor1_Address" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+                  <div class="form-group" style="display: grid; grid-template-columns: 2fr 1fr; gap: 10px;">
+                    <div>
+                        <label>City</label>
+                        <input type="text" name="Indemnitor1_City" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                    <div>
+                        <label>Zip</label>
+                        <input type="text" name="Indemnitor1_Zip" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Phone</label>
+                    <input type="tel" name="Indemnitor1_Phone" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+                  <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+                    <div>
+                        <label>Driver's Lic.</label>
+                        <input type="text" name="Indemnitor1_DriversLic" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                    <div>
+                        <label>S.S. No.</label>
+                        <input type="text" name="Indemnitor1_SSN" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                    <div>
+                        <label>D.O.B.</label>
+                        <input type="text" name="Indemnitor1_DOB" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Relationship to defendant</label>
+                    <input type="text" name="Indemnitor1_Relation" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+                  <div class="form-group">
+                    <label>Spouse</label>
+                    <input type="text" name="Indemnitor1_Spouse" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+                  <div class="form-group" style="grid-column: span 2;">
+                    <label>Reference (Personal or Credit) 1</label>
+                    <div style="display: grid; grid-template-columns: 3fr 1fr; gap: 10px;">
+                        <input type="text" name="Indemnitor1_Ref1" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                        <input type="text" name="Indemnitor1_Ref1_Relation" placeholder="Relation" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                  </div>
+                  <div class="form-group" style="grid-column: span 2;">
+                    <label>Reference 2</label>
+                    <div style="display: grid; grid-template-columns: 3fr 1fr; gap: 10px;">
+                        <input type="text" name="Indemnitor1_Ref2" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                        <input type="text" name="Indemnitor1_Ref2_Relation" placeholder="Relation" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                  </div>
+                </div>
+            </div>            <div style="background: var(--color-slate-50); padding: 20px; border: 1px solid var(--color-slate-200); border-radius: 4px; margin-bottom: 20px;">
+                <h4 style="margin-bottom: 15px;">Indemnitor 2</h4>
+                <div class="form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                  <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" name="Indemnitor2_Name" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+                  <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                    <div>
+                        <label>Employment</label>
+                        <input type="text" name="Indemnitor2_Employment" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                    <div>
+                        <label>Employer</label>
+                        <input type="text" name="Indemnitor2_Employer" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Address</label>
+                    <input type="text" name="Indemnitor2_Address" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+                  <div class="form-group" style="display: grid; grid-template-columns: 2fr 1fr; gap: 10px;">
+                    <div>
+                        <label>City</label>
+                        <input type="text" name="Indemnitor2_City" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                    <div>
+                        <label>Zip</label>
+                        <input type="text" name="Indemnitor2_Zip" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Phone</label>
+                    <input type="tel" name="Indemnitor2_Phone" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+                  <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+                    <div>
+                        <label>Driver's Lic.</label>
+                        <input type="text" name="Indemnitor2_DriversLic" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                    <div>
+                        <label>S.S. No.</label>
+                        <input type="text" name="Indemnitor2_SSN" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                    <div>
+                        <label>D.O.B.</label>
+                        <input type="text" name="Indemnitor2_DOB" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Relationship to defendant</label>
+                    <input type="text" name="Indemnitor2_Relation" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+                  <div class="form-group">
+                    <label>Spouse</label>
+                    <input type="text" name="Indemnitor2_Spouse" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+                  <div class="form-group" style="grid-column: span 2;">
+                    <label>Reference (Personal or Credit) 1</label>
+                    <div style="display: grid; grid-template-columns: 3fr 1fr; gap: 10px;">
+                        <input type="text" name="Indemnitor2_Ref1" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                        <input type="text" name="Indemnitor2_Ref1_Relation" placeholder="Relation" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                  </div>
+                  <div class="form-group" style="grid-column: span 2;">
+                    <label>Reference 2</label>
+                    <div style="display: grid; grid-template-columns: 3fr 1fr; gap: 10px;">
+                        <input type="text" name="Indemnitor2_Ref2" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                        <input type="text" name="Indemnitor2_Ref2_Relation" placeholder="Relation" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                  </div>
+                </div>
+            </div>            <div style="background: var(--color-slate-50); padding: 20px; border: 1px solid var(--color-slate-200); border-radius: 4px; margin-bottom: 20px;">
+                <h4 style="margin-bottom: 15px;">Indemnitor 3</h4>
+                <div class="form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                  <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" name="Indemnitor3_Name" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+                  <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                    <div>
+                        <label>Employment</label>
+                        <input type="text" name="Indemnitor3_Employment" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                    <div>
+                        <label>Employer</label>
+                        <input type="text" name="Indemnitor3_Employer" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Address</label>
+                    <input type="text" name="Indemnitor3_Address" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+                  <div class="form-group" style="display: grid; grid-template-columns: 2fr 1fr; gap: 10px;">
+                    <div>
+                        <label>City</label>
+                        <input type="text" name="Indemnitor3_City" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                    <div>
+                        <label>Zip</label>
+                        <input type="text" name="Indemnitor3_Zip" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Phone</label>
+                    <input type="tel" name="Indemnitor3_Phone" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+                  <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+                    <div>
+                        <label>Driver's Lic.</label>
+                        <input type="text" name="Indemnitor3_DriversLic" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                    <div>
+                        <label>S.S. No.</label>
+                        <input type="text" name="Indemnitor3_SSN" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                    <div>
+                        <label>D.O.B.</label>
+                        <input type="text" name="Indemnitor3_DOB" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Relationship to defendant</label>
+                    <input type="text" name="Indemnitor3_Relation" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+                  <div class="form-group">
+                    <label>Spouse</label>
+                    <input type="text" name="Indemnitor3_Spouse" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+                  <div class="form-group" style="grid-column: span 2;">
+                    <label>Reference (Personal or Credit) 1</label>
+                    <div style="display: grid; grid-template-columns: 3fr 1fr; gap: 10px;">
+                        <input type="text" name="Indemnitor3_Ref1" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                        <input type="text" name="Indemnitor3_Ref1_Relation" placeholder="Relation" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                  </div>
+                  <div class="form-group" style="grid-column: span 2;">
+                    <label>Reference 2</label>
+                    <div style="display: grid; grid-template-columns: 3fr 1fr; gap: 10px;">
+                        <input type="text" name="Indemnitor3_Ref2" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                        <input type="text" name="Indemnitor3_Ref2_Relation" placeholder="Relation" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <!-- Hold Harmless (Collateral) -->
+            <h3 class="form-section-title" style="color: var(--color-navy-700); border-bottom: 2px solid var(--color-slate-200); padding-bottom: 10px; margin-bottom: 20px;">6. Hold Harmless (Collateral/Vehicles)</h3>
+            <div class="form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px;">
+                <div class="form-group" style="grid-column: span 2;">
+                    <label>Description of Collateral</label>
+                    <input type="text" name="Collateral_Desc" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                </div>
+                <div class="form-group">
+                    <label>VIN#</label>
+                    <input type="text" name="Collateral_VIN" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                </div>
+                <div class="form-group">
+                    <label>License Plate</label>
+                    <input type="text" name="Collateral_License" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                </div>
+            </div>
+
+            <!-- Signature Checkboxes & E-Sign -->
             <div class="form-group" style="margin-bottom: 30px;">
-              <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer; background: var(--color-slate-50); padding: 16px; border: 1px solid var(--color-slate-200); border-radius: 4px;">
+              <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer; background: var(--color-slate-50); padding: 16px; border: 1px solid var(--color-slate-200); border-radius: 4px; margin-bottom: 10px;">
                 <input type="checkbox" required style="margin-top: 4px;">
                 <span style="font-size: 0.9rem; color: var(--color-slate-700); line-height: 1.5;">
-                  I hereby certify that the information provided in this application is true, complete, and accurate. I understand that this information will be used by 24/7 Bail Agency, Inc. to evaluate eligibility for a bail bond.
+                  I have read and had explained to me and understand the terms and conditions of 24/7 Bail Agency, Inc. executing the above listed Surety Bail Bonds on my behalf.
+                </span>
+              </label>
+              <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer; background: var(--color-slate-50); padding: 16px; border: 1px solid var(--color-slate-200); border-radius: 4px; margin-bottom: 10px;">
+                <input type="checkbox" required style="margin-top: 4px;">
+                <span style="font-size: 0.9rem; color: var(--color-slate-700); line-height: 1.5;">
+                  I understand that I am assuming specific obligations and have read the Contract carefully. The premium paid on this bond is not returnable.
+                </span>
+              </label>
+              <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer; background: var(--color-slate-50); padding: 16px; border: 1px solid var(--color-slate-200); border-radius: 4px; margin-bottom: 10px;">
+                <input type="checkbox" required style="margin-top: 4px;">
+                <span style="font-size: 0.9rem; color: var(--color-slate-700); line-height: 1.5;">
+                  I authorize 24/7 Bail Agency and/or production company to photograph me, take motion pictures, video footage, and/or make electronic sound recordings of me.
                 </span>
               </label>
             </div>
-
-            <div style="text-align: center;">
+            
+            <div class="form-group" style="margin-bottom: 30px;">
+                <label>Electronic Signature (Type Full Name)</label>
+                <input type="text" name="Electronic_Signature" required style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px; font-family: 'Brush Script MT', cursive; font-size: 1.2rem;">
+            </div>
+            <div style="text-align: center;"><div style="text-align: center;">
               <button type="submit" class="btn btn-primary" style="padding: 16px 48px; font-size: 1.1rem; width: 100%; max-width: 400px;">
                 Submit Application Securely
               </button>
@@ -413,3 +1069,4 @@
   <script src="global.js"></script>
 </body>
 </html>
+
