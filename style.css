@@ -2490,13 +2490,13 @@ td strong {
   }
 
   /* Specific nested simple grids that should stack */
-  .digital-application-form > div > div[style*="grid-template-columns: 1fr 1fr"],
-  .digital-application-form > div > div[style*="grid-template-columns: 1fr 1fr 1fr"] {
+  .digital-application-form .wizard-step > div > div[style*="grid-template-columns: 1fr 1fr"],
+  .digital-application-form .wizard-step > div > div[style*="grid-template-columns: 1fr 1fr 1fr"] {
     grid-template-columns: 1fr !important;
   }
 
   /* Make tabular data sections (Offenses, Children, etc.) scrollable */
-  .digital-application-form > div[style*="margin-bottom: 30px"] {
+  .digital-application-form .wizard-step > div[style*="margin-bottom: 30px"] {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     width: 100%;
@@ -2514,5 +2514,9 @@ td strong {
     overflow-x: auto !important;
     white-space: nowrap !important;
     width: 100% !important;
+  }
+
+  #nextBtn {
+    margin-left: auto;
   }
 }
