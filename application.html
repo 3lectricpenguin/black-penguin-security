@@ -634,7 +634,7 @@
                           <th style="padding: 8px; border: 1px solid var(--color-slate-300); text-align: left;">Phone</th>
                       </tr>
                   </thead>
-                  <tbody>
+                  <tbody id="relatives-tbody">
                       <tr>
                           <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_1_Type" style="width: 100%; border: none;" placeholder="Relation"></td>
                           <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_1_Name" style="width: 100%; border: none;" placeholder="Name"></td>
@@ -653,50 +653,9 @@
                           <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_3_Address" style="width: 100%; border: none;" placeholder="Address, City, State, Zip"></td>
                           <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_3_Phone" style="width: 100%; border: none;" placeholder="Phone"></td>
                       </tr>
-                      <tr>
-                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_4_Type" style="width: 100%; border: none;" placeholder="Relation"></td>
-                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_4_Name" style="width: 100%; border: none;" placeholder="Name"></td>
-                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_4_Address" style="width: 100%; border: none;" placeholder="Address, City, State, Zip"></td>
-                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_4_Phone" style="width: 100%; border: none;" placeholder="Phone"></td>
-                      </tr>
-                      <tr>
-                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_5_Type" style="width: 100%; border: none;" placeholder="Relation"></td>
-                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_5_Name" style="width: 100%; border: none;" placeholder="Name"></td>
-                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_5_Address" style="width: 100%; border: none;" placeholder="Address, City, State, Zip"></td>
-                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_5_Phone" style="width: 100%; border: none;" placeholder="Phone"></td>
-                      </tr>
-                      <tr>
-                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_6_Type" style="width: 100%; border: none;" placeholder="Relation"></td>
-                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_6_Name" style="width: 100%; border: none;" placeholder="Name"></td>
-                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_6_Address" style="width: 100%; border: none;" placeholder="Address, City, State, Zip"></td>
-                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_6_Phone" style="width: 100%; border: none;" placeholder="Phone"></td>
-                      </tr>
-                      <tr>
-                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_7_Type" style="width: 100%; border: none;" placeholder="Relation"></td>
-                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_7_Name" style="width: 100%; border: none;" placeholder="Name"></td>
-                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_7_Address" style="width: 100%; border: none;" placeholder="Address, City, State, Zip"></td>
-                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_7_Phone" style="width: 100%; border: none;" placeholder="Phone"></td>
-                      </tr>
-                      <tr>
-                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_8_Type" style="width: 100%; border: none;" placeholder="Relation"></td>
-                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_8_Name" style="width: 100%; border: none;" placeholder="Name"></td>
-                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_8_Address" style="width: 100%; border: none;" placeholder="Address, City, State, Zip"></td>
-                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_8_Phone" style="width: 100%; border: none;" placeholder="Phone"></td>
-                      </tr>
-                      <tr>
-                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_9_Type" style="width: 100%; border: none;" placeholder="Relation"></td>
-                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_9_Name" style="width: 100%; border: none;" placeholder="Name"></td>
-                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_9_Address" style="width: 100%; border: none;" placeholder="Address, City, State, Zip"></td>
-                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_9_Phone" style="width: 100%; border: none;" placeholder="Phone"></td>
-                      </tr>
-                      <tr>
-                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_10_Type" style="width: 100%; border: none;" placeholder="Relation"></td>
-                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_10_Name" style="width: 100%; border: none;" placeholder="Name"></td>
-                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_10_Address" style="width: 100%; border: none;" placeholder="Address, City, State, Zip"></td>
-                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_10_Phone" style="width: 100%; border: none;" placeholder="Phone"></td>
-                      </tr>
                   </tbody>
               </table>
+              <button type="button" id="addRelativeBtn" style="padding: 6px 12px; margin-top: 5px; background: var(--color-slate-200); border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; color: var(--color-slate-700);">+ Add Relative</button>
             </div>
 
             <!-- Indemnitor Information (x3) -->
@@ -1149,6 +1108,24 @@
                   <input type="text" name="Child${childCount}_Phone" placeholder="Phone" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
                 `;
                 container.appendChild(row);
+            });
+        }
+
+
+        let relativeCount = 3;
+        const addRelativeBtn = document.getElementById("addRelativeBtn");
+        if(addRelativeBtn) {
+            addRelativeBtn.addEventListener("click", () => {
+                relativeCount++;
+                const tbody = document.getElementById("relatives-tbody");
+                const tr = document.createElement("tr");
+                tr.innerHTML = `
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_${relativeCount}_Type" style="width: 100%; border: none;" placeholder="Relation"></td>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_${relativeCount}_Name" style="width: 100%; border: none;" placeholder="Name"></td>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_${relativeCount}_Address" style="width: 100%; border: none;" placeholder="Address, City, State, Zip"></td>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_${relativeCount}_Phone" style="width: 100%; border: none;" placeholder="Phone"></td>
+                `;
+                tbody.appendChild(tr);
             });
         }
 
