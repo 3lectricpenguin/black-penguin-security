@@ -258,16 +258,16 @@
             <!-- Offenses -->
             <div style="margin-bottom: 30px;">
               <label style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--color-slate-800);">Offenses</label>
-              <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 10px; margin-bottom: 10px; font-size: 0.85rem; font-weight: 600;">
+              <div class="mobile-header-row" style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 10px; margin-bottom: 10px; font-size: 0.85rem; font-weight: 600;">
                 <div>Offense</div><div>Case #</div><div>Power #</div><div>Amount</div><div>Premium</div>
               </div>
               <div id="offenses-container">
                 <div class="offense-row" style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 10px; margin-bottom: 10px;">
-                  <input type="text" name="Offense_1" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-                  <input type="text" name="Case_1" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-                  <input type="text" name="Power_1" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-                  <input type="text" name="Amount_1" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-                  <input type="text" name="Premium_1" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  <input type="text" name="Offense_1" placeholder="Offense" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  <input type="text" name="Case_1" placeholder="Case #" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  <input type="text" name="Power_1" placeholder="Power #" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  <input type="text" name="Amount_1" placeholder="Amount" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  <input type="text" name="Premium_1" placeholder="Premium" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
                 </div>
               </div>
               <button type="button" id="addOffenseBtn" style="padding: 6px 12px; margin-top: 5px; background: var(--color-slate-200); border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; color: var(--color-slate-700);">+ Add Offense</button>
@@ -492,15 +492,15 @@
             <!-- Children -->
             <div style="margin-bottom: 30px;">
               <label style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--color-slate-800);">Children Info</label>
-              <div style="display: grid; grid-template-columns: 1fr 3fr 2fr 1.5fr; gap: 10px; margin-bottom: 10px; font-size: 0.85rem; font-weight: 600;">
+              <div class="mobile-header-row" style="display: grid; grid-template-columns: 1fr 3fr 2fr 1.5fr; gap: 10px; margin-bottom: 10px; font-size: 0.85rem; font-weight: 600;">
                 <div>Age</div><div>Child's Name/Address</div><div>School/Employer</div><div>Phone</div>
               </div>
               <div id="children-container">
                 <div class="child-row" style="display: grid; grid-template-columns: 1fr 3fr 2fr 1.5fr; gap: 10px; margin-bottom: 10px;">
-                  <input type="text" name="Child1_Age" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-                  <input type="text" name="Child1_NameAddress" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-                  <input type="text" name="Child1_SchoolEmp" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-                  <input type="text" name="Child1_Phone" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  <input type="text" name="Child1_Age" placeholder="Age" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  <input type="text" name="Child1_NameAddress" placeholder="Child's Name/Address" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  <input type="text" name="Child1_SchoolEmp" placeholder="School/Employer" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  <input type="text" name="Child1_Phone" placeholder="Phone" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
                 </div>
               </div>
               <button type="button" id="addChildBtn" style="padding: 6px 12px; margin-top: 5px; background: var(--color-slate-200); border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; color: var(--color-slate-700);">+ Add Child</button>
@@ -515,27 +515,27 @@
               <div class="form-group" style="grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; gap: 10px;">
                 <div>
                     <label>Auto Year</label>
-                    <input type="text" name="Auto_Year" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    <input type="text" name="Auto_Year" placeholder="Year" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
                 </div>
                 <div>
                     <label>Make</label>
-                    <input type="text" name="Auto_Make" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    <input type="text" name="Auto_Make" placeholder="Make" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
                 </div>
                 <div>
                     <label>Model</label>
-                    <input type="text" name="Auto_Model" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    <input type="text" name="Auto_Model" placeholder="Model" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
                 </div>
                 <div>
                     <label>Color</label>
-                    <input type="text" name="Auto_Color" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    <input type="text" name="Auto_Color" placeholder="Color" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
                 </div>
                 <div>
                     <label>Tag#</label>
-                    <input type="text" name="Auto_Tag" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    <input type="text" name="Auto_Tag" placeholder="Tag#" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
                 </div>
                 <div>
                     <label>State</label>
-                    <input type="text" name="Auto_State" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    <input type="text" name="Auto_State" placeholder="State" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
                 </div>
               </div>
               <div class="form-group">
@@ -555,15 +555,15 @@
               <div class="form-group" style="grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
                 <div>
                     <label>Driver's License #</label>
-                    <input type="text" name="Drivers_Lic" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    <input type="text" name="Drivers_Lic" placeholder="Driver's Lic." style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
                 </div>
                 <div>
                     <label>State</label>
-                    <input type="text" name="DL_State" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    <input type="text" name="DL_State" placeholder="State" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
                 </div>
                 <div>
                     <label>Expiration</label>
-                    <input type="text" name="DL_Exp" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    <input type="text" name="DL_Exp" placeholder="Exp" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
                 </div>
               </div>
               <div class="form-group">
@@ -725,11 +725,11 @@
                   <div class="form-group" style="display: grid; grid-template-columns: 2fr 1fr; gap: 10px;">
                     <div>
                         <label>City</label>
-                        <input type="text" name="Indemnitor1_City" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                        <input type="text" name="Indemnitor1_City" placeholder="City" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
                     </div>
                     <div>
                         <label>Zip</label>
-                        <input type="text" name="Indemnitor1_Zip" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                        <input type="text" name="Indemnitor1_Zip" placeholder="Zip" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
                     </div>
                   </div>
                   <div class="form-group">
@@ -739,15 +739,15 @@
                   <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
                     <div>
                         <label>Driver's Lic.</label>
-                        <input type="text" name="Indemnitor1_DriversLic" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                        <input type="text" name="Indemnitor1_DriversLic" placeholder="Driver's Lic." style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
                     </div>
                     <div>
                         <label>S.S. No.</label>
-                        <input type="text" name="Indemnitor1_SSN" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                        <input type="text" name="Indemnitor1_SSN" placeholder="SSN" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
                     </div>
                     <div>
                         <label>D.O.B.</label>
-                        <input type="text" name="Indemnitor1_DOB" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                        <input type="text" name="Indemnitor1_DOB" placeholder="DOB" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
                     </div>
                   </div>
                   <div class="form-group">
@@ -797,11 +797,11 @@
                   <div class="form-group" style="display: grid; grid-template-columns: 2fr 1fr; gap: 10px;">
                     <div>
                         <label>City</label>
-                        <input type="text" name="Indemnitor2_City" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                        <input type="text" name="Indemnitor2_City" placeholder="City" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
                     </div>
                     <div>
                         <label>Zip</label>
-                        <input type="text" name="Indemnitor2_Zip" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                        <input type="text" name="Indemnitor2_Zip" placeholder="Zip" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
                     </div>
                   </div>
                   <div class="form-group">
@@ -811,15 +811,15 @@
                   <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
                     <div>
                         <label>Driver's Lic.</label>
-                        <input type="text" name="Indemnitor2_DriversLic" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                        <input type="text" name="Indemnitor2_DriversLic" placeholder="Driver's Lic." style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
                     </div>
                     <div>
                         <label>S.S. No.</label>
-                        <input type="text" name="Indemnitor2_SSN" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                        <input type="text" name="Indemnitor2_SSN" placeholder="SSN" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
                     </div>
                     <div>
                         <label>D.O.B.</label>
-                        <input type="text" name="Indemnitor2_DOB" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                        <input type="text" name="Indemnitor2_DOB" placeholder="DOB" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
                     </div>
                   </div>
                   <div class="form-group">
@@ -869,11 +869,11 @@
                   <div class="form-group" style="display: grid; grid-template-columns: 2fr 1fr; gap: 10px;">
                     <div>
                         <label>City</label>
-                        <input type="text" name="Indemnitor3_City" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                        <input type="text" name="Indemnitor3_City" placeholder="City" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
                     </div>
                     <div>
                         <label>Zip</label>
-                        <input type="text" name="Indemnitor3_Zip" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                        <input type="text" name="Indemnitor3_Zip" placeholder="Zip" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
                     </div>
                   </div>
                   <div class="form-group">
@@ -883,15 +883,15 @@
                   <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
                     <div>
                         <label>Driver's Lic.</label>
-                        <input type="text" name="Indemnitor3_DriversLic" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                        <input type="text" name="Indemnitor3_DriversLic" placeholder="Driver's Lic." style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
                     </div>
                     <div>
                         <label>S.S. No.</label>
-                        <input type="text" name="Indemnitor3_SSN" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                        <input type="text" name="Indemnitor3_SSN" placeholder="SSN" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
                     </div>
                     <div>
                         <label>D.O.B.</label>
-                        <input type="text" name="Indemnitor3_DOB" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                        <input type="text" name="Indemnitor3_DOB" placeholder="DOB" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
                     </div>
                   </div>
                   <div class="form-group">
@@ -1120,11 +1120,11 @@
                 row.className = "offense-row";
                 row.style.cssText = "display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 10px; margin-bottom: 10px;";
                 row.innerHTML = `
-                  <input type="text" name="Offense_${offenseCount}" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-                  <input type="text" name="Case_${offenseCount}" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-                  <input type="text" name="Power_${offenseCount}" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-                  <input type="text" name="Amount_${offenseCount}" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-                  <input type="text" name="Premium_${offenseCount}" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                                    <input type="text" name="Offense_${offenseCount}" placeholder="Offense" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  <input type="text" name="Case_${offenseCount}" placeholder="Case #" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  <input type="text" name="Power_${offenseCount}" placeholder="Power #" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  <input type="text" name="Amount_${offenseCount}" placeholder="Amount" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  <input type="text" name="Premium_${offenseCount}" placeholder="Premium" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
                 `;
                 container.appendChild(row);
             });
@@ -1140,10 +1140,10 @@
                 row.className = "child-row";
                 row.style.cssText = "display: grid; grid-template-columns: 1fr 3fr 2fr 1.5fr; gap: 10px; margin-bottom: 10px;";
                 row.innerHTML = `
-                  <input type="text" name="Child${childCount}_Age" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-                  <input type="text" name="Child${childCount}_NameAddress" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-                  <input type="text" name="Child${childCount}_SchoolEmp" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-                  <input type="text" name="Child${childCount}_Phone" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                                    <input type="text" name="Child${childCount}_Age" placeholder="Age" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  <input type="text" name="Child${childCount}_NameAddress" placeholder="Child's Name/Address" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  <input type="text" name="Child${childCount}_SchoolEmp" placeholder="School/Employer" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  <input type="text" name="Child${childCount}_Phone" placeholder="Phone" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
                 `;
                 container.appendChild(row);
             });
