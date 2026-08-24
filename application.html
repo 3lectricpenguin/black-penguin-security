@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -235,7 +235,14 @@
             <input type="hidden" name="_next" value="https://247bailbonds.com/application.html?success=true">
             <input type="hidden" name="_captcha" value="false">
 
-                        <!-- Section 1: Application Information -->
+            <!-- Wizard Progress -->
+            <div class="wizard-progress" style="margin-bottom:30px; background:#e2e8f0; height:8px; border-radius:4px; overflow:hidden;">
+                <div id="wizard-progress-bar" style="width: 16.66%; background:var(--color-yellow-500); height:100%; transition:width 0.3s ease;"></div>
+            </div>
+
+
+                        <div class="wizard-step active" id="step-1">
+            <!-- Section 1: Application Information -->
             <h3 class="form-section-title" style="color: var(--color-navy-700); border-bottom: 2px solid var(--color-slate-200); padding-bottom: 10px; margin-bottom: 20px;">1. Application Details</h3>
             <div class="form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px;">
               <div class="form-group">
@@ -254,34 +261,17 @@
               <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 10px; margin-bottom: 10px; font-size: 0.85rem; font-weight: 600;">
                 <div>Offense</div><div>Case #</div><div>Power #</div><div>Amount</div><div>Premium</div>
               </div>
-              <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 10px; margin-bottom: 10px;">
-                <input type="text" name="Offense_1" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-                <input type="text" name="Case_1" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-                <input type="text" name="Power_1" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-                <input type="text" name="Amount_1" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-                <input type="text" name="Premium_1" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              <div id="offenses-container">
+                <div class="offense-row" style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 10px; margin-bottom: 10px;">
+                  <input type="text" name="Offense_1" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  <input type="text" name="Case_1" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  <input type="text" name="Power_1" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  <input type="text" name="Amount_1" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  <input type="text" name="Premium_1" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                </div>
               </div>
-              <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 10px; margin-bottom: 10px;">
-                <input type="text" name="Offense_2" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-                <input type="text" name="Case_2" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-                <input type="text" name="Power_2" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-                <input type="text" name="Amount_2" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-                <input type="text" name="Premium_2" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-              </div>
-              <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 10px; margin-bottom: 10px;">
-                <input type="text" name="Offense_3" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-                <input type="text" name="Case_3" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-                <input type="text" name="Power_3" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-                <input type="text" name="Amount_3" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-                <input type="text" name="Premium_3" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-              </div>
-              <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 10px; margin-bottom: 10px;">
-                <input type="text" name="Offense_4" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-                <input type="text" name="Case_4" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-                <input type="text" name="Power_4" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-                <input type="text" name="Amount_4" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-                <input type="text" name="Premium_4" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-              </div>
+              <button type="button" id="addOffenseBtn" style="padding: 6px 12px; margin-top: 5px; background: var(--color-slate-200); border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; color: var(--color-slate-700);">+ Add Offense</button>
+
               <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 15px;">
                 <div class="form-group">
                   <label for="total_bond">Total Bond Amount</label>
@@ -308,6 +298,8 @@
               </div>
             </div>
 
+            </div>
+            <div class="wizard-step" id="step-2" style="display:none;">
             <!-- Section 2: Defendant Information -->
             <h3 class="form-section-title" style="color: var(--color-navy-700); border-bottom: 2px solid var(--color-slate-200); padding-bottom: 10px; margin-bottom: 20px;">2. Defendant Information</h3>
             <div class="form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px;">
@@ -387,6 +379,8 @@
               </div>
             </div>
 
+            </div>
+            <div class="wizard-step" id="step-3" style="display:none;">
             <!-- Section 3: Occupation & Family Info -->
             <h3 class="form-section-title" style="color: var(--color-navy-700); border-bottom: 2px solid var(--color-slate-200); padding-bottom: 10px; margin-bottom: 20px;">3. Occupation & Family Info</h3>
             <div class="form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px;">
@@ -501,26 +495,20 @@
               <div style="display: grid; grid-template-columns: 1fr 3fr 2fr 1.5fr; gap: 10px; margin-bottom: 10px; font-size: 0.85rem; font-weight: 600;">
                 <div>Age</div><div>Child's Name/Address</div><div>School/Employer</div><div>Phone</div>
               </div>
-              <div style="display: grid; grid-template-columns: 1fr 3fr 2fr 1.5fr; gap: 10px; margin-bottom: 10px;">
-                <input type="text" name="Child1_Age" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-                <input type="text" name="Child1_NameAddress" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-                <input type="text" name="Child1_SchoolEmp" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-                <input type="text" name="Child1_Phone" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              <div id="children-container">
+                <div class="child-row" style="display: grid; grid-template-columns: 1fr 3fr 2fr 1.5fr; gap: 10px; margin-bottom: 10px;">
+                  <input type="text" name="Child1_Age" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  <input type="text" name="Child1_NameAddress" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  <input type="text" name="Child1_SchoolEmp" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  <input type="text" name="Child1_Phone" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                </div>
               </div>
-              <div style="display: grid; grid-template-columns: 1fr 3fr 2fr 1.5fr; gap: 10px; margin-bottom: 10px;">
-                <input type="text" name="Child2_Age" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-                <input type="text" name="Child2_NameAddress" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-                <input type="text" name="Child2_SchoolEmp" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-                <input type="text" name="Child2_Phone" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-              </div>
-              <div style="display: grid; grid-template-columns: 1fr 3fr 2fr 1.5fr; gap: 10px; margin-bottom: 10px;">
-                <input type="text" name="Child3_Age" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-                <input type="text" name="Child3_NameAddress" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-                <input type="text" name="Child3_SchoolEmp" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-                <input type="text" name="Child3_Phone" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
-              </div>
+              <button type="button" id="addChildBtn" style="padding: 6px 12px; margin-top: 5px; background: var(--color-slate-200); border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; color: var(--color-slate-700);">+ Add Child</button>
+
             </div>
 
+            </div>
+            <div class="wizard-step" id="step-4" style="display:none;">
             <!-- Section 4: Auto & Legal/Criminal History -->
             <h3 class="form-section-title" style="color: var(--color-navy-700); border-bottom: 2px solid var(--color-slate-200); padding-bottom: 10px; margin-bottom: 20px;">4. Auto & Additional Information</h3>
             <div class="form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px;">
@@ -632,6 +620,8 @@
               </div>
             </div>
 
+            </div>
+            <div class="wizard-step" id="step-5" style="display:none;">
             <!-- Relatives / Friends -->
             <div style="margin-bottom: 30px; overflow-x: auto;">
               <label style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--color-slate-800);">Relatives / Friends</label>
@@ -928,6 +918,8 @@
                   </div>
                 </div>
             </div>
+            </div>
+            <div class="wizard-step" id="step-6" style="display:none;">
             <!-- Hold Harmless (Collateral) -->
             <h3 class="form-section-title" style="color: var(--color-navy-700); border-bottom: 2px solid var(--color-slate-200); padding-bottom: 10px; margin-bottom: 20px;">6. Hold Harmless (Collateral/Vehicles)</h3>
             <div class="form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px;">
@@ -971,8 +963,13 @@
                 <label>Electronic Signature (Type Full Name)</label>
                 <input type="text" name="Electronic_Signature" required style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px; font-family: 'Brush Script MT', cursive; font-size: 1.2rem;">
             </div>
-            <div style="text-align: center;"><div style="text-align: center;">
-              <button type="submit" class="btn btn-primary" style="padding: 16px 48px; font-size: 1.1rem; width: 100%; max-width: 400px;">
+            </div>
+            <div class="wizard-controls" style="display:flex; justify-content:space-between; margin-top:30px;">
+                <button type="button" id="prevBtn" class="btn btn-secondary" style="display:none; padding: 12px 24px; border: 1px solid var(--color-slate-300); border-radius: 4px; background: var(--color-slate-100); cursor: pointer;">Previous Step</button>
+                <button type="button" id="nextBtn" class="btn btn-primary" style="padding: 12px 24px; border-radius: 4px; cursor: pointer;">Next Step &rarr;</button>
+            </div>
+            <div style="text-align: center; margin-top:20px;">
+              <button type="submit" id="submitBtn" class="btn btn-primary" style="display:none; padding: 16px 48px; font-size: 1.1rem; width: 100%; max-width: 400px;">
                 Submit Application Securely
               </button>
             </div>
@@ -1067,6 +1064,94 @@
   </footer>
 
   <script src="global.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const steps = document.querySelectorAll(".wizard-step");
+        const nextBtn = document.getElementById("nextBtn");
+        const prevBtn = document.getElementById("prevBtn");
+        const submitBtn = document.getElementById("submitBtn");
+        const progressBar = document.getElementById("wizard-progress-bar");
+        let currentStep = 0;
+
+        function showStep(stepIndex) {
+            steps.forEach((step, index) => {
+                step.style.display = index === stepIndex ? "block" : "none";
+            });
+            
+            prevBtn.style.display = stepIndex === 0 ? "none" : "inline-block";
+            
+            if (stepIndex === steps.length - 1) {
+                nextBtn.style.display = "none";
+                submitBtn.style.display = "inline-block";
+            } else {
+                nextBtn.style.display = "inline-block";
+                submitBtn.style.display = "none";
+            }
+            
+            progressBar.style.width = ((stepIndex + 1) / steps.length * 100) + "%";
+            window.scrollTo({
+                top: document.querySelector(".digital-application-form").offsetTop - 100,
+                behavior: 'smooth'
+            });
+        }
+
+        nextBtn.addEventListener("click", () => {
+            if (currentStep < steps.length - 1) {
+                currentStep++;
+                showStep(currentStep);
+            }
+        });
+
+        prevBtn.addEventListener("click", () => {
+            if (currentStep > 0) {
+                currentStep--;
+                showStep(currentStep);
+            }
+        });
+
+        let offenseCount = 1;
+        const addOffenseBtn = document.getElementById("addOffenseBtn");
+        if(addOffenseBtn) {
+            addOffenseBtn.addEventListener("click", () => {
+                offenseCount++;
+                const container = document.getElementById("offenses-container");
+                const row = document.createElement("div");
+                row.className = "offense-row";
+                row.style.cssText = "display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 10px; margin-bottom: 10px;";
+                row.innerHTML = `
+                  <input type="text" name="Offense_${offenseCount}" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  <input type="text" name="Case_${offenseCount}" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  <input type="text" name="Power_${offenseCount}" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  <input type="text" name="Amount_${offenseCount}" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  <input type="text" name="Premium_${offenseCount}" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                `;
+                container.appendChild(row);
+            });
+        }
+
+        let childCount = 1;
+        const addChildBtn = document.getElementById("addChildBtn");
+        if(addChildBtn) {
+            addChildBtn.addEventListener("click", () => {
+                childCount++;
+                const container = document.getElementById("children-container");
+                const row = document.createElement("div");
+                row.className = "child-row";
+                row.style.cssText = "display: grid; grid-template-columns: 1fr 3fr 2fr 1.5fr; gap: 10px; margin-bottom: 10px;";
+                row.innerHTML = `
+                  <input type="text" name="Child${childCount}_Age" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  <input type="text" name="Child${childCount}_NameAddress" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  <input type="text" name="Child${childCount}_SchoolEmp" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  <input type="text" name="Child${childCount}_Phone" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                `;
+                container.appendChild(row);
+            });
+        }
+
+    });
+</script>
+
 </body>
 </html>
 
