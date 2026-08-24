@@ -39,6 +39,5 @@ If your client is detained in another county or state, our network allows us to 
 If you are an attorney requiring immediate bond assistance for a client, please contact our dedicated attorney desk:
 
 *   **Priority Attorney Line:** 1-866-322-2245 (Request the Senior On-Duty Underwriter)
-*   **24/7 Dispatch Email:** attorneys@247bailagency.com (Monitored round-the-clock)
 
 *We are committed to helping you provide the best representation for your clients by ensuring they are free to assist in their own defense.*
