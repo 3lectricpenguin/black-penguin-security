@@ -2470,3 +2470,49 @@ td strong {
   color: var(--color-slate-950);
 }
 
+/* -----------------------------------------------------------------------------
+   18. APPLICATION FORM RESPONSIVE OVERRIDES
+----------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  /* Override main structure grids to stack vertically */
+  .digital-application-form .form-grid {
+    grid-template-columns: 1fr !important;
+    gap: 15px !important;
+  }
+  
+  .digital-application-form .form-group[style*="grid-column: span 2"] {
+    grid-column: span 1 !important;
+  }
+  
+  /* Form groups that are grids (e.g. 1fr 1fr, 2fr 1fr) */
+  .digital-application-form .form-group[style*="display: grid"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Specific nested simple grids that should stack */
+  .digital-application-form > div > div[style*="grid-template-columns: 1fr 1fr"],
+  .digital-application-form > div > div[style*="grid-template-columns: 1fr 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Make tabular data sections (Offenses, Children, etc.) scrollable */
+  .digital-application-form > div[style*="margin-bottom: 30px"] {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+  }
+
+  .digital-application-form div[style*="grid-template-columns: 2fr 1fr 1fr 1fr 1fr"],
+  .digital-application-form div[style*="grid-template-columns: 1fr 3fr 2fr 1.5fr"],
+  .digital-application-form div[style*="grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr"] {
+    min-width: 600px;
+  }
+  
+  /* Make inline tables and wrapping containers scrollable/responsive */
+  .digital-application-form table {
+    display: block !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+    width: 100% !important;
+  }
+}
