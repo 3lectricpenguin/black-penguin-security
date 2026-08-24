@@ -2525,3 +2525,4 @@ td strong {
     margin-left: auto;
   }
 }
+.offense-row input, .child-row input { width: 100% !important; }
