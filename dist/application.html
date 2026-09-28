@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bail Application & Contract - 24/7 Bail Bonds</title>
+  <meta name="description" content="Online Bail Bond Application & Contract form. Digital application portal for 24/7 Bail Agency. Currently under construction.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- FIXED EMERGENCY CALL BUTTON -->
+  <a href="tel:1-866-322-2245" class="emergency-fixed-btn" aria-label="Call Emergency Bail Line">
+    <div class="pulse-ring-effect"></div>
+    <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6.62 10.79a15.15 15.15 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.27c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.24.2 2.45.57 3.57a1 1 0 01-.27 1.11z"/>
+    </svg>
+  </a>
+
+  <!-- NAVIGATION HEADER -->
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="brand-logo">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 6h2v2h-2V7zm0 4h2v6h-2v-6z"/>
+        </svg>
+        <span>
+          24/7 Bail Bonds
+          <span class="brand-subtitle">Michigan &amp; Ohio</span>
+        </span>
+      </a>
+      <nav class="navbar" aria-label="Main Navigation">
+        <button class="hamburger-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="navbar-nav">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="services.html#attorneys" class="nav-link">Attorneys</a></li>
+          <li><a href="blog.html" class="nav-link">Blog</a></li>
+          <li><a href="application.html" class="nav-link active">Bail Application</a></li>
+          <li class="has-dropdown">
+            <a href="locations.html" class="nav-link dropdown-toggle" aria-expanded="false">
+              <span>Counties Served</span>
+              <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </a>
+            <div class="dropdown-menu">
+              <div class="dropdown-header-title">Coverage Area Directory</div>
+              <div class="dropdown-columns">
+                <div class="dropdown-col">
+                  <div class="dropdown-col-heading">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+                    Michigan Counties
+                  </div>
+                  <ul class="dropdown-list">
+                    <li>
+                      <a href="branch-county-mi.html" class="dropdown-item featured-link">
+                        <span>Branch County</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="hillsdale-county-mi.html" class="dropdown-item featured-link">
+                        <span>Hillsdale County</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="jackson-county-mi.html" class="dropdown-item featured-link">
+                        <span>Jackson County</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="lenawee-county-mi.html" class="dropdown-item featured-link">
+                        <span>Lenawee County</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="livingston-county-mi.html" class="dropdown-item featured-link">
+                        <span>Livingston County</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="macomb-county-mi.html" class="dropdown-item featured-link">
+                        <span>Macomb County</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="midland-county-mi.html" class="dropdown-item featured-link">
+                        <span>Midland County</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="monroe-county-mi.html" class="dropdown-item featured-link">
+                        <span>Monroe County</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="oakland-county-mi.html" class="dropdown-item featured-link">
+                        <span>Oakland County</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="saginaw-county-mi.html" class="dropdown-item featured-link">
+                        <span>Saginaw County</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="washtenaw-county-mi.html" class="dropdown-item featured-link">
+                        <span>Washtenaw County</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="wayne-county-mi.html" class="dropdown-item featured-link">
+                        <span>Wayne County</span>
+                      </a>
+                    </li>
+                    <li style="margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--color-slate-200);">
+                      <a href="locations.html?state=Michigan" class="dropdown-item" style="color: var(--color-red-600); font-weight: 600; justify-content: center;">
+                        View All 83 MI Counties &rarr;
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="dropdown-col">
+                  <div class="dropdown-col-heading">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+                    Ohio Counties
+                  </div>
+                  <ul class="dropdown-list">
+                    <li>
+                      <a href="allen-county-oh.html" class="dropdown-item featured-link">
+                        <span>Allen County</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="erie-county-oh.html" class="dropdown-item featured-link">
+                        <span>Erie County</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="hancock-county-oh.html" class="dropdown-item featured-link">
+                        <span>Hancock County</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="henry-county-oh.html" class="dropdown-item featured-link">
+                        <span>Henry County</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="lucas-county-oh.html" class="dropdown-item featured-link">
+                        <span>Lucas County</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="ottawa-county-oh.html" class="dropdown-item featured-link">
+                        <span>Ottawa County</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="sandusky-county-oh.html" class="dropdown-item featured-link">
+                        <span>Sandusky County</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="seneca-county-oh.html" class="dropdown-item featured-link">
+                        <span>Seneca County</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="wood-county-oh.html" class="dropdown-item featured-link">
+                        <span>Wood County</span>
+                      </a>
+                    </li>
+                                      <li style="margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--color-slate-200);">
+                      <a href="locations.html?state=Ohio" class="dropdown-item" style="color: var(--color-red-600); font-weight: 600; justify-content: center;">
+                        View All 88 OH Counties &rarr;
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="dropdown-footer">
+                <a href="locations.html" class="dropdown-callout-btn">
+                  <span>View All Counties &amp; Directory &rarr;</span>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <a href="tel:1-866-322-2245" class="btn btn-emergency">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="margin-right: 4px;">
+            <path d="M6.62 10.79a15.15 15.15 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.27c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.24.2 2.45.57 3.57a1 1 0 01-.27 1.11z"/>
+          </svg>
+          <span>1-866-322-2245</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- PAGE HERO HEADER -->
+    <section class="section-dark" style="padding: 65px 0; text-align: center;">
+      <div class="container" style="max-width: 950px;">
+        <div class="badge badge-gold" style="margin-bottom: 16px;">ONLINE APPLICATION PORTAL</div>
+        <h1 style="font-size: clamp(2.2rem, 5vw, 3.2rem); margin-bottom: 16px;">Bail Bond Application &amp; Contract</h1>
+        <p class="text-lead" style="color: var(--color-slate-300); margin-bottom: 0; max-width: 750px; margin-left: auto; margin-right: auto;">
+          Digital application portal for 24/7 Bail Agency.
+        </p>
+      </div>
+    </section>
+
+    <!-- DIGITAL APPLICATION FORM SECTION -->
+    <section class="section" style="padding: 60px 0;">
+      <div class="container" style="max-width: 900px;">
+        <div class="card-service" style="padding: 40px; box-shadow: var(--shadow-xl); background-color: var(--color-white); border-top: 5px solid var(--color-yellow-500);">
+          
+          <h2 style="font-size: 2rem; color: var(--color-slate-900); margin-bottom: 24px; text-align: center;">
+            Digital Bail Application
+          </h2>
+          <p style="text-align: center; color: var(--color-slate-600); margin-bottom: 40px;">
+            Please fill out the application below as completely as possible. The information provided will be sent securely to our licensed agents for immediate processing.
+          </p>
+
+          <form action="https://formsubmit.co/247bailbondz@gmail.com" method="POST" class="digital-application-form">
+            <!-- FormSubmit Configuration -->
+            <input type="hidden" name="_subject" value="New Bail Bond Application Submitted">
+            <input type="hidden" name="_next" value="https://247bailagency.com/application.html?success=true">
+            <input type="hidden" name="_captcha" value="false">
+
+            <!-- Wizard Progress -->
+            <div class="wizard-progress" style="margin-bottom:30px; background:#e2e8f0; height:8px; border-radius:4px; overflow:hidden;">
+                <div id="wizard-progress-bar" style="width: 16.66%; background:var(--color-yellow-500); height:100%; transition:width 0.3s ease;"></div>
+            </div>
+
+
+                        <div class="wizard-step active" id="step-1">
+            <!-- Section 1: Application Information -->
+            <h3 class="form-section-title" style="color: var(--color-navy-700); border-bottom: 2px solid var(--color-slate-200); padding-bottom: 10px; margin-bottom: 20px;">1. Application Details</h3>
+            <div class="form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px;">
+              <div class="form-group">
+                <label for="agent">Agent</label>
+                <input type="text" id="agent" name="Agent" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label for="app_date">Date of Application</label>
+                <input type="date" id="app_date" name="Date_of_Application" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+            </div>
+
+            <!-- Offenses -->
+            <div style="margin-bottom: 30px;">
+              <label style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--color-slate-800);">Offenses</label>
+              <div class="mobile-header-row" style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 10px; margin-bottom: 10px; font-size: 0.85rem; font-weight: 600;">
+                <div>Offense</div><div>Case #</div><div>Power #</div><div>Amount</div><div>Premium</div>
+              </div>
+              <div id="offenses-container">
+                <div class="offense-row" style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 10px; margin-bottom: 10px;">
+                  <input type="text" name="Offense_1" placeholder="Offense" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  <input type="text" name="Case_1" placeholder="Case #" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  <input type="text" name="Power_1" placeholder="Power #" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  <input type="text" name="Amount_1" placeholder="Amount" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  <input type="text" name="Premium_1" placeholder="Premium" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                </div>
+              </div>
+              <button type="button" id="addOffenseBtn" style="padding: 6px 12px; margin-top: 5px; background: var(--color-slate-200); border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; color: var(--color-slate-700);">+ Add Offense</button>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 15px;">
+                <div class="form-group">
+                  <label for="total_bond">Total Bond Amount</label>
+                  <input type="text" id="total_bond" name="Total_Bond_Amount" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                </div>
+                <div class="form-group">
+                  <label for="total_prem">Total Prem.</label>
+                  <input type="text" id="total_prem" name="Total_Prem" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                </div>
+              </div>
+              <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-top: 15px;">
+                <div class="form-group">
+                  <label for="court">Court</label>
+                  <input type="text" id="court" name="Court" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                </div>
+                <div class="form-group">
+                  <label for="app_date_court">Appearance Date</label>
+                  <input type="date" id="app_date_court" name="Appearance_Date" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                </div>
+                <div class="form-group">
+                  <label for="time">Time</label>
+                  <input type="time" id="time" name="Time" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                </div>
+              </div>
+            </div>
+
+            </div>
+            <div class="wizard-step" id="step-2" style="display:none;">
+            <!-- Section 2: Defendant Information -->
+            <h3 class="form-section-title" style="color: var(--color-navy-700); border-bottom: 2px solid var(--color-slate-200); padding-bottom: 10px; margin-bottom: 20px;">2. Defendant Information</h3>
+            <div class="form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px;">
+              <div class="form-group">
+                <label>Defendant's Full Name (First, Middle, Last)</label>
+                <input type="text" name="Defendant_Name" required style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Phone</label>
+                <input type="tel" name="Defendant_Phone" required style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group" style="grid-column: span 2;">
+                <label>Alias/Nickname/Street Name</label>
+                <input type="text" name="Defendant_Alias" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Date of Birth</label>
+                <input type="date" name="Defendant_DOB" required style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Place of Birth</label>
+                <input type="text" name="Defendant_POB" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Social Security No.</label>
+                <input type="text" name="Defendant_SSN" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                  <div class="form-group">
+                    <label>Height</label>
+                    <input type="text" name="Defendant_Height" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+                  <div class="form-group">
+                    <label>Weight</label>
+                    <input type="text" name="Defendant_Weight" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+              </div>
+              <div class="form-group">
+                <label>Eye Color</label>
+                <input type="text" name="Defendant_EyeColor" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Hair Color</label>
+                <input type="text" name="Defendant_HairColor" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Race</label>
+                <input type="text" name="Defendant_Race" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Scars/Tattoos/Marks, etc.</label>
+                <input type="text" name="Defendant_Scars" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group" style="grid-column: span 2;">
+                <label>Address</label>
+                <input type="text" name="Defendant_Address" required style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Apt. #</label>
+                <input type="text" name="Defendant_Apt" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group" style="display: flex; align-items: center; gap: 20px;">
+                <label><input type="radio" name="HousingStatus" value="Own"> Own</label>
+                <label><input type="radio" name="HousingStatus" value="Rent"> Rent</label>
+              </div>
+              <div class="form-group">
+                <label>Landlord</label>
+                <input type="text" name="Defendant_Landlord" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>City, State/Zip Code</label>
+                <input type="text" name="Defendant_CityStateZip" required style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group" style="grid-column: span 2;">
+                <label>Previous Address</label>
+                <input type="text" name="Defendant_PrevAddress" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+            </div>
+
+            </div>
+            <div class="wizard-step" id="step-3" style="display:none;">
+            <!-- Section 3: Occupation & Family Info -->
+            <h3 class="form-section-title" style="color: var(--color-navy-700); border-bottom: 2px solid var(--color-slate-200); padding-bottom: 10px; margin-bottom: 20px;">3. Occupation & Family Info</h3>
+            <div class="form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px;">
+              <div class="form-group">
+                <label>Present Occupation(s)</label>
+                <input type="text" name="Def_PresentOcc" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Previous Occupation(s)</label>
+                <input type="text" name="Def_PrevOcc" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Employer</label>
+                <input type="text" name="Def_Employer" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                  <div>
+                    <label>Shift</label>
+                    <input type="text" name="Def_Shift" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+                  <div>
+                    <label>How Long</label>
+                    <input type="text" name="Def_HowLong" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+              </div>
+              <div class="form-group" style="grid-column: span 2;">
+                <label>Address (Employer)</label>
+                <input type="text" name="Def_EmpAddress" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Job Title</label>
+                <input type="text" name="Def_JobTitle" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Phone (Employer)</label>
+                <input type="text" name="Def_EmpPhone" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Previous Employer</label>
+                <input type="text" name="Def_PrevEmp" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>How Long</label>
+                <input type="text" name="Def_PrevEmpHowLong" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Union</label>
+                <input type="text" name="Def_Union" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Local #</label>
+                <input type="text" name="Def_LocalNum" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+
+              <!-- Spouse -->
+              <div class="form-group" style="grid-column: span 2;">
+                <h4 style="margin: 15px 0 10px; color: var(--color-slate-700);">Spouse Information</h4>
+              </div>
+              <div class="form-group">
+                <label>Spouse Full Name</label>
+                <input type="text" name="Spouse_Name" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                  <div>
+                    <label>Date of Birth</label>
+                    <input type="date" name="Spouse_DOB" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+                  <div>
+                    <label>Social Security No.</label>
+                    <input type="text" name="Spouse_SSN" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+              </div>
+              <div class="form-group">
+                <label>Maiden Name</label>
+                <input type="text" name="Spouse_MaidenName" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Occupation(s)</label>
+                <input type="text" name="Spouse_Occupation" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Employer</label>
+                <input type="text" name="Spouse_Employer" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                  <div>
+                    <label>Shift</label>
+                    <input type="text" name="Spouse_Shift" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+                  <div>
+                    <label>How Long</label>
+                    <input type="text" name="Spouse_HowLong" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+              </div>
+              <div class="form-group" style="grid-column: span 2;">
+                <label>Address (Employer)</label>
+                <input type="text" name="Spouse_EmpAddress" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Job Title</label>
+                <input type="text" name="Spouse_JobTitle" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Phone</label>
+                <input type="text" name="Spouse_EmpPhone" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+            </div>
+
+            <!-- Children -->
+            <div style="margin-bottom: 30px;">
+              <label style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--color-slate-800);">Children Info</label>
+              <div class="mobile-header-row" style="display: grid; grid-template-columns: 1fr 3fr 2fr 1.5fr; gap: 10px; margin-bottom: 10px; font-size: 0.85rem; font-weight: 600;">
+                <div>Age</div><div>Child's Name/Address</div><div>School/Employer</div><div>Phone</div>
+              </div>
+              <div id="children-container">
+                <div class="child-row" style="display: grid; grid-template-columns: 1fr 3fr 2fr 1.5fr; gap: 10px; margin-bottom: 10px;">
+                  <input type="text" name="Child1_Age" placeholder="Age" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  <input type="text" name="Child1_NameAddress" placeholder="Child's Name/Address" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  <input type="text" name="Child1_SchoolEmp" placeholder="School/Employer" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  <input type="text" name="Child1_Phone" placeholder="Phone" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                </div>
+              </div>
+              <button type="button" id="addChildBtn" style="padding: 6px 12px; margin-top: 5px; background: var(--color-slate-200); border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; color: var(--color-slate-700);">+ Add Child</button>
+
+            </div>
+
+            </div>
+            <div class="wizard-step" id="step-4" style="display:none;">
+            <!-- Section 4: Auto & Legal/Criminal History -->
+            <h3 class="form-section-title" style="color: var(--color-navy-700); border-bottom: 2px solid var(--color-slate-200); padding-bottom: 10px; margin-bottom: 20px;">4. Auto & Additional Information</h3>
+            <div class="form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px;">
+              <div class="form-group" style="grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px;">
+                <div>
+                    <label>Auto Year</label>
+                    <input type="text" name="Auto_Year" placeholder="Year" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                </div>
+                <div>
+                    <label>Make</label>
+                    <input type="text" name="Auto_Make" placeholder="Make" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                </div>
+                <div>
+                    <label>Model</label>
+                    <input type="text" name="Auto_Model" placeholder="Model" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                </div>
+                <div>
+                    <label>Color</label>
+                    <input type="text" name="Auto_Color" placeholder="Color" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                </div>
+                <div>
+                    <label>Tag#</label>
+                    <input type="text" name="Auto_Tag" placeholder="Tag#" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                </div>
+                <div>
+                    <label>State</label>
+                    <input type="text" name="Auto_State" placeholder="State" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Amount Owed</label>
+                <input type="text" name="Auto_AmtOwed" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Lien Holder</label>
+                <input type="text" name="Auto_LienHolder" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group" style="grid-column: span 2;">
+                <label>Insurance Agent/Company</label>
+                <input type="text" name="Insurance_Co" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              
+              <!-- Legal History -->
+              <div class="form-group" style="grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+                <div>
+                    <label>Driver's License #</label>
+                    <input type="text" name="Drivers_Lic" placeholder="Driver's Lic." style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                </div>
+                <div>
+                    <label>State</label>
+                    <input type="text" name="DL_State" placeholder="State" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                </div>
+                <div>
+                    <label>Expiration</label>
+                    <input type="text" name="DL_Exp" placeholder="Exp" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Previous Arrests for</label>
+                <input type="text" name="Prev_Arrests" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Where</label>
+                <input type="text" name="Prev_Arrests_Where" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>On Probation/Parole?</label>
+                <input type="text" name="Probation_Parole" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                  <div>
+                    <label>Where</label>
+                    <input type="text" name="Probation_Where" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+                  <div>
+                    <label>Officer</label>
+                    <input type="text" name="Probation_Officer" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+              </div>
+              <div class="form-group">
+                <label>Credit Card Company 1</label>
+                <input type="text" name="CC1_Name" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Account #</label>
+                <input type="text" name="CC1_Acc" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Credit Card Company 2</label>
+                <input type="text" name="CC2_Name" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Account #</label>
+                <input type="text" name="CC2_Acc" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group">
+                <label>Attorney</label>
+                <input type="text" name="Attorney" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+              </div>
+              <div class="form-group" style="display: grid; grid-template-columns: 2fr 1fr; gap: 10px;">
+                  <div>
+                    <label>Address</label>
+                    <input type="text" name="Attorney_Address" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+                  <div>
+                    <label>Phone</label>
+                    <input type="text" name="Attorney_Phone" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+              </div>
+            </div>
+
+            </div>
+            <div class="wizard-step" id="step-5" style="display:none;">
+            <!-- Relatives / Friends -->
+            <div style="margin-bottom: 30px; overflow-x: auto;">
+              <label style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--color-slate-800);">Relatives / Friends</label>
+              <table style="width: 100%; border-collapse: collapse; min-width: 600px;">
+                  <thead>
+                      <tr style="background: var(--color-slate-100);">
+                          <th style="padding: 8px; border: 1px solid var(--color-slate-300); text-align: left;">Relation</th>
+                          <th style="padding: 8px; border: 1px solid var(--color-slate-300); text-align: left;">Name</th>
+                          <th style="padding: 8px; border: 1px solid var(--color-slate-300); text-align: left;">Address, City, State, Zip</th>
+                          <th style="padding: 8px; border: 1px solid var(--color-slate-300); text-align: left;">Phone</th>
+                      </tr>
+                  </thead>
+                  <tbody id="relatives-tbody">
+                      <tr>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_1_Type" style="width: 100%; border: none;" placeholder="Relation"></td>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_1_Name" style="width: 100%; border: none;" placeholder="Name"></td>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_1_Address" style="width: 100%; border: none;" placeholder="Address, City, State, Zip"></td>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_1_Phone" style="width: 100%; border: none;" placeholder="Phone"></td>
+                      </tr>
+                      <tr>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_2_Type" style="width: 100%; border: none;" placeholder="Relation"></td>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_2_Name" style="width: 100%; border: none;" placeholder="Name"></td>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_2_Address" style="width: 100%; border: none;" placeholder="Address, City, State, Zip"></td>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_2_Phone" style="width: 100%; border: none;" placeholder="Phone"></td>
+                      </tr>
+                      <tr>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_3_Type" style="width: 100%; border: none;" placeholder="Relation"></td>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_3_Name" style="width: 100%; border: none;" placeholder="Name"></td>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_3_Address" style="width: 100%; border: none;" placeholder="Address, City, State, Zip"></td>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_3_Phone" style="width: 100%; border: none;" placeholder="Phone"></td>
+                      </tr>
+                  </tbody>
+              </table>
+              <button type="button" id="addRelativeBtn" style="padding: 6px 12px; margin-top: 5px; background: var(--color-slate-200); border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; color: var(--color-slate-700);">+ Add Relative</button>
+            </div>
+
+            <!-- Indemnitor Information (x3) -->
+            <h3 class="form-section-title" style="color: var(--color-navy-700); border-bottom: 2px solid var(--color-slate-200); padding-bottom: 10px; margin-bottom: 20px;">5. Indemnitors (Co-Signers)</h3>
+            <p style="color: var(--color-slate-600); margin-bottom: 20px;">Up to 3 indemnitors can be added.</p>            <div style="background: var(--color-slate-50); padding: 20px; border: 1px solid var(--color-slate-200); border-radius: 4px; margin-bottom: 20px;">
+                <h4 style="margin-bottom: 15px;">Indemnitor 1</h4>
+                <div class="form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                  <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" name="Indemnitor1_Name" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+                  <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                    <div>
+                        <label>Employment</label>
+                        <input type="text" name="Indemnitor1_Employment" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                    <div>
+                        <label>Employer</label>
+                        <input type="text" name="Indemnitor1_Employer" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Address</label>
+                    <input type="text" name="Indemnitor1_Address" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+                  <div class="form-group" style="display: grid; grid-template-columns: 2fr 1fr; gap: 10px;">
+                    <div>
+                        <label>City</label>
+                        <input type="text" name="Indemnitor1_City" placeholder="City" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                    <div>
+                        <label>Zip</label>
+                        <input type="text" name="Indemnitor1_Zip" placeholder="Zip" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Phone</label>
+                    <input type="tel" name="Indemnitor1_Phone" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+                  <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+                    <div>
+                        <label>Driver's Lic.</label>
+                        <input type="text" name="Indemnitor1_DriversLic" placeholder="Driver's Lic." style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                    <div>
+                        <label>S.S. No.</label>
+                        <input type="text" name="Indemnitor1_SSN" placeholder="SSN" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                    <div>
+                        <label>D.O.B.</label>
+                        <input type="text" name="Indemnitor1_DOB" placeholder="DOB" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Relationship to defendant</label>
+                    <input type="text" name="Indemnitor1_Relation" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+                  <div class="form-group">
+                    <label>Spouse</label>
+                    <input type="text" name="Indemnitor1_Spouse" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+                  <div class="form-group" style="grid-column: span 2;">
+                    <label>Reference (Personal or Credit) 1</label>
+                    <div style="display: grid; grid-template-columns: 3fr 1fr; gap: 10px;">
+                        <input type="text" name="Indemnitor1_Ref1" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                        <input type="text" name="Indemnitor1_Ref1_Relation" placeholder="Relation" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                  </div>
+                  <div class="form-group" style="grid-column: span 2;">
+                    <label>Reference 2</label>
+                    <div style="display: grid; grid-template-columns: 3fr 1fr; gap: 10px;">
+                        <input type="text" name="Indemnitor1_Ref2" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                        <input type="text" name="Indemnitor1_Ref2_Relation" placeholder="Relation" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                  </div>
+                </div>
+            </div>            <div style="background: var(--color-slate-50); padding: 20px; border: 1px solid var(--color-slate-200); border-radius: 4px; margin-bottom: 20px;">
+                <h4 style="margin-bottom: 15px;">Indemnitor 2</h4>
+                <div class="form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                  <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" name="Indemnitor2_Name" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+                  <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                    <div>
+                        <label>Employment</label>
+                        <input type="text" name="Indemnitor2_Employment" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                    <div>
+                        <label>Employer</label>
+                        <input type="text" name="Indemnitor2_Employer" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Address</label>
+                    <input type="text" name="Indemnitor2_Address" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+                  <div class="form-group" style="display: grid; grid-template-columns: 2fr 1fr; gap: 10px;">
+                    <div>
+                        <label>City</label>
+                        <input type="text" name="Indemnitor2_City" placeholder="City" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                    <div>
+                        <label>Zip</label>
+                        <input type="text" name="Indemnitor2_Zip" placeholder="Zip" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Phone</label>
+                    <input type="tel" name="Indemnitor2_Phone" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+                  <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+                    <div>
+                        <label>Driver's Lic.</label>
+                        <input type="text" name="Indemnitor2_DriversLic" placeholder="Driver's Lic." style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                    <div>
+                        <label>S.S. No.</label>
+                        <input type="text" name="Indemnitor2_SSN" placeholder="SSN" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                    <div>
+                        <label>D.O.B.</label>
+                        <input type="text" name="Indemnitor2_DOB" placeholder="DOB" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Relationship to defendant</label>
+                    <input type="text" name="Indemnitor2_Relation" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+                  <div class="form-group">
+                    <label>Spouse</label>
+                    <input type="text" name="Indemnitor2_Spouse" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+                  <div class="form-group" style="grid-column: span 2;">
+                    <label>Reference (Personal or Credit) 1</label>
+                    <div style="display: grid; grid-template-columns: 3fr 1fr; gap: 10px;">
+                        <input type="text" name="Indemnitor2_Ref1" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                        <input type="text" name="Indemnitor2_Ref1_Relation" placeholder="Relation" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                  </div>
+                  <div class="form-group" style="grid-column: span 2;">
+                    <label>Reference 2</label>
+                    <div style="display: grid; grid-template-columns: 3fr 1fr; gap: 10px;">
+                        <input type="text" name="Indemnitor2_Ref2" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                        <input type="text" name="Indemnitor2_Ref2_Relation" placeholder="Relation" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                  </div>
+                </div>
+            </div>            <div style="background: var(--color-slate-50); padding: 20px; border: 1px solid var(--color-slate-200); border-radius: 4px; margin-bottom: 20px;">
+                <h4 style="margin-bottom: 15px;">Indemnitor 3</h4>
+                <div class="form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                  <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" name="Indemnitor3_Name" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+                  <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                    <div>
+                        <label>Employment</label>
+                        <input type="text" name="Indemnitor3_Employment" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                    <div>
+                        <label>Employer</label>
+                        <input type="text" name="Indemnitor3_Employer" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Address</label>
+                    <input type="text" name="Indemnitor3_Address" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+                  <div class="form-group" style="display: grid; grid-template-columns: 2fr 1fr; gap: 10px;">
+                    <div>
+                        <label>City</label>
+                        <input type="text" name="Indemnitor3_City" placeholder="City" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                    <div>
+                        <label>Zip</label>
+                        <input type="text" name="Indemnitor3_Zip" placeholder="Zip" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Phone</label>
+                    <input type="tel" name="Indemnitor3_Phone" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+                  <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+                    <div>
+                        <label>Driver's Lic.</label>
+                        <input type="text" name="Indemnitor3_DriversLic" placeholder="Driver's Lic." style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                    <div>
+                        <label>S.S. No.</label>
+                        <input type="text" name="Indemnitor3_SSN" placeholder="SSN" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                    <div>
+                        <label>D.O.B.</label>
+                        <input type="text" name="Indemnitor3_DOB" placeholder="DOB" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Relationship to defendant</label>
+                    <input type="text" name="Indemnitor3_Relation" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+                  <div class="form-group">
+                    <label>Spouse</label>
+                    <input type="text" name="Indemnitor3_Spouse" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  </div>
+                  <div class="form-group" style="grid-column: span 2;">
+                    <label>Reference (Personal or Credit) 1</label>
+                    <div style="display: grid; grid-template-columns: 3fr 1fr; gap: 10px;">
+                        <input type="text" name="Indemnitor3_Ref1" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                        <input type="text" name="Indemnitor3_Ref1_Relation" placeholder="Relation" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                  </div>
+                  <div class="form-group" style="grid-column: span 2;">
+                    <label>Reference 2</label>
+                    <div style="display: grid; grid-template-columns: 3fr 1fr; gap: 10px;">
+                        <input type="text" name="Indemnitor3_Ref2" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                        <input type="text" name="Indemnitor3_Ref2_Relation" placeholder="Relation" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                    </div>
+                  </div>
+                </div>
+            </div>
+            </div>
+            <div class="wizard-step" id="step-6" style="display:none;">
+            <!-- Hold Harmless (Collateral) -->
+            <h3 class="form-section-title" style="color: var(--color-navy-700); border-bottom: 2px solid var(--color-slate-200); padding-bottom: 10px; margin-bottom: 20px;">6. Hold Harmless (Collateral/Vehicles)</h3>
+            <div class="form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px;">
+                <div class="form-group" style="grid-column: span 2;">
+                    <label>Description of Collateral</label>
+                    <input type="text" name="Collateral_Desc" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                </div>
+                <div class="form-group">
+                    <label>VIN#</label>
+                    <input type="text" name="Collateral_VIN" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                </div>
+                <div class="form-group">
+                    <label>License Plate</label>
+                    <input type="text" name="Collateral_License" style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                </div>
+            </div>
+
+            <!-- Signature Checkboxes & E-Sign -->
+            <div class="form-group" style="margin-bottom: 30px;">
+              <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer; background: var(--color-slate-50); padding: 16px; border: 1px solid var(--color-slate-200); border-radius: 4px; margin-bottom: 10px;">
+                <input type="checkbox" required style="margin-top: 4px;">
+                <span style="font-size: 0.9rem; color: var(--color-slate-700); line-height: 1.5;">
+                  I have read and had explained to me and understand the terms and conditions of 24/7 Bail Agency, Inc. executing the above listed Surety Bail Bonds on my behalf.
+                </span>
+              </label>
+              <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer; background: var(--color-slate-50); padding: 16px; border: 1px solid var(--color-slate-200); border-radius: 4px; margin-bottom: 10px;">
+                <input type="checkbox" required style="margin-top: 4px;">
+                <span style="font-size: 0.9rem; color: var(--color-slate-700); line-height: 1.5;">
+                  I understand that I am assuming specific obligations and have read the Contract carefully. The premium paid on this bond is not returnable.
+                </span>
+              </label>
+              <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer; background: var(--color-slate-50); padding: 16px; border: 1px solid var(--color-slate-200); border-radius: 4px; margin-bottom: 10px;">
+                <input type="checkbox" required style="margin-top: 4px;">
+                <span style="font-size: 0.9rem; color: var(--color-slate-700); line-height: 1.5;">
+                  I authorize 24/7 Bail Agency and/or production company to photograph me, take motion pictures, video footage, and/or make electronic sound recordings of me.
+                </span>
+              </label>
+            </div>
+            
+            <div class="form-group" style="margin-bottom: 30px;">
+                <label>Electronic Signature (Type Full Name)</label>
+                <input type="text" name="Electronic_Signature" required style="width: 100%; padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 4px; font-family: 'Brush Script MT', cursive; font-size: 1.2rem;">
+            </div>
+            </div>
+            <div class="wizard-controls" style="display:flex; justify-content:space-between; margin-top:30px;">
+                <button type="button" id="prevBtn" class="btn btn-secondary" style="display:none; padding: 12px 24px; border: 1px solid var(--color-slate-300); border-radius: 4px; background: var(--color-slate-100); cursor: pointer;">Back</button>
+                <button type="button" id="nextBtn" class="btn btn-primary" style="padding: 12px 24px; border-radius: 4px; cursor: pointer;">Next Step &rarr;</button>
+            </div>
+            <div style="text-align: center; margin-top:20px;">
+              <button type="submit" id="submitBtn" class="btn btn-primary" style="display:none; padding: 16px 48px; font-size: 1.1rem; width: 100%; max-width: 400px;">
+                Submit
+              </button>
+            </div>
+            
+            <p style="text-align: center; font-size: 0.85rem; color: var(--color-slate-500); margin-top: 16px;">
+              If you need immediate assistance, please call our 24/7 hotline at <a href="tel:1-866-322-2245" style="color: var(--color-red-600); font-weight: 600;">1-866-322-2245</a>.
+            </p>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- BOTTOM CTA BANNER -->
+    <section class="section section-dark" style="text-align: center;">
+      <div class="container" style="max-width: 800px;">
+        <h2 style="margin-bottom: 20px;">Make 24/7 Bail Agency Your 1st Call For Bail</h2>
+        <p class="text-lead" style="color: var(--color-slate-400); margin-bottom: 30px;">Speak directly to a senior licensed agent. We process phone approvals and post bonds 24/7/365.</p>
+        <a href="tel:1-866-322-2245" class="btn btn-primary" style="padding: 16px 36px; font-size: 1.1rem;">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.62 10.79a15.15 15.15 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.27c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.24.2 2.45.57 3.57a1 1 0 01-.27 1.11z"/>
+          </svg>
+          <span style="display: flex; flex-direction: column; align-items: center; line-height: 1.2;">
+            <span style="font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.9;">Speak to an Agent</span>
+            <span style="font-size: 1.25rem; font-weight: 800;">1-866-322-2245</span>
+          </span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-logo-wrap">
+          <a href="index.html" class="brand-logo" style="color: var(--color-white);">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="fill: var(--color-gold-500); height: 32px;">
+              <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 6h2v2h-2V7zm0 4h2v6h-2v-6z"/>
+            </svg>
+            <span style="display: flex; flex-direction: column;">
+              24/7 Bail Bonds
+              <span class="brand-subtitle" style="color: var(--color-navy-500);">Michigan & Ohio</span>
+            </span>
+          </a>
+          <p>Providing professional, confidential, and prompt bail bond services across Michigan and Ohio for over 30 years. Family-owned and operated, available 24/7/365.</p>
+        </div>
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="about.html" class="footer-link">About Us</a></li>
+            <li><a href="services.html" class="footer-link">Services</a></li>
+            <li><a href="services.html#attorneys" class="footer-link">Attorneys</a></li>
+            <li><a href="blog.html" class="footer-link">Blog</a></li>
+            <li><a href="application.html" class="footer-link">Bail Application</a></li>
+            <li><a href="locations.html" class="footer-link">Counties Served</a></li>
+            <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Our Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html" class="footer-link">Surety Bail Bonds</a></li>
+            <li><a href="services.html" class="footer-link">Federal Surety Bonds</a></li>
+            <li><a href="services.html" class="footer-link">Signature Bonds</a></li>
+            <li><a href="services.html" class="footer-link">Contract Bonds</a></li>
+            <li><a href="application.html" class="footer-link">Digital Application</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Contact Info</h4>
+          <ul class="footer-links">
+            <li class="footer-link footer-contact-item">
+              <svg class="footer-contact-icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+              <span>24/7 Toll-Free Hotline:<br><a href="tel:1-866-322-2245" style="font-weight: 700; color: var(--color-white);">1-866-322-2245</a></span>
+            </li>
+            <li class="footer-link footer-contact-item">
+              <svg class="footer-contact-icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+              <span>Email Us:<br><a href="mailto:247bailbondz@gmail.com" style="color: var(--color-white);">247bailbondz@gmail.com</a></span>
+            </li>
+            <li class="footer-link footer-contact-item" style="margin-top: 8px; font-size: 0.88rem; line-height: 1.5; color: var(--color-slate-400);">
+              <svg class="footer-contact-icon" width="18" height="18" fill="currentColor" viewBox="0 0 24 24" style="color: var(--color-yellow-500); flex-shrink: 0;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              <span>Looking for your local office? Please visit your <a href="locations.html" style="color: var(--color-yellow-500); text-decoration: underline; font-weight: 600;">County Page</a> for direct local contact numbers.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">
+          &copy; 2026 24/7 Bail Bonds. All Rights Reserved. Fully Licensed and Bonded in Michigan and Ohio.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="global.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const steps = document.querySelectorAll(".wizard-step");
+        const nextBtn = document.getElementById("nextBtn");
+        const prevBtn = document.getElementById("prevBtn");
+        const submitBtn = document.getElementById("submitBtn");
+        const progressBar = document.getElementById("wizard-progress-bar");
+        let currentStep = 0;
+
+        function showStep(stepIndex) {
+            steps.forEach((step, index) => {
+                step.style.display = index === stepIndex ? "block" : "none";
+            });
+            
+            prevBtn.style.display = stepIndex === 0 ? "none" : "inline-block";
+            
+            if (stepIndex === steps.length - 1) {
+                nextBtn.style.display = "none";
+                submitBtn.style.display = "inline-block";
+            } else {
+                nextBtn.style.display = "inline-block";
+                submitBtn.style.display = "none";
+            }
+            
+            progressBar.style.width = ((stepIndex + 1) / steps.length * 100) + "%";
+            window.scrollTo({
+                top: document.querySelector(".digital-application-form").offsetTop - 100,
+                behavior: 'smooth'
+            });
+        }
+
+        nextBtn.addEventListener("click", () => {
+            if (currentStep < steps.length - 1) {
+                currentStep++;
+                showStep(currentStep);
+            }
+        });
+
+        prevBtn.addEventListener("click", () => {
+            if (currentStep > 0) {
+                currentStep--;
+                showStep(currentStep);
+            }
+        });
+
+        let offenseCount = 1;
+        const addOffenseBtn = document.getElementById("addOffenseBtn");
+        if(addOffenseBtn) {
+            addOffenseBtn.addEventListener("click", () => {
+                offenseCount++;
+                const container = document.getElementById("offenses-container");
+                const row = document.createElement("div");
+                row.className = "offense-row";
+                row.style.cssText = "display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 10px; margin-bottom: 10px;";
+                row.innerHTML = `
+                                    <input type="text" name="Offense_${offenseCount}" placeholder="Offense" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  <input type="text" name="Case_${offenseCount}" placeholder="Case #" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  <input type="text" name="Power_${offenseCount}" placeholder="Power #" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  <input type="text" name="Amount_${offenseCount}" placeholder="Amount" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  <input type="text" name="Premium_${offenseCount}" placeholder="Premium" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                `;
+                container.appendChild(row);
+            });
+        }
+
+        let childCount = 1;
+        const addChildBtn = document.getElementById("addChildBtn");
+        if(addChildBtn) {
+            addChildBtn.addEventListener("click", () => {
+                childCount++;
+                const container = document.getElementById("children-container");
+                const row = document.createElement("div");
+                row.className = "child-row";
+                row.style.cssText = "display: grid; grid-template-columns: 1fr 3fr 2fr 1.5fr; gap: 10px; margin-bottom: 10px;";
+                row.innerHTML = `
+                                    <input type="text" name="Child${childCount}_Age" placeholder="Age" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  <input type="text" name="Child${childCount}_NameAddress" placeholder="Child's Name/Address" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  <input type="text" name="Child${childCount}_SchoolEmp" placeholder="School/Employer" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                  <input type="text" name="Child${childCount}_Phone" placeholder="Phone" style="padding: 8px; border: 1px solid var(--color-slate-300); border-radius: 4px;">
+                `;
+                container.appendChild(row);
+            });
+        }
+
+
+        let relativeCount = 3;
+        const addRelativeBtn = document.getElementById("addRelativeBtn");
+        if(addRelativeBtn) {
+            addRelativeBtn.addEventListener("click", () => {
+                relativeCount++;
+                const tbody = document.getElementById("relatives-tbody");
+                const tr = document.createElement("tr");
+                tr.innerHTML = `
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_${relativeCount}_Type" style="width: 100%; border: none;" placeholder="Relation"></td>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_${relativeCount}_Name" style="width: 100%; border: none;" placeholder="Name"></td>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_${relativeCount}_Address" style="width: 100%; border: none;" placeholder="Address, City, State, Zip"></td>
+                          <td style="padding: 8px; border: 1px solid var(--color-slate-300);"><input type="text" name="Rel_${relativeCount}_Phone" style="width: 100%; border: none;" placeholder="Phone"></td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+    });
+</script>
+
+
+    <!-- Google Review Modal -->
+    <div id="reviewModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 9999; justify-content: center; align-items: center;">
+      <div style="background: white; padding: 40px; border-radius: 8px; max-width: 500px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.15); margin: 20px;">
+        <svg style="width: 64px; height: 64px; color: #10B981; margin: 0 auto 20px;" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        <h2 style="color: var(--color-navy-700); margin-bottom: 15px;">Application Submitted Successfully!</h2>
+        <p style="color: var(--color-slate-600); margin-bottom: 20px; font-size: 1.1rem; line-height: 1.5;">Thank you for trusting 24/7 Bail Bonds. We are reviewing your application and will be in touch shortly.</p>
+        <p style="color: var(--color-slate-700); margin-bottom: 30px; font-weight: 600;">Would you mind taking a moment to leave us a review on Google? It really helps us out.</p>
+        <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+          <a href="https://www.google.com/maps/place/24%2F7+Bail+Agency/@41.9039414,-84.1096924,13z/data=!4m12!1m2!2m1!1s247+bail+agency!3m8!1s0x883cf1eb4dca0a95:0xe0d76047250910fe!8m2!3d41.9039414!4d-84.0334747!9m1!1b1!15sCg8yNDcgYmFpbCBhZ2VuY3laESIPMjQ3IGJhaWwgYWdlbmN5kgESYmFpbF9ib25kc19zZXJ2aWNl4AEA!16s%2Fg%2F11hctbcv30?entry=ttu&g_ep=EgoyMDI2MDgxOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-primary" style="padding: 12px 32px; text-decoration: none; border-radius: 4px; font-weight: 600;">Leave a Review</a>
+          <button type="button" id="closeReviewModal" style="padding: 12px 32px; border: 1px solid var(--color-slate-300); background: var(--color-slate-100); color: var(--color-slate-700); cursor: pointer; border-radius: 4px; font-weight: 600;">Maybe Later</button>
+        </div>
+      </div>
+    </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      // Check for success param
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('success') === 'true') {
+          const reviewModal = document.getElementById("reviewModal");
+          if (reviewModal) {
+              reviewModal.style.display = "flex";
+          }
+          
+          // Clean up URL so it doesn't pop up again on refresh
+          window.history.replaceState({}, document.title, window.location.pathname);
+      }
+
+      const closeReviewModal = document.getElementById("closeReviewModal");
+      if (closeReviewModal) {
+          closeReviewModal.addEventListener("click", () => {
+              document.getElementById("reviewModal").style.display = "none";
+          });
+      }
+  });
+</script>
+
+</body>
+</html>
+
